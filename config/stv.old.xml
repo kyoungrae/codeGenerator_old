@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="모니터링 첨부파일" name="stv_tb_morn_addfile_s"
+        namespace="stv" scope="base" service="RetireeAddFiles">
+        <field desc="모니터링 대상 사용자 아이디" keyfield="true" length="15"
+            name="rte_id" type="VARCHAR2"/>
+        <field desc="회차" keyfield="true" length="22" name="mor_seq" type="NUMBER"/>
+        <field desc="첨부파일 아이디" keyfield="true" length="32"
+            name="mor_doc_id" type="VARCHAR2"></field>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="회차별 모니터링정보" name="stv_tb_morn_case_s"
+        namespace="stv" scope="base" service="MonitoringCase">
+        <field desc="모니터링 대상 사용자 아이디" keyfield="true" length="15"
+            name="rte_id" type="VARCHAR2"/>
+        <field desc="회차" keyfield="true" length="22" name="mor_seq" type="NUMBER"/>
+        <field desc="모니터링 케이스 코드" keyfield="true" length="20"
+            name="mor_case_cd" type="VARCHAR2"/>
+        <field desc="비고" keyfield="false" length="100"
+            name="mor_case_desc" type="VARCHAR2"/>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="모니터링 마스터" name="stv_tb_morn_m"
+        namespace="stv" scope="base" service="MonitoringMaster">
+        <field desc="모니터링 대상 사용자아이디" keyfield="true" length="15"
+            name="rte_id" type="VARCHAR2"/>
+        <field desc="회차" keyfield="true" length="22" name="mor_seq" type="NUMBER"/>
+        <field desc="모니터링 아이디" keyfield="false" length="1024"
+            name="mor_checkpoint" type="VARCHAR2"/>
+        <field desc="모니터링 아이디" keyfield="false" length="7"
+            name="mor_check_end_dt" type="DATE"/>
+        <field desc="모니터링 아이디" keyfield="false" length="15"
+            name="mor_check_user" type="VARCHAR2"/>
+        <field desc="모니터링 아이디" keyfield="false" length="7"
+            name="mor_check_dt" type="DATE"/>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="퇴직예정자 마스터" name="stv_tb_retiree_m"
+        namespace="stv" scope="base" service="RetireeStatus">
+        <field desc="퇴사예정자 아이디" keyfield="true" length="15"
+            name="rte_id" type="VARCHAR2"/>
+        <field desc="소속회사" keyfield="false" length="30"
+            name="rte_aft_cpn" type="VARCHAR2"></field>
+        <field desc="부서아이디" keyfield="false" length="32"
+            name="rte_dept_id" type="VARCHAR2"/>
+        <field desc="부서명" keyfield="false" length="50"
+            name="rte_dept_nm" type="VARCHAR2"/>
+        <field desc="사번" keyfield="false" length="15" name="rte_emp_no" type="VARCHAR2"/>
+        <field desc="이름" keyfield="false" length="20" name="rte_nm" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="30" name="rte_position" type="VARCHAR2"/>
+        <field desc="직책" keyfield="false" length="30" name="rte_job_div" type="VARCHAR2"/>
+        <field desc="직급" keyfield="false" length="30" name="rte_bsn_loc" type="VARCHAR2"/>
+        <field desc="입사일" keyfield="false" length="11"
+            name="rte_entry_dt" type="TIMESTAMP(6)"/>
+        <field desc="퇴사신고일" keyfield="false" length="11"
+            name="rte_report_dt" type="TIMESTAMP(6)"/>
+        <field desc="퇴사인지일" keyfield="false" length="7"
+            name="rte_cgn_dt" type="DATE"/>
+        <field desc="인지등록자사번" keyfield="false" length="15"
+            name="rte_cgn_emp_no" type="VARCHAR2"/>
+        <field desc="인지등록자명" keyfield="false" length="20"
+            name="rte_cgn_user_nm" type="VARCHAR2"/>
+        <field desc="퇴사신청일" keyfield="false" length="7"
+            name="rte_app_dt" type="DATE"/>
+        <field desc="신청등록자사번" keyfield="false" length="15"
+            name="rte_app_emp_no" type="VARCHAR2"/>
+        <field desc="신청등록자명" keyfield="false" length="20"
+            name="rte_app_user_nm" type="VARCHAR2"/>
+        <field desc="퇴사예정일" keyfield="false" length="7"
+            name="rte_expect_dt" type="DATE"/>
+        <field desc="마지막출근일" keyfield="false" length="7"
+            name="rte_last_work_dt" type="DATE"/>
+        <field desc="모니터링차수" keyfield="false" length="22"
+            name="rte_mor_cur_seq" type="NUMBER"/>
+        <field desc="진행상태" keyfield="false" length="15"
+            name="rte_prog_status" type="VARCHAR2"/>
+        <field desc="등록일자" keyfield="false" length="7" name="rte_reg_dt" type="DATE"/>
+        <field desc="지연일수" keyfield="false" length="22"
+            name="rte_delay_n" type="NUMBER"/>
+        <field desc="최종점검결과" keyfield="false" length="20"
+            name="rte_final_result" type="VARCHAR2"/>
+        <field desc="부서장 검토의견 확인일" keyfield="false" length="7"
+            name="rte_aprv_dt" type="DATE"/>
+        <field desc="부서장 검토의견" keyfield="false" length="256"
+            name="rte_aprv_desc" type="VARCHAR2"/>
+        <field desc="부서장 검토의견 확인자 아이디" keyfield="false" length="20"
+            name="rte_aprv_user_id" type="VARCHAR2"/>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="보안위반자 마스터" name="stv_tb_scoffender_m"
+        namespace="stv" scope="base" service="SecurityOffender">
+        <field desc="위반자 아이디" keyfield="true" length="15" name="ofnd_id" type="VARCHAR2"/>
+        <field desc="소속회사" keyfield="false" length="30"
+            name="ofnd_aft_cpn" type="VARCHAR2"/>
+        <field desc="부서아이디" keyfield="false" length="32"
+            name="ofnd_dept_id" type="VARCHAR2"/>
+        <field desc="부서명" keyfield="false" length="50"
+            name="ofnd_dept_nm" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="32"
+            name="ofnd_viol_dept_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="50"
+            name="ofnd_viol_dept_nm" type="VARCHAR2"/>
+        <field desc="사번" keyfield="false" length="15" name="ofnd_emp_no" type="VARCHAR2"/>
+        <field desc="이름" keyfield="false" length="20" name="ofnd_nm" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="30"
+            name="ofnd_position" type="VARCHAR2"/>
+        <field desc="직책" keyfield="false" length="30"
+            name="ofnd_job_div" type="VARCHAR2"/>
+        <field desc="직급" keyfield="false" length="30"
+            name="ofnd_bsn_loc" type="VARCHAR2"/>
+        <field desc="위반합계점수" keyfield="false" length="22"
+            name="ofnd_tot_score" type="NUMBER"/>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="보안위반항목 마스터" name="stv_tb_violationitem_m"
+        namespace="stv" scope="base" service="SecurityViolationItem">
+        <field desc="보안위반 아이템 아이디" keyfield="true" length="32"
+            name="vitm_id" type="VARCHAR2"/>
+        <field desc="대분류" keyfield="false" length="20" name="vitm_div_l" type="VARCHAR2"/>
+        <field desc="중분류" keyfield="false" length="20" name="vitm_div_m" type="VARCHAR2"/>
+        <field desc="항목명" keyfield="false" length="50" name="vitm_nm" type="VARCHAR2"/>
+        <field desc="점수" keyfield="false" length="22" name="vitm_score" type="NUMBER"/>
+        <field desc="설명" keyfield="false" length="256" name="vitm_desc" type="VARCHAR2"/>
+        <field desc="등록자 아이디" keyfield="false" length="15"
+            name="vitm_reg_user_id" type="VARCHAR2"/>
+        <field desc="등록일" keyfield="false" length="11"
+            name="vitm_reg_dt" type="TIMESTAMP(6)"/>
+        <field desc="변경자 아이디" keyfield="false" length="15"
+            name="vitm_modi_user_id" type="VARCHAR2"/>
+        <field desc="변경일" keyfield="false" length="11"
+            name="vitm_modi_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="보안위반내용 첨부파일"
+        name="stv_tb_violation_addfile_s" namespace="stv" scope="base" service="SecurityViolationAddFiles">
+        <field desc="위반 아이디" keyfield="true" length="32" name="vil_id" type="VARCHAR2"/>
+        <field desc="첨부파일 아이디" keyfield="true" length="32"
+            name="vil_doc_id" type="VARCHAR2"></field>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="보안위반목록" name="stv_tb_violation_list_m"
+        namespace="stv" scope="base" service="SecurityViolationList">
+        <field desc="위반 아이디" keyfield="true" length="32" name="vil_id" type="VARCHAR2"/>
+        <field desc="위반자 아이디" keyfield="false" length="15"
+            name="ofnd_id" type="VARCHAR2"/>
+        <field desc="위반시 부서아이디" keyfield="false" length="32"
+            name="vil_dept_id" type="VARCHAR2"/>
+        <field desc="위반시 부서명" keyfield="false" length="50"
+            name="vil_dept_nm" type="VARCHAR2"/>
+        <field desc="적발주체" keyfield="false" length="20"
+            name="vil_catcher_cd" type="VARCHAR2"/>
+        <field desc="위반항목 대분류" keyfield="false" length="20"
+            name="vitm_div_l" type="VARCHAR2"/>
+        <field desc="위반항목 중분류" keyfield="false" length="20"
+            name="vitm_div_m" type="VARCHAR2"/>
+        <field desc="위반항목 아이디" keyfield="false" length="32"
+            name="vitm_id" type="VARCHAR2"/>
+        <field desc="위반내용" keyfield="false" length="256" name="vil_desc" type="VARCHAR2"/>
+        <field desc="위반아이피" keyfield="false" length="30" name="vil_ip" type="VARCHAR2"/>
+        <field desc="위반URL" keyfield="false" length="256" name="vil_url" type="VARCHAR2"/>
+        <field desc="위반일자" keyfield="false" length="11" name="vil_dt" type="TIMESTAMP(6)"/>
+        <field desc="상주구분" keyfield="false" length="20"
+            name="vil_rsd_div" type="VARCHAR2"/>
+        <field desc="위반관리자" keyfield="false" length="15"
+            name="vil_man_user_id" type="VARCHAR2"/>
+        <field desc="위반점검자" keyfield="false" length="15"
+            name="vil_check_user_id" type="VARCHAR2"/>
+        <field desc="시스템 생성시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+</entities>

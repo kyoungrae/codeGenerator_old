@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="메뉴정보" name="board" namespace="fsec"
+        scope="bbs" service="BoardManager">
+        <field desc="메뉴ID" keyfield="false" length="32" name="menu_id" type="VARCHAR"/>
+        <field desc="메뉴명" keyfield="false" length="100" name="menu_name" type="VARCHAR"/>
+        <field desc="메뉴URI" keyfield="false" length="255"
+            name="menu_uri" type="VARCHAR"/>
+        <field desc="상위메뉴ID" keyfield="false" length="30"
+            name="up_menu_id" type="VARCHAR"/>
+        <field desc="정렬순서" keyfield="false" length="22"
+            name="sort_order" type="NUMBER"/>
+        <field desc="메뉴설명" keyfield="false" length="255"
+            name="menu_desc" type="VARCHAR"/>
+        <field desc="게시판여부" keyfield="false" length="65532"
+            name="is_board" type="VARCHAR"/>
+        <field desc="댓글여부" keyfield="false" length="65532"
+            name="is_comment" type="VARCHAR"/>
+        <field desc="메뉴타입" keyfield="false" length="65532"
+            name="menu_type" type="VARCHAR"/>
+        <field desc="사용여부" keyfield="false" length="1" name="is_use" type="VARCHAR"/>
+        <field desc="생성일시" keyfield="false" length="12"
+            name="created_at" type="TIMESTAMP(6)"/>
+        <field desc="등록일시" keyfield="false" length="12" name="reg_at" type="TIMESTAMP(6)"/>
+    </entity>
+</entities>

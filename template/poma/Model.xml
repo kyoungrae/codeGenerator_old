@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Model</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/com/cpaas/biz/model/</path>	
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<auther>source generator(ilho.ko@gmail.com)</auther>
+		<cdate>2019.09.18</cdate>
+		<pakage>com.cpaas.biz.model</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+package #pakage#;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+
+import com.cpaas.biz.ancestor.MobileModel;
+import com.cpaas.framework.webapp.edm.mvc.controller.MultipartRequest;
+import com.cpaas.framework.webapp.edm.mvc.view.XMLResponse;
+import com.cpaas.framework.common.util.StringUtil;
+
+import com.cpaas.biz.database.#Service#Handler;
+
+ /**
+ * <pre>
+ * #Service##sourcetype#
+ * </pre>
+ *
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+
+public class #Service##Sourcetype# extends MobileModel {
+	public XMLResponse get#Service#List(MultipartRequest request, HttpServletResponse response) throws Exception {
+		List<Map<String, Object>> rst = new ArrayList<Map<String, Object>>();
+		Map<String, Object> param = new HashMap<String, Object>();
+		
+		try {
+			#Service#Handler sh = new #Service#Handler();
+			rst = sh.select#Service#(param);
+			
+			xmlResponse.setReturnCode(XMLResponse.RETURN_SUCCESS);
+			xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+			xmlResponse.setReturnDescription("SUCCESS"); 
+	        xmlResponse.setReturnData(rst);
+		} catch(Exception e) {
+			logger.error(e);
+			xmlResponse.setReturnCode(XMLResponse.RETURN_ERROR);               
+	        xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+	        xmlResponse.setReturnDescription(e.getMessage());
+		}
+		
+		return forward(request.getRequest(), response);
+	}
+	
+	public XMLResponse insert#Service#(MultipartRequest request, HttpServletResponse response) throws Exception {
+		List<Map<String, Object>> rst = new ArrayList<Map<String, Object>>();
+		Map<String, Object> param = new HashMap<String, Object>();
+		
+		try {
+			#Service#Handler sh = new #Service#Handler();
+			#begin#
+			param.put("#field_name#", StringUtil.nvl(request.getParameter("#field_name#"),""));#end#
+			
+			int resultCode = sh.insert#Service#(param);
+			
+			HashMap resultMap = new HashMap();
+			resultMap.put("RESULT_CODE", resultCode+"");
+			
+			rst.add(resultMap);
+			
+			xmlResponse.setReturnCode(XMLResponse.RETURN_SUCCESS);
+			xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+			xmlResponse.setReturnDescription("SUCCESS"); 
+	        xmlResponse.setReturnData(rst);
+		} catch(Exception e) {
+			xmlResponse.setReturnCode(XMLResponse.RETURN_ERROR);               
+	        xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+	        xmlResponse.setReturnDescription(e.getMessage());
+		}
+		
+		return forward(request.getRequest(), response);
+	}
+	
+	public XMLResponse update#Service#(MultipartRequest request, HttpServletResponse response) throws Exception {
+		List<Map<String, Object>> rst = new ArrayList<Map<String, Object>>();
+		Map<String, Object> param = new HashMap<String, Object>();
+		
+		try {
+			#Service#Handler sh = new #Service#Handler();
+			#begin#
+			param.put("#field_name#", StringUtil.nvl(request.getParameter("#field_name#"),""));#end#
+			
+			int resultCode = sh.update#Service#(param);
+			
+			HashMap resultMap = new HashMap();
+			resultMap.put("RESULT_CODE", resultCode+"");
+			
+			rst.add(resultMap);
+			
+			xmlResponse.setReturnCode(XMLResponse.RETURN_SUCCESS);
+			xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+			xmlResponse.setReturnDescription("SUCCESS"); 
+	        xmlResponse.setReturnData(rst);
+		} catch(Exception e) {
+			xmlResponse.setReturnCode(XMLResponse.RETURN_ERROR);               
+	        xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+	        xmlResponse.setReturnDescription(e.getMessage());
+		}
+		
+		return forward(request.getRequest(), response);
+	}
+	
+	public XMLResponse delete#Service#(MultipartRequest request, HttpServletResponse response) throws Exception {
+		List<Map<String, Object>> rst = new ArrayList<Map<String, Object>>();
+		Map<String, Object> param = new HashMap<String, Object>();
+		
+		try {
+			#Service#Handler sh = new #Service#Handler();
+			#begin#
+			param.put("#field_name#", StringUtil.nvl(request.getParameter("#field_name#"),""));#end#
+			
+			int resultCode = sh.delete#Service#(param);
+			
+			HashMap resultMap = new HashMap();
+			resultMap.put("RESULT_CODE", resultCode+"");
+			
+			rst.add(resultMap);
+			
+			xmlResponse.setReturnCode(XMLResponse.RETURN_SUCCESS);
+			xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+			xmlResponse.setReturnDescription("SUCCESS"); 
+	        xmlResponse.setReturnData(rst);
+		} catch(Exception e) {
+			xmlResponse.setReturnCode(XMLResponse.RETURN_ERROR);               
+	        xmlResponse.setReturnType(XMLResponse.RETURN_TYPE_JSON);
+	        xmlResponse.setReturnDescription(e.getMessage());
+		}
+		
+		return forward(request.getRequest(), response);
+	}
+}
+	]]>
+	</source>
+</template>

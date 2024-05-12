@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="dac_door_h" namespace="dac"
+        scope="basic" service="DoorHistory">
+        <field desc="" keyfield="true" length="0" name="evt_time" type="timestamp"/>
+        <field desc="" keyfield="false" length="32" name="dr_serial" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="dr_evt_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="evt_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="evt_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="dac_door_m" namespace="dac"
+        scope="basic" service="DoorMaster">
+        <field desc="" keyfield="true" length="32" name="dr_serial" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="dr_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="dr_stat" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="dr_kind" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="dr_pass" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="alwy_opn_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_ctrl_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="auto_close_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="bat_chg_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="dac_gw_m" namespace="dac" scope="basic" service="GatewayMaster">
+        <field desc="" keyfield="true" length="32" name="gw_serial" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="gw_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="gw_stat" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

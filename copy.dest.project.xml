@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="copy source ${project.name}">
+
+	<property environment="env" />
+	<property file="copy.dest.project.properties"/>
+	<property name="basedir" value="." />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="source" value="1.5" />
+	<property name="target" value="1.5" />
+	<property name="report.home" value="." />
+
+	<target name="build" >
+		
+		<copy todir="${project.path}${src.target.dir}">
+			<fileset dir="${src.source.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<include name="**/*.java" />				
+				<exclude name="CVS/**/*.*" />
+				<exclude name="**/CVS/*.*" />
+				<exclude name="test/**/*.*" />
+				<exclude name="**/test/*.*" />
+			</fileset>
+		</copy>
+
+		<copy todir="${project.path}${web.target.dir}">
+			<fileset dir="${web.source.dir}">
+				<include name="**/*.jsp" />
+				<include name="**/*.js" />
+				<include name="**/*.html" />
+				<include name="**/*.css" />
+				<exclude name="CVS/**/*.*" />
+				<exclude name="**/CVS/*.*" />
+				<exclude name="test/**/*.*" />
+				<exclude name="**/test/*.*" />
+			</fileset>
+		</copy>
+
+	</target>
+
+</project>
+

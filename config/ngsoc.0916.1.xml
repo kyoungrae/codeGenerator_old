@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="ATTACK MASTER" name="attack"
+        namespace="fsec" scope="attack" service="AttackMaster">
+        <field desc="ATTACK ID " keyfield="true" length="32"
+            name="attack_id" type="VARCHAR"/>
+        <field desc="1단계 분류" keyfield="false" length="20"
+            name="attack_fir_type" type="VARCHAR"/>
+        <field desc="2단계 분류" keyfield="false" length="20"
+            name="attack_sec_type" type="VARCHAR"/>
+        <field desc="ATTACK 명" keyfield="false" length="128"
+            name="szname" type="VARCHAR"/>
+        <field desc="플랫폼" keyfield="false" length="100" name="platforms" type="VARCHAR"/>
+        <field desc="버전" keyfield="false" length="20" name="version" type="VARCHAR"/>
+        <field desc="생성일" keyfield="false" length="8" name="create_at" type="DATE"/>
+        <field desc="최종수정일" keyfield="false" length="8"
+            name="last_modified_at" type="DATE"/>
+        <field desc="ATTACK 설명" keyfield="false" length="4000"
+            name="description" type="CLOB"/>
+        <field desc="데이터 생성일자" keyfield="false" length="8"
+            name="sys_cr_dt" type="DATE"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일자" keyfield="false" length="8"
+            name="sys_ud_dt" type="DATE"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+        <field desc="CAPEC_ID" keyfield="false" length="15"
+            name="capec_id" type="VARCHAR"/>
+    </entity>
+</entities>

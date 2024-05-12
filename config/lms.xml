@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="승인청 테이블" name="lms_tb_appr_office_m"
+        namespace="wat" scope="lms" service="ApprOfficeMgmt">
+        <field desc="승인청번호" keyfield="true" length="32"
+            name="appr_office_no" type="VARCHAR2"/>
+        <field desc="승인청명" keyfield="false" length="50"
+            name="appr_office_nm" type="VARCHAR2"/>
+        <field desc="담당자명" keyfield="false" length="20" name="emp_nm" type="VARCHAR2"/>
+        <field desc="담당자이메일" keyfield="false" length="30" name="email" type="VARCHAR2"/>
+        <field desc="담당자직위" keyfield="false" length="20" name="position" type="VARCHAR2"/>
+        <field desc="담당자부서" keyfield="false" length="20" name="dept" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="검침 테이블" name="lms_tb_gauge_m"
+        namespace="wat" scope="lms" service="GaugeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실번호" keyfield="true" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="검침년월" keyfield="true" length="8"
+            name="check_yyyymm" type="VARCHAR2"/>
+        <field desc="검침일" keyfield="true" length="2" name="check_day" type="VARCHAR2"/>
+        <field desc="검침구분" keyfield="false" length="2" name="check_kind" type="VARCHAR2"/>
+        <field desc="전치침" keyfield="false" length="12"
+            name="before_guide" type="VARCHAR2"/>
+        <field desc="당지침" keyfield="false" length="12"
+            name="present_guide" type="VARCHAR2"/>
+        <field desc="사용량" keyfield="false" length="12" name="use_amount" type="VARCHAR2"/>
+        <field desc="사용요금" keyfield="false" length="12" name="use_fee" type="VARCHAR2"/>
+        <field desc="자동검침여부" keyfield="false" length="1"
+            name="auto_check_yn" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="관리비항목 테이블" name="lms_tb_mgmt_fee_item_m"
+        namespace="wat" scope="lms" service="FeeItemMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="관리비항목번호" keyfield="true" length="2"
+            name="mgmt_fee_item_no" type="VARCHAR2"/>
+        <field desc="관리비항목명" keyfield="false" length="20"
+            name="mgmt_fee_item_nm" type="VARCHAR2"/>
+        <field desc="설명" keyfield="false" length="200" name="descript" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="입주자 테이블" name="lms_tb_movein_m"
+        namespace="wat" scope="lms" service="MoveinMgmt">
+        <field desc="입주자번호" keyfield="true" length="32" name="movein_no" type="VARCHAR2"/>
+        <field desc="입주국사번호" keyfield="false" length="32"
+            name="office_no" type="VARCHAR2"/>
+        <field desc="입주구분" keyfield="false" length="1"
+            name="appr_status" type="VARCHAR2"/>
+        <field desc="입주호실" keyfield="false" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="상호" keyfield="false" length="50" name="company" type="VARCHAR2"/>
+        <field desc="대표자" keyfield="false" length="50" name="represent" type="VARCHAR2"/>
+        <field desc="주소" keyfield="false" length="200" name="addr" type="VARCHAR2"/>
+        <field desc="전화번호1" keyfield="false" length="20" name="tel1" type="VARCHAR2"/>
+        <field desc="전화번호2" keyfield="false" length="20" name="tel2" type="VARCHAR2"/>
+        <field desc="이메일" keyfield="false" length="30" name="email" type="VARCHAR2"/>
+        <field desc="업태" keyfield="false" length="20"
+            name="business_condition" type="VARCHAR2"/>
+        <field desc="종목" keyfield="false" length="20" name="item" type="VARCHAR2"/>
+        <field desc="입실일자" keyfield="false" length="8"
+            name="movein_date" type="VARCHAR2"/>
+        <field desc="퇴실일자" keyfield="false" length="8" name="out_date" type="VARCHAR2"/>
+        <field desc="세대용도1" keyfield="false" length="2"
+            name="household_use1" type="VARCHAR2"/>
+        <field desc="세대용도2" keyfield="false" length="2"
+            name="household_use2" type="VARCHAR2"/>
+        <field desc="세대용도3" keyfield="false" length="2"
+            name="household_use3" type="VARCHAR2"/>
+        <field desc="수도용도" keyfield="false" length="1"
+            name="water_supply_use" type="VARCHAR2"/>
+        <field desc="세금계산서발행여부" keyfield="false" length="1"
+            name="tax_bill_issue_yn" type="VARCHAR2"/>
+        <field desc="계산서발행여부" keyfield="false" length="1"
+            name="bill_issue_yn" type="VARCHAR2"/>
+        <field desc="전자계산서발행여부" keyfield="false" length="1"
+            name="elec_bill_issue_yn" type="VARCHAR2"/>
+        <field desc="전기료계산방법" keyfield="false" length="1"
+            name="elec_fee_use" type="VARCHAR2"/>
+        <field desc="차상위" keyfield="false" length="1"
+            name="elec_fee_discount1" type="VARCHAR2"/>
+        <field desc="기초생활" keyfield="false" length="1"
+            name="elec_fee_discount2" type="VARCHAR2"/>
+        <field desc="복지할인" keyfield="false" length="1"
+            name="elec_fee_discount3" type="VARCHAR2"/>
+        <field desc="대가족" keyfield="false" length="1"
+            name="elec_fee_discount4" type="VARCHAR2"/>
+        <field desc="3자녀" keyfield="false" length="1"
+            name="elec_fee_discount5" type="VARCHAR2"/>
+        <field desc="TV수신료" keyfield="false" length="1"
+            name="tv_receive_fee" type="VARCHAR2"/>
+        <field desc="년차" keyfield="false" length="2" name="movein_year" type="VARCHAR2"/>
+        <field desc="대표호실" keyfield="false" length="10"
+            name="mgmt_room_no" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="입주자절차 테이블" name="lms_tb_movein_process_m"
+        namespace="wat" scope="lms" service="MoveinProcessMgmt">
+        <field desc="입주자번호" keyfield="true" length="32"
+            name="waiting_no" type="VARCHAR2"/>
+        <field desc="입주년차" keyfield="true" length="2" name="movein_year" type="VARCHAR2"/>
+        <field desc="국사번호" keyfield="false" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실번호" keyfield="false" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="승인절차" keyfield="false" length="1"
+            name="appr_status" type="VARCHAR2"/>
+        <field desc="상호" keyfield="false" length="50" name="company" type="VARCHAR2"/>
+        <field desc="대표자" keyfield="false" length="50" name="represent" type="VARCHAR2"/>
+        <field desc="전화번호1" keyfield="false" length="20" name="tel1" type="VARCHAR2"/>
+        <field desc="전화번호2" keyfield="false" length="20" name="tel2" type="VARCHAR2"/>
+        <field desc="주소" keyfield="false" length="200" name="addr" type="VARCHAR2"/>
+        <field desc="업태" keyfield="false" length="20"
+            name="business_condition" type="VARCHAR2"/>
+        <field desc="종목" keyfield="false" length="20" name="item" type="VARCHAR2"/>
+        <field desc="세부내용" keyfield="false" length="200"
+            name="description" type="VARCHAR2"/>
+        <field desc="예상상주인원" keyfield="false" length="2"
+            name="expect_reside" type="VARCHAR2"/>
+        <field desc="택배물량" keyfield="false" length="200"
+            name="delivery_amount" type="VARCHAR2"/>
+        <field desc="택배중량" keyfield="false" length="200"
+            name="delivery_weight" type="VARCHAR2"/>
+        <field desc="사용예정시작일" keyfield="false" length="8"
+            name="expect_use_start" type="VARCHAR2"/>
+        <field desc="사용예정종료일" keyfield="false" length="8"
+            name="expect_use_end" type="VARCHAR2"/>
+        <field desc="시설공사시작일" keyfield="false" length="8"
+            name="expect_work_start" type="VARCHAR2"/>
+        <field desc="시설공사종료일" keyfield="false" length="8"
+            name="expect_work_end" type="VARCHAR2"/>
+        <field desc="시설투자계획" keyfield="false" length="200"
+            name="work_plan" type="VARCHAR2"/>
+        <field desc="입주예정일" keyfield="false" length="8"
+            name="expect_movein_date" type="VARCHAR2"/>
+        <field desc="허가희망일" keyfield="false" length="8"
+            name="hope_appr_date" type="VARCHAR2"/>
+        <field desc="영업계획" keyfield="false" length="200"
+            name="business_plan" type="VARCHAR2"/>
+        <field desc="희망주차대수" keyfield="false" length="2"
+            name="hope_parking_number" type="VARCHAR2"/>
+        <field desc="전력사용량" keyfield="false" length="12"
+            name="electric_amount" type="VARCHAR2"/>
+        <field desc="사용료보증금" keyfield="false" length="12"
+            name="use_fee_keymoney" type="VARCHAR2"/>
+        <field desc="관리비보증금" keyfield="false" length="12"
+            name="mgmt_fee_keymoney" type="VARCHAR2"/>
+        <field desc="사용료공급가액" keyfield="false" length="12"
+            name="use_fee_supply" type="VARCHAR2"/>
+        <field desc="사용료부가세액" keyfield="false" length="12"
+            name="use_fee_addtax" type="VARCHAR2"/>
+        <field desc="관리비공급가액" keyfield="false" length="12"
+            name="mgmt_fee_supply" type="VARCHAR2"/>
+        <field desc="관리비부가세액" keyfield="false" length="12"
+            name="mgmt_fee_addtax" type="VARCHAR2"/>
+        <field desc="사용료납부방식" keyfield="false" length="1"
+            name="use_fee_pay_tp" type="VARCHAR2"/>
+        <field desc="분납횟수" keyfield="false" length="2"
+            name="installment_times" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="입주자 회차별 사용료 테이블"
+        name="lms_tb_movein_use_fee_s" namespace="wat" scope="lms" service="MoveinUseFeeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실번호" keyfield="true" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="사용료납부방식" keyfield="false" length="1"
+            name="use_fee_pay_tp" type="VARCHAR2"/>
+        <field desc="사용료보증금" keyfield="false" length="12"
+            name="use_fee_keymoney" type="VARCHAR2"/>
+        <field desc="사용료" keyfield="false" length="12" name="use_fee" type="VARCHAR2"/>
+        <field desc="1회차사용료" keyfield="false" length="12"
+            name="use_fee1" type="VARCHAR2"/>
+        <field desc="2회차사용료" keyfield="false" length="12"
+            name="use_fee2" type="VARCHAR2"/>
+        <field desc="3회차사용료" keyfield="false" length="12"
+            name="use_fee3" type="VARCHAR2"/>
+        <field desc="4회차사용료" keyfield="false" length="12"
+            name="use_fee4" type="VARCHAR2"/>
+        <field desc="5회차사용료" keyfield="false" length="12"
+            name="use_fee5" type="VARCHAR2"/>
+        <field desc="6회차사용료" keyfield="false" length="12"
+            name="use_fee6" type="VARCHAR2"/>
+        <field desc="7회차사용료" keyfield="false" length="12"
+            name="use_fee7" type="VARCHAR2"/>
+        <field desc="8회차사용료" keyfield="false" length="12"
+            name="use_fee8" type="VARCHAR2"/>
+        <field desc="9회차사용료" keyfield="false" length="12"
+            name="use_fee9" type="VARCHAR2"/>
+        <field desc="10회차사용료" keyfield="false" length="12"
+            name="use_fee10" type="VARCHAR2"/>
+        <field desc="11회차사용료" keyfield="false" length="12"
+            name="use_fee11" type="VARCHAR2"/>
+        <field desc="12회차사용료" keyfield="false" length="12"
+            name="use_fee12" type="VARCHAR2"/>
+        <field desc="감정년도" keyfield="true" length="4"
+            name="judgment_year" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="입주대기 테이블" name="lms_tb_movein_waiting_m"
+        namespace="wat" scope="lms" service="MoveinWaitingMgmt">
+        <field desc="대기자번호" keyfield="true" length="32"
+            name="waiting_no" type="VARCHAR2"/>
+        <field desc="국사번호" keyfield="false" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실타입" keyfield="false" length="10" name="room_tp" type="VARCHAR2"/>
+        <field desc="대기신청일시" keyfield="false" length="7"
+            name="waiting_date" type="DATE"/>
+        <field desc="대기자명" keyfield="false" length="20"
+            name="waiting_nm" type="VARCHAR2"/>
+        <field desc="사용용도" keyfield="false" length="1" name="use_type" type="VARCHAR2"/>
+        <field desc="전화번호" keyfield="false" length="20" name="tel" type="VARCHAR2"/>
+        <field desc="대기종료여부" keyfield="false" length="1"
+            name="waiting_yn" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="국사 첨부파일 다운로드 이력 테이블"
+        name="lms_tb_office_attach_h" namespace="wat" scope="lms" service="OfficeAttachHistoryMgmt">
+        <field desc="다운로드GUID" keyfield="true" length="32"
+            name="download_guid" type="VARCHAR2"/>
+        <field desc="국사번호" keyfield="false" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="파일번호" keyfield="false" length="32" name="file_no" type="VARCHAR2"/>
+        <field desc="다운로드자" keyfield="false" length="20"
+            name="file_downloader" type="VARCHAR2"/>
+        <field desc="다운로드일시" keyfield="false" length="7"
+            name="file_downloade_date" type="DATE"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="국사 첨부파일 테이블" name="lms_tb_office_attach_s"
+        namespace="wat" scope="lms" service="OfficeAttachMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="파일번호" keyfield="true" length="32" name="file_no" type="VARCHAR2"/>
+        <field desc="파일명" keyfield="false" length="50" name="file_nm" type="VARCHAR2"/>
+        <field desc="버전" keyfield="false" length="4" name="version" type="VARCHAR2"/>
+        <field desc="파일위치" keyfield="false" length="200" name="file_loc" type="VARCHAR2"/>
+        <field desc="확장자" keyfield="false" length="10" name="file_ext" type="VARCHAR2"/>
+        <field desc="등록자" keyfield="false" length="20"
+            name="file_register" type="VARCHAR2"/>
+        <field desc="등록일시" keyfield="false" length="7"
+            name="file_regist_date" type="DATE"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="국사 테이블" name="lms_tb_office_m"
+        namespace="wat" scope="lms" service="OfficeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="국사명" keyfield="false" length="50" name="office_nm" type="VARCHAR2"/>
+        <field desc="국사종류" keyfield="false" length="1"
+            name="office_kind" type="VARCHAR2"/>
+        <field desc="임대여부" keyfield="false" length="1" name="rent_yn" type="VARCHAR2"/>
+        <field desc="주소" keyfield="false" length="200" name="addr" type="VARCHAR2"/>
+        <field desc="준공일" keyfield="false" length="8"
+            name="work_complete_date" type="VARCHAR2"/>
+        <field desc="규모(연면적)" keyfield="false" length="10"
+            name="tot_area" type="VARCHAR2"/>
+        <field desc="지하(층)" keyfield="false" length="3"
+            name="under_ground_flr" type="VARCHAR2"/>
+        <field desc="지상(층)" keyfield="false" length="3"
+            name="ground_flr" type="VARCHAR2"/>
+        <field desc="전용률(%)" keyfield="false" length="10"
+            name="use_area_rt" type="VARCHAR2"/>
+        <field desc="승강기" keyfield="false" length="100" name="elevator" type="VARCHAR2"/>
+        <field desc="주차위탁업체" keyfield="false" length="50"
+            name="parking_company" type="VARCHAR2"/>
+        <field desc="주차대수" keyfield="false" length="100"
+            name="parking_number" type="VARCHAR2"/>
+        <field desc="무료주차" keyfield="false" length="100"
+            name="parking_fee_rule" type="VARCHAR2"/>
+        <field desc="승인청번호" keyfield="false" length="32"
+            name="appr_office_no" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="관리비청구 테이블" name="lms_tb_req_mgmt_fee_m"
+        namespace="wat" scope="lms" service="ReqMgmtFeeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실" keyfield="true" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="청구년월" keyfield="true" length="8" name="req_yyyymm" type="VARCHAR2"/>
+        <field desc="청구일" keyfield="false" length="2" name="req_day" type="VARCHAR2"/>
+        <field desc="정액관리비" keyfield="false" length="12"
+            name="fix_mgmt_fee" type="VARCHAR2"/>
+        <field desc="세대전기료" keyfield="false" length="12" name="elec_fee" type="VARCHAR2"/>
+        <field desc="공용전기료" keyfield="false" length="12"
+            name="comm_elec_fee" type="VARCHAR2"/>
+        <field desc="전력기금" keyfield="false" length="12" name="elec_fund" type="VARCHAR2"/>
+        <field desc="세대수도료" keyfield="false" length="12"
+            name="water_fee1" type="VARCHAR2"/>
+        <field desc="세대하수료" keyfield="false" length="12"
+            name="water_fee2" type="VARCHAR2"/>
+        <field desc="공용수도료" keyfield="false" length="12"
+            name="comm_water_fee" type="VARCHAR2"/>
+        <field desc="세대금탕료" keyfield="false" length="12"
+            name="hot_water_fee" type="VARCHAR2"/>
+        <field desc="세대냉난방" keyfield="false" length="12"
+            name="cooling_fee" type="VARCHAR2"/>
+        <field desc="세대난방료" keyfield="false" length="12"
+            name="heating_fee" type="VARCHAR2"/>
+        <field desc="기본난방료" keyfield="false" length="12"
+            name="base_heating_fee" type="VARCHAR2"/>
+        <field desc="공동난방료" keyfield="false" length="12"
+            name="comm_heating_fee" type="VARCHAR2"/>
+        <field desc="임대료" keyfield="false" length="12" name="use_fee" type="VARCHAR2"/>
+        <field desc="공용급탕료" keyfield="false" length="12"
+            name="comm_hot_water_fee" type="VARCHAR2"/>
+        <field desc="TV수신료" keyfield="false" length="12"
+            name="tv_rece_fee" type="VARCHAR2"/>
+        <field desc="기타전기료" keyfield="false" length="12"
+            name="etc_elec_fee" type="VARCHAR2"/>
+        <field desc="감면액" keyfield="false" length="12"
+            name="exemption_fee" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="사용료청구 테이블"
+        name="lms_tb_req_midout_mgmt_fee_m" namespace="wat" scope="lms" service="ReqMidoutMgmtFeeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실" keyfield="true" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="청구년월" keyfield="true" length="8" name="req_yyyymm" type="VARCHAR2"/>
+        <field desc="청구일" keyfield="false" length="2" name="req_day" type="VARCHAR2"/>
+        <field desc="정액관리비" keyfield="false" length="12"
+            name="fix_mgmt_fee" type="VARCHAR2"/>
+        <field desc="세대전기료" keyfield="false" length="12" name="elec_fee" type="VARCHAR2"/>
+        <field desc="공용전기료" keyfield="false" length="12"
+            name="comm_elec_fee" type="VARCHAR2"/>
+        <field desc="전력기금" keyfield="false" length="12" name="elec_fund" type="VARCHAR2"/>
+        <field desc="세대수도료" keyfield="false" length="12"
+            name="water_fee1" type="VARCHAR2"/>
+        <field desc="세대하수료" keyfield="false" length="12"
+            name="water_fee2" type="VARCHAR2"/>
+        <field desc="공용수도료" keyfield="false" length="12"
+            name="comm_water_fee" type="VARCHAR2"/>
+        <field desc="세대금탕료" keyfield="false" length="12"
+            name="hot_water_fee" type="VARCHAR2"/>
+        <field desc="세대냉난방" keyfield="false" length="12"
+            name="cooling_fee" type="VARCHAR2"/>
+        <field desc="세대난방료" keyfield="false" length="12"
+            name="heating_fee" type="VARCHAR2"/>
+        <field desc="기본난방료" keyfield="false" length="12"
+            name="base_heating_fee" type="VARCHAR2"/>
+        <field desc="공동난방료" keyfield="false" length="12"
+            name="comm_heating_fee" type="VARCHAR2"/>
+        <field desc="임대료" keyfield="false" length="12" name="use_fee" type="VARCHAR2"/>
+        <field desc="공용급탕료" keyfield="false" length="12"
+            name="comm_hot_water_fee" type="VARCHAR2"/>
+        <field desc="TV수신료" keyfield="false" length="12"
+            name="tv_rece_fee" type="VARCHAR2"/>
+        <field desc="기타전기료" keyfield="false" length="12"
+            name="etc_elec_fee" type="VARCHAR2"/>
+        <field desc="감면액" keyfield="false" length="12"
+            name="exemption_fee" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc=" " name="lms_tb_req_use_fee_m"
+        namespace="wat" scope="lms" service="ReqUseFeeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실번호" keyfield="true" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="청구년월" keyfield="true" length="8" name="req_yyyymm" type="VARCHAR2"/>
+        <field desc="회차" keyfield="false" length="2"
+            name="use_fee_times" type="VARCHAR2"/>
+        <field desc="사용료" keyfield="false" length="12"
+            name="req_use_fee" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="국사 호실정보 테이블" name="lms_tb_room_p"
+        namespace="wat" scope="lms" service="RoomMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실번호" keyfield="true" length="10" name="room_no" type="VARCHAR2"/>
+        <field desc="층" keyfield="true" length="3" name="floor" type="VARCHAR2"/>
+        <field desc="호실타입" keyfield="true" length="10" name="room_tp" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="국사 호실타입 테이블" name="lms_tb_room_type_m"
+        namespace="wat" scope="lms" service="RoomTypeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실타입" keyfield="true" length="10" name="room_tp" type="VARCHAR2"/>
+        <field desc="전용면적" keyfield="false" length="10" name="use_area" type="VARCHAR2"/>
+        <field desc="허가면적" keyfield="false" length="10"
+            name="permission_area" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="국사 타입별사용료 테이블"
+        name="lms_tb_room_use_fee_s" namespace="wat" scope="lms" service="RoomUseFeeMgmt">
+        <field desc="국사번호" keyfield="true" length="32" name="office_no" type="VARCHAR2"/>
+        <field desc="호실타입" keyfield="true" length="10" name="room_tp" type="VARCHAR2"/>
+        <field desc="감정년도" keyfield="true" length="4"
+            name="judgment_year" type="VARCHAR2"/>
+        <field desc="연간사용료" keyfield="false" length="12"
+            name="use_fee_year" type="VARCHAR2"/>
+        <field desc="1회차사용료" keyfield="false" length="12"
+            name="use_fee1" type="VARCHAR2"/>
+        <field desc="2회차사용료" keyfield="false" length="12"
+            name="use_fee2" type="VARCHAR2"/>
+        <field desc="3회차사용료" keyfield="false" length="12"
+            name="use_fee3" type="VARCHAR2"/>
+        <field desc="4회차사용료" keyfield="false" length="12"
+            name="use_fee4" type="VARCHAR2"/>
+        <field desc="5회차사용료" keyfield="false" length="12"
+            name="use_fee5" type="VARCHAR2"/>
+        <field desc="6회차사용료" keyfield="false" length="12"
+            name="use_fee6" type="VARCHAR2"/>
+        <field desc="7회차사용료" keyfield="false" length="12"
+            name="use_fee7" type="VARCHAR2"/>
+        <field desc="8회차사용료" keyfield="false" length="12"
+            name="use_fee8" type="VARCHAR2"/>
+        <field desc="9회차사용료" keyfield="false" length="12"
+            name="use_fee9" type="VARCHAR2"/>
+        <field desc="10회차사용료" keyfield="false" length="12"
+            name="use_fee10" type="VARCHAR2"/>
+        <field desc="11회차사용료" keyfield="false" length="12"
+            name="use_fee11" type="VARCHAR2"/>
+        <field desc="12회차사용료" keyfield="false" length="12"
+            name="use_fee12" type="VARCHAR2"/>
+        <field desc="월관리비" keyfield="false" length="12"
+            name="mgmt_fee_month" type="VARCHAR2"/>
+        <field desc="사용료보증금" keyfield="false" length="12"
+            name="use_fee_keymoney" type="VARCHAR2"/>
+        <field desc="관리비보증금" keyfield="false" length="12"
+            name="mgmt_fee_keymoney" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+</entities>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="cc_tc_push_h" namespace="push"
+        scope="history" service="PushHistory">
+        <field desc="" keyfield="true" length="32" name="push_id" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="device_token" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sender_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="rcv_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="70" name="push_title" type="varchar"/>
+        <field desc="" keyfield="false" length="120" name="push_msg" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="rcv_time" type="datetime"/>
+        <field desc="" keyfield="false" length="10" name="rcv_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="rcv_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="sucs_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

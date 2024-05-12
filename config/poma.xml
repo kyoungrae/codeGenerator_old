@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc=" " name="zw_appr" namespace="poma"
+        scope="" service="servicezw_appr">
+        <field desc=" " keyfield="true" length="20" name="appr_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="13" name="draft_emp_no" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="13"
+            name="next_appr_emp_no" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="appr_code" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="status_code" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="4000"
+            name="appr_cotent" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="ins_dt" type="DATE"/>
+        <field desc=" " keyfield="false" length="20" name="ins_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="upt_dt" type="DATE"/>
+        <field desc=" " keyfield="false" length="20" name="upt_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc=" " name="zw_appr_h" namespace="poma"
+        scope="" service="servicezw_appr_h">
+        <field desc=" " keyfield="true" length="20" name="appr_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="true" length="22" name="appr_seq" type="NUMBER"/>
+        <field desc=" " keyfield="false" length="13" name="appr_emp_no" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="progress_code" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="255"
+            name="appr_oppinon" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="ins_dt" type="DATE"/>
+        <field desc=" " keyfield="false" length="20" name="ins_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="7" name="upt_dt" type="DATE"/>
+        <field desc=" " keyfield="false" length="20" name="upt_id" type="VARCHAR2"/>
+    </entity>
+</entities>

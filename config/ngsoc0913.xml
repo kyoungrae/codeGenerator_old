@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="사용자 마스터 view" name="ngsoc_vc_user_ms"
+        namespace="fsec" scope="user" service="UserView">
+        <field desc="ID" keyfield="false" length="15" name="id" type="VARCHAR"/>
+        <field desc="참가기관" keyfield="false" length="255"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="이름" keyfield="false" length="50" name="name" type="VARCHAR"/>
+        <field desc="부서" keyfield="false" length="255" name="dept" type="VARCHAR"/>
+        <field desc="직급" keyfield="false" length="255" name="jrank" type="VARCHAR"/>
+        <field desc="직책" keyfield="false" length="255" name="position" type="VARCHAR"/>
+        <field desc="담당업무" keyfield="false" length="255" name="task" type="VARCHAR"/>
+        <field desc="전화번호" keyfield="false" length="255"
+            name="telephone_number" type="VARCHAR"/>
+        <field desc="모바일번호" keyfield="false" length="255"
+            name="mobile_number" type="VARCHAR"/>
+        <field desc="이메일주소" keyfield="false" length="50"
+            name="email_address" type="VARCHAR"/>
+        <field desc="비밀번호" keyfield="false" length="128" name="password" type="VARCHAR"/>
+        <field desc="업무협업도구이름" keyfield="false" length="255"
+            name="teamchat_name" type="VARCHAR"/>
+        <field desc="권한그룹" keyfield="false" length="255"
+            name="permission_group" type="VARCHAR"/>
+        <field desc="상태" keyfield="false" length="255" name="status" type="VARCHAR"/>
+        <field desc="REST API 키" keyfield="false" length="32"
+            name="api_key" type="VARCHAR"/>
+        <field desc="연락순위" keyfield="false" length="255"
+            name="contact_order" type="VARCHAR"/>
+        <field desc="2차인증유형" keyfield="false" length="255"
+            name="mfa_type" type="VARCHAR"/>
+        <field desc="휴면전환 여부" keyfield="false" length="1"
+            name="is_dormant" type="VARCHAR"/>
+        <field desc="생성일시" keyfield="false" length="12"
+            name="created_at" type="TIMESTAMP(6)"/>
+        <field desc="수정일시" keyfield="false" length="12"
+            name="modified_at" type="TIMESTAMP(6)"/>
+        <field desc="최종로그인일시" keyfield="false" length="12"
+            name="last_login_at" type="TIMESTAMP(6)"/>
+        <field desc="로그인실패횟수" keyfield="false" length="255"
+            name="fail_login_cnt" type="VARCHAR"/>
+    </entity>
+</entities>

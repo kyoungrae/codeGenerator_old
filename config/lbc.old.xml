@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="lbc_tb_assets_list_m"
+        namespace="lbc" scope="" service="servicelbc_tb_assets_list_m">
+        <field desc="" keyfield="true" length="32" name="assets_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="assets_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="32"
+            name="blueprint_img_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="becon_info" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="scanner_info" type="varchar"/>
+        <field desc="" keyfield="false" length="50"
+            name="mgr_division_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="mgr_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="mgr_tel_no" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_busrouting" namespace="lbc"
+        scope="" service="servicelbc_tb_busrouting">
+        <field desc="" keyfield="true" length="32" name="busrouting_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="car_no" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busrouting_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="busrouting_grp" type="varchar"/>
+        <field desc="" keyfield="false" length="5" name="routing_day" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busstop_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busstop_ctgr" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="timetable" type="varchar"/>
+        <field desc="" keyfield="false" length="5" name="stop_interval" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_busstop_list"
+        namespace="lbc" scope="" service="servicelbc_tb_busstop_list">
+        <field desc="" keyfield="true" length="32" name="busstop_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busstop_grup" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="busstop_addr" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busstop_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="busstop_approach" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="busstop_radius" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_carrun_list"
+        namespace="lbc" scope="" service="servicelbc_tb_carrun_list">
+        <field desc="" keyfield="true" length="32" name="carrun_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="car_no" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="car_running_distance" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="car_running_time" type="varchar"/>
+        <field desc="" keyfield="false" length="10"
+            name="car_running_speed" type="varchar"/>
+        <field desc="" keyfield="false" length="10"
+            name="car_start_busstop" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="car_start_time" type="datetime"/>
+        <field desc="" keyfield="false" length="10"
+            name="car_finish_busstop" type="varchar"/>
+        <field desc="" keyfield="false" length="7"
+            name="car_finish_time" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_car_list_m" namespace="lbc"
+        scope="" service="servicelbc_tb_car_list_m">
+        <field desc="" keyfield="true" length="32" name="car_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="car_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="carnink_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="car_no" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="device_no" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="scanner_no" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="car_group_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="car_status_onoff" type="varchar"/>
+        <field desc="" keyfield="false" length="2"
+            name="cat_set_voltage" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="car_set_gps" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="car_report_cycle" type="varchar"/>
+        <field desc="" keyfield="false" length="11"
+            name="car_driving_dest" type="int"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_connection_mgr"
+        namespace="lbc" scope="" service="servicelbc_tb_connection_mgr">
+        <field desc="" keyfield="true" length="32" name="conn_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="cpny_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="connection_target" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="serial_no" type="varchar"/>
+        <field desc="" keyfield="false" length="5"
+            name="connection_status" type="varchar"/>
+        <field desc="" keyfield="false" length="5" name="bettary_status" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_device_list_m"
+        namespace="lbc" scope="" service="servicelbc_tb_device_list_m">
+        <field desc="" keyfield="true" length="32" name="device_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="device_no" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="device_name" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="device_regst_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="device_mgr_tel" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_passenger_list"
+        namespace="lbc" scope="" service="servicelbc_tb_passenger_list">
+        <field desc="" keyfield="true" length="11" name="passenger_id" type="int"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="category" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="division" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="passenger_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="smart_tag_no" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="passenger_tel_no" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tc_auth_m" namespace="lbc"
+        scope="" service="servicelbc_tc_auth_m">
+        <field desc="" keyfield="true" length="32" name="authente_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="cpny_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="3" name="auth_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_dashboard_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="mnu_assets_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="mnu_inout_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_caroperlist_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="mnu_carlist_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_devicelist_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_passenger_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="mnu_route_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="mnu_busstop_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_analdata_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_analroute_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_analroutelist_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_analgrap_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1"
+            name="mnu_acntgant_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="mnu_usermgr_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tc_company_m" namespace="lbc"
+        scope="" service="servicelbc_tc_company_m">
+        <field desc="" keyfield="true" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="cpny_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="cpny_owner_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="10" name="cpny_no" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="cpny_addr" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="cpny_tel_no" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="cpny_fax_no" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="cpny_mgr_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="12"
+            name="cpny_mgr_tel_no" type="varchar"/>
+        <field desc="" keyfield="false" length="32"
+            name="cpny_mgr_mail_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_mgr_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="cpny_mgr_pwd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="cpny_regst_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tc_device_inst_m"
+        namespace="lbc" scope="" service="servicelbc_tc_device_inst_m">
+        <field desc="" keyfield="true" length="15" name="inst_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="inst_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="inst_pwd" type="varchar"/>
+        <field desc="" keyfield="false" length="12" name="inst_tel_no" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="inst_mail_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="regist_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

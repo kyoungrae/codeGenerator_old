@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="lbc_tb_busrouting_car_mp"
+        namespace="lbc" scope="com" service="BusRoutingCarMapping">
+        <field desc="" keyfield="false" length="32" name="busrouting_id" type="varchar"></field>
+        <field desc="" keyfield="false" length="32" name="car_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_busrouting_m"
+        namespace="lbc" scope="com" service="BusRoutingMaster">
+        <field desc="" keyfield="true" length="32" name="busrouting_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busrouting_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busrouting_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="50"
+            name="busrouting_grp" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="routing_day_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="lbc_tb_busrouting_s"
+        namespace="lbc" scope="com" service="BusRoutingSub">
+        <field desc="" keyfield="true" length="32" name="busrouting_id" type="varchar"></field>
+        <field desc="" keyfield="true" length="4" name="busstop_time" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="busstop_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="busstop_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="2" name="stop_interval" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

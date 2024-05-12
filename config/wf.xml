@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="wf_tb_process_att_s"
+        namespace="workflow" scope="core" service="wf_tb_process_att_s">
+        <field desc="" keyfield="true" length="20" name="process_id" type="varchar"/>
+        <field desc="" keyfield="true" length="10" name="process_ver" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="att_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="att_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="100" name="att_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="255" name="att_desc" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_process_m"
+        namespace="workflow" scope="core" service="wf_tb_process_m">
+        <field desc="" keyfield="true" length="20" name="process_id" type="varchar"/>
+        <field desc="" keyfield="true" length="10" name="process_ver" type="varchar"/>
+        <field desc="" keyfield="false" length="100" name="process_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="process_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_route_s"
+        namespace="workflow" scope="core" service="wf_tb_route_s">
+        <field desc="" keyfield="true" length="20" name="process_id" type="varchar"/>
+        <field desc="" keyfield="true" length="10" name="process_ver" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="route_id" type="varchar"/>
+        <field desc="" keyfield="false" length="100" name="route_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="10" name="route_seq" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="stask_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="dtask_id" type="varchar"/>
+        <field desc="" keyfield="false" length="200"
+            name="route_condition" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_task_s" namespace="workflow"
+        scope="core" service="wf_tb_task_s">
+        <field desc="" keyfield="true" length="20" name="process_id" type="varchar"/>
+        <field desc="" keyfield="true" length="10" name="process_ver" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="task_id" type="varchar"/>
+        <field desc="" keyfield="false" length="100" name="task_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="task_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="task_role_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="task_role_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="arrive_event" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="leave_event" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute1" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute2" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute3" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute4" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute5" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="255" name="task_desc" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_work_att_arr_s"
+        namespace="workflow" scope="core" service="wf_tb_work_att_arr_s">
+        <field desc="" keyfield="true" length="32" name="work_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="att_id" type="varchar"/>
+        <field desc="" keyfield="true" length="11" name="att_idx" type="int"/>
+        <field desc="" keyfield="false" length="255" name="att_val" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_work_att_s"
+        namespace="workflow" scope="core" service="wf_tb_work_att_s">
+        <field desc="" keyfield="true" length="32" name="work_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="att_id" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="att_val" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_work_att_text_s"
+        namespace="workflow" scope="core" service="wf_tb_work_att_text_s">
+        <field desc="" keyfield="true" length="32" name="work_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="att_id" type="varchar"/>
+        <field desc="" keyfield="false" length="0" name="att_val" type="text"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_work_h" namespace="workflow"
+        scope="core" service="wf_tb_work_h">
+        <field desc="" keyfield="true" length="32" name="work_id" type="varchar"/>
+        <field desc="" keyfield="true" length="11" name="work_seq" type="int"/>
+        <field desc="" keyfield="false" length="20" name="work_state_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="work_task_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="work_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7"
+            name="work_task_st_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7"
+            name="work_task_end_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="work_action_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute1" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute2" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute3" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute4" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute5" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute6" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute7" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute8" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute9" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute10" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute11" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute12" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute13" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute14" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute15" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute16" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute17" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute18" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute19" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute20" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute21" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute22" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute23" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute24" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute25" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute26" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute27" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute28" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute29" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute30" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="wf_tb_work_m" namespace="workflow"
+        scope="core" service="wf_tb_work_m">
+        <field desc="" keyfield="true" length="32" name="work_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="process_id" type="varchar"/>
+        <field desc="" keyfield="false" length="10" name="process_ver" type="varchar"/>
+        <field desc="" keyfield="false" length="100" name="work_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="work_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="work_state_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="work_cur_task_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="work_cur_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="work_st_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="work_end_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="200" name="attribute1" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute2" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute3" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute4" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute5" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute6" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute7" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute8" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute9" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute10" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute11" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute12" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute13" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute14" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute15" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute16" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute17" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute18" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute19" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute20" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute21" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute22" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute23" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute24" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute25" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute26" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute27" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute28" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute29" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="attribute30" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+</entities>

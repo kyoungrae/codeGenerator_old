@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="참가기관" name="customer" namespace="fsec"
+        scope="com" service="CustomerView">
+        <field desc="ID" keyfield="false" length="0" name="id" type="ERROR"/>
+        <field desc="이름" keyfield="false" length="0" name="name" type="ERROR"/>
+        <field desc="코드" keyfield="false" length="0" name="code" type="ERROR"/>
+        <field desc="업권" keyfield="false" length="0" name="sector_id" type="ERROR"/>
+        <field desc="유형" keyfield="false" length="0" name="ntype" type="ERROR"/>
+        <field desc="검증허용여부" keyfield="false" length="0"
+            name="is_validation_agreed" type="ERROR"/>
+        <field desc="전화번호" keyfield="false" length="0"
+            name="telephone_number" type="ERROR"/>
+        <field desc="모바일번호" keyfield="false" length="0"
+            name="mobile_number" type="ERROR"/>
+        <field desc="이메일주소" keyfield="false" length="0"
+            name="email_address" type="ERROR"/>
+        <field desc="상위참가기관" keyfield="false" length="0"
+            name="parent_customer_id" type="ERROR"/>
+        <field desc="상태" keyfield="false" length="0" name="status" type="ERROR"/>
+        <field desc="설명" keyfield="false" length="0" name="description" type="ERROR"/>
+        <field desc="생성일시" keyfield="false" length="0" name="created_at" type="ERROR"/>
+        <field desc="수정일시" keyfield="false" length="0"
+            name="modified_at" type="ERROR"/>
+    </entity>
+</entities>

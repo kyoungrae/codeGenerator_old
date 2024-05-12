@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="업무정보 MASTER" name="biz_info"
+        namespace="fsec" scope="biz" service="BizInfo">
+        <field desc="업무정보  ID" keyfield="true" length="32" name="bi_id" type="VARCHAR"/>
+        <field desc="참가기관 ID" keyfield="false" length="32"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="업무정보  유형" keyfield="false" length="20"
+            name="bi_type" type="VARCHAR"/>
+        <field desc="업무정보  제목" keyfield="false" length="100"
+            name="bi_title" type="VARCHAR"/>
+        <field desc="업무정보  내용" keyfield="false" length="4000"
+            name="bi_contents" type="CLOB"/>
+        <field desc="업무정보  작성일" keyfield="false" length="8"
+            name="bi_reg_dt" type="DATE"/>
+        <field desc="업무정보  작성자" keyfield="false" length="15"
+            name="bi_reg_user_id" type="VARCHAR"/>
+        <field desc="업무정보  작성 부서" keyfield="false" length="32"
+            name="bi_reg_group_id" type="VARCHAR"/>
+        <field desc="업무정보  갱신일" keyfield="false" length="8"
+            name="bi_modi_dt" type="DATE"/>
+        <field desc="업무정보  갱신자" keyfield="false" length="15"
+            name="bi_modi_user_id" type="VARCHAR"/>
+        <field desc="업무정보  갱신 부서" keyfield="false" length="32"
+            name="bi_modi_group_id" type="VARCHAR"></field>
+        <field desc="업무정보  TLP" keyfield="false" length="20"
+            name="bi_tlb" type="VARCHAR"/>
+        <field desc="업무정보  조회 수" keyfield="false" length="22"
+            name="bi_read_cnt" type="NUMBER"/>
+        <field desc="업무정보  첨부파일 수" keyfield="false" length="22"
+            name="bi_atch_cnt" type="NUMBER"/>
+        <field desc="업무정보  댓글 수" keyfield="false" length="22"
+            name="bi_cmnt_cnt" type="NUMBER"/>
+        <field desc="데이터 생성일자" keyfield="false" length="8"
+            name="sys_cr_dt" type="DATE"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일자" keyfield="false" length="8"
+            name="sys_ud_dt" type="DATE"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="업무정보 첨부파일" name="biz_info_atch"
+        namespace="fsec" scope="biz" service="BizInfoAttFile">
+        <field desc="업무정보  ID" keyfield="true" length="32" name="bi_id" type="VARCHAR"/>
+        <field desc="업무정보  첨부파일 ID" keyfield="true" length="32"
+            name="bi_atch_id" type="VARCHAR"/>
+        <field desc="데이터 생성일자" keyfield="false" length="8"
+            name="sys_cr_dt" type="DATE"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일자" keyfield="false" length="8"
+            name="sys_ud_dt" type="DATE"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="업무정보 댓글" name="biz_info_cmnt"
+        namespace="fsec" scope="biz" service="BizInfoComments">
+        <field desc="업무정보  ID" keyfield="true" length="32" name="bi_id" type="VARCHAR"/>
+        <field desc="업무정보  댓글 ID" keyfield="true" length="32"
+            name="bi_cmnt_id" type="VARCHAR"/>
+        <field desc="업무정보  댓글 내용" keyfield="false" length="400"
+            name="bi_cmnt_cmnt" type="VARCHAR"/>
+        <field desc="업무정보  댓글 등록일자" keyfield="false" length="8"
+            name="bi_cmnt_reg_dt" type="DATE"/>
+        <field desc="업무정보  댓글 등록자" keyfield="false" length="15"
+            name="bi_cmnt_reg_user_id" type="VARCHAR"/>
+        <field desc="업무정보  댓글 등록부서" keyfield="false" length="32"
+            name="bi_cmnt_reg_group_id" type="VARCHAR"/>
+        <field desc="업무정보  댓글 갱신일자" keyfield="false" length="8"
+            name="bi_cmnt_modi_dt" type="DATE"/>
+        <field desc="업무정보  댓글 갱신자" keyfield="false" length="15"
+            name="bi_cmnt_modi_user_id" type="VARCHAR"/>
+        <field desc="업무정보  댓글 갱신부서" keyfield="false" length="32"
+            name="bi_cmnt_modi_group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일자" keyfield="false" length="8"
+            name="sys_cr_dt" type="DATE"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일자" keyfield="false" length="8"
+            name="sys_ud_dt" type="DATE"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc=" " name="ngsoc_vc_user_ms"
+        namespace="fsec" scope="com" service="UserView">
+        <field desc="ID" keyfield="false" length="15" name="id" type="VARCHAR"/>
+        <field desc="참가기관" keyfield="false" length="255"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="이름" keyfield="false" length="50" name="name" type="VARCHAR"/>
+        <field desc="부서" keyfield="false" length="255" name="dept" type="VARCHAR"/>
+        <field desc="직급" keyfield="false" length="255" name="jrank" type="VARCHAR"/>
+        <field desc="직책" keyfield="false" length="255" name="position" type="VARCHAR"/>
+        <field desc="담당업무" keyfield="false" length="255" name="task" type="VARCHAR"/>
+        <field desc="전화번호" keyfield="false" length="255"
+            name="telephone_number" type="VARCHAR"/>
+        <field desc="모바일번호" keyfield="false" length="255"
+            name="mobile_number" type="VARCHAR"/>
+        <field desc="이메일주소" keyfield="false" length="50"
+            name="email_address" type="VARCHAR"/>
+        <field desc="비밀번호" keyfield="false" length="128" name="password" type="VARCHAR"/>
+        <field desc="업무협업도구이름" keyfield="false" length="255"
+            name="teamchat_name" type="VARCHAR"/>
+        <field desc="권한그룹" keyfield="false" length="255"
+            name="permission_group" type="VARCHAR"/>
+        <field desc="상태" keyfield="false" length="255" name="status" type="VARCHAR"/>
+        <field desc="REST API 키" keyfield="false" length="32"
+            name="api_key" type="VARCHAR"/>
+        <field desc="연락순위" keyfield="false" length="255"
+            name="contact_order" type="VARCHAR"/>
+        <field desc="2차인증유형" keyfield="false" length="255"
+            name="mfa_type" type="VARCHAR"/>
+        <field desc="휴면전환 여부" keyfield="false" length="1"
+            name="is_dormant" type="VARCHAR"/>
+        <field desc="생성일시" keyfield="false" length="12"
+            name="created_at" type="TIMESTAMP(6)"/>
+        <field desc="수정일시" keyfield="false" length="12"
+            name="modified_at" type="TIMESTAMP(6)"/>
+        <field desc="최종로그인일시" keyfield="false" length="12"
+            name="last_login_at" type="TIMESTAMP(6)"/>
+        <field desc="로그인실패횟수" keyfield="false" length="255"
+            name="fail_login_cnt" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="악성파일 유포지" name="tiu_mal_dist"
+        namespace="fsec" scope="mal" service="MaiDist">
+        <field desc="ID" keyfield="true" length="32" name="id" type="VARCHAR"/>
+        <field desc="수집시간?" keyfield="false" length="8"
+            name="sys_col_dt" type="DATE"/>
+        <field desc="이름" keyfield="false" length="128" name="szname" type="VARCHAR"/>
+        <field desc="URL" keyfield="false" length="2048" name="url" type="VARCHAR"/>
+        <field desc="IP" keyfield="false" length="20" name="ip" type="VARCHAR"/>
+        <field desc="호스트명" keyfield="false" length="128"
+            name="host_szname" type="VARCHAR"/>
+        <field desc="SHA256" keyfield="false" length="64" name="sha256" type="VARCHAR"/>
+        <field desc="유형" keyfield="false" length="64" name="ntype" type="VARCHAR"/>
+        <field desc="대표탐지명" keyfield="false" length="128"
+            name="detection_szname" type="VARCHAR"/>
+        <field desc="공개여부(FCTI)" keyfield="false" length="1"
+            name="is_fcti_display" type="VARCHAR"/>
+        <field desc="악성여부" keyfield="false" length="1" name="is_malware" type="VARCHAR"/>
+        <field desc="MD5" keyfield="false" length="128" name="md5" type="VARCHAR"/>
+        <field desc="SHA1" keyfield="false" length="128" name="sha1" type="VARCHAR"/>
+        <field desc="크기" keyfield="false" length="16" name="nsize" type="VARCHAR"/>
+        <field desc="CVE" keyfield="false" length="20" name="cve" type="VARCHAR"/>
+        <field desc="설명" keyfield="false" length="4000"
+            name="szdescription" type="CLOB"/>
+        <field desc="데이터등록일시" keyfield="false" length="8"
+            name="sys_cr_dt" type="DATE"/>
+        <field desc="데이터등록자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터수정일시" keyfield="false" length="8"
+            name="sys_ud_dt" type="DATE"/>
+        <field desc="데이터수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+</entities>
+

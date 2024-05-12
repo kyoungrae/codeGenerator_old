@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="액션서비스" name="cm_tb_act_m" namespace="cm"
+        scope="act" service="ActService">
+        <field desc="액션키" keyfield="true" length="20" name="act_id" type="varchar"/>
+        <field desc="레벨" keyfield="false" length="11" name="acl_lv" type="int"/>
+        <field desc="순서" keyfield="false" length="11" name="disp_seq" type="int">ㅅ수ㅅㅅ수순순순ㅅ순서순순서순서</field>
+        <field desc="생성일" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="수정일" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="클래스명" keyfield="false" length="200" name="class_nm" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_att_m" namespace="cm"
+        scope="att" service="servicecm_tb_att_m">
+        <field desc="" keyfield="true" length="20" name="att_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="att_cd_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="l_code_id" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_lv" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="att_sz" type="int"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_box_acl_s" namespace="cm"
+        scope="box" service="servicecm_tb_box_acl_s">
+        <field desc="" keyfield="true" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="memb_div_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="memb_id" type="varchar"/>
+        <field desc="" keyfield="true" length="11" name="acl_lv" type="int"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_box_act_p" namespace="cm"
+        scope="box" service="servicecm_tb_box_act_p">
+        <field desc="" keyfield="true" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="doc_stat_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="act_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="act_div_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="disp_div_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_box_doc_plcy_s"
+        namespace="cm" scope="box" service="servicecm_tb_box_doc_plcy_s">
+        <field desc="" keyfield="true" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="plcy_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_box_doc_stat_s"
+        namespace="cm" scope="box" service="servicecm_tb_box_doc_stat_s">
+        <field desc="" keyfield="true" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="doc_stat_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_box_doc_tp_s" namespace="cm"
+        scope="doc" service="servicecm_tb_box_doc_tp_s">
+        <field desc="" keyfield="true" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="doc_tp_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_box_m" namespace="cm"
+        scope="box" service="servicecm_tb_box_m">
+        <field desc="" keyfield="true" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="box_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_lv" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="box_div_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_clas_m" namespace="cm"
+        scope="clas" service="servicecm_tb_clas_m">
+        <field desc="" keyfield="true" length="32" name="clas_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="clas_div_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="att_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="att_val" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="l_code_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="clas_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="up_clas_id" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="clas_lv" type="int"/>
+        <field desc="" keyfield="false" length="11" name="sort_seq" type="int"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_cntr_m" namespace="cm"
+        scope="cntr" service="servicecm_tb_cntr_m">
+        <field desc="" keyfield="true" length="32" name="cntr_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="cntr_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="cntr_lv" type="int"/>
+        <field desc="" keyfield="false" length="11" name="sort_seq" type="int"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="18" name="box_id" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="up_cntr_id" type="varchar"/>
+        <field desc="" keyfield="false" length="1000" name="cntr_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="reg_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="reg_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_access_h" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_access_h">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="true" length="0" name="access_time" type="timestamp"/>
+        <field desc="" keyfield="false" length="20" name="action_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15"
+            name="access_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_acl_s" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_acl_s">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="memb_div_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="memb_id" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="acl_lv" type="int"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_att_h" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_att_h">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="true" length="11" name="ver_no" type="int"/>
+        <field desc="" keyfield="true" length="20" name="att_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="1000" name="att_val" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_att_s" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_att_s">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="att_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="1000" name="att_val" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_file_s" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_file_s">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="file_id" type="varchar"/>
+        <field desc="" keyfield="false" length="500" name="file_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="file_sz" type="int"/>
+        <field desc="" keyfield="false" length="20" name="file_ext_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="10" name="ver_view_no" type="varchar"/>
+        <field desc="" keyfield="true" length="11" name="ver_no" type="int"/>
+        <field desc="" keyfield="false" length="7" name="reg_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15" name="reg_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="1000" name="file_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="cur_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_m" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_m">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="org_doc_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="file_ext_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="500" name="doc_titl" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="doc_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="keep_cd" type="int"/>
+        <field desc="" keyfield="false" length="32" name="cntr_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="doc_tp_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="lock_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="10" name="ver_view_no" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="ver_no" type="int"/>
+        <field desc="" keyfield="false" length="1" name="chk_out_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="0" name="chk_out_dt" type="date"/>
+        <field desc="" keyfield="false" length="15"
+            name="chk_out_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="0" name="chk_in_dt" type="date"/>
+        <field desc="" keyfield="false" length="15" name="own_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="reg_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="reg_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="modi_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="15" name="doc_stat_cd" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_ref_s" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_ref_s">
+        <field desc="" keyfield="true" length="32" name="doc_id" type="varchar"/>
+        <field desc="" keyfield="true" length="32" name="ref_doc_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_doc_tp_s" namespace="cm"
+        scope="doc" service="servicecm_tb_doc_tp_s">
+        <field desc="" keyfield="true" length="20" name="doc_tp_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="20" name="att_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="att_seq" type="int"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_plcy_doc_acl_m"
+        namespace="cm" scope="plcy" service="servicecm_tb_plcy_doc_acl_m">
+        <field desc="" keyfield="true" length="20" name="plcy_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="20"
+            name="plcy_memb_div_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="32" name="plcy_memb_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cm_tb_plcy_doc_acl_s"
+        namespace="cm" scope="plcy" service="servicecm_tb_plcy_doc_acl_s">
+        <field desc="" keyfield="true" length="20" name="plcy_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="20"
+            name="plcy_memb_div_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="32" name="plcy_memb_id" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="memb_div_cd" type="varchar"/>
+        <field desc="" keyfield="true" length="32" name="memb_id" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="acl_lv" type="int"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="WAT 부재자 대리인 정보 테이블"
+        name="cc_tc_absn_agnt_s" namespace="account" scope="employee" service="servicecc_tc_absn_agnt_s">
+        <field desc="부재자MID" keyfield="true" length="32" name="absn_mid" type="varchar"/>
+        <field desc="대리인 ID" keyfield="true" length="15"
+            name="absn_agnt_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 부재자 기본정보 테이블" name="cc_tc_absn_m"
+        namespace="account" scope="employee" service="servicecc_tc_absn_m">
+        <field desc="부재자MID" keyfield="true" length="32" name="absn_mid" type="varchar"/>
+        <field desc="부재자 사용자ID" keyfield="true" length="15"
+            name="absn_id" type="varchar"/>
+        <field desc="부재 시작일" keyfield="false" length="22"
+            name="absn_strt_dt" type="datetime"/>
+        <field desc="부재 종료일" keyfield="false" length="22"
+            name="absn_end_dt" type="datetime"/>
+        <field desc="부재사유코드" keyfield="false" length="20"
+            name="absn_rsn_cd" type="varchar"/>
+        <field desc="부재 내용" keyfield="false" length="100"
+            name="absn_desc" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_approval_complete_recode"
+        namespace="account" scope="employee" service="servicecc_tc_approval_complete_recode">
+        <field desc="워크플로우 아이디" keyfield="true" length="32"
+            name="wrkf_mid" type="varchar"/>
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_approval_display_recode"
+        namespace="account" scope="employee" service="servicecc_tc_approval_display_recode">
+        <field desc="워크플로우 아이디" keyfield="true" length="32"
+            name="wrkf_mid" type="varchar"/>
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_approval_refference_recode"
+        namespace="account" scope="employee" service="servicecc_tc_approval_refference_recode">
+        <field desc="워크플로우 아이디" keyfield="true" length="32"
+            name="wrkf_mid" type="varchar"/>
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_approval_reject_recode"
+        namespace="account" scope="employee" service="servicecc_tc_approval_reject_recode">
+        <field desc="워크플로우 아이디" keyfield="true" length="32"
+            name="wrkf_mid" type="varchar"/>
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 게시판 그룹별 접근정보 테이블"
+        name="cc_tc_bbs_acl_s" namespace="account" scope="employee" service="servicecc_tc_bbs_acl_s">
+        <field desc="그룹아이디" keyfield="true" length="32" name="group_id" type="varchar"/>
+        <field desc="게시판아이디" keyfield="true" length="50" name="bbs_mid" type="varchar"/>
+        <field desc="게시판권한코드" keyfield="false" length="20"
+            name="bbs_auth_cd" type="varchar"/>
+        <field desc="프로젝트 구분코드" keyfield="false" length="20"
+            name="prj_div_cd" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 게시판 첨부파일 테이블" name="cc_tc_bbs_atch_s"
+        namespace="account" scope="employee" service="servicecc_tc_bbs_atch_s">
+        <field desc="게시글 번호" keyfield="true" length="11" name="bbs_no" type="int"/>
+        <field desc="게시판 아이디" keyfield="true" length="50" name="bbs_mid" type="varchar"/>
+        <field desc="게시판 첨부파일 아이디" keyfield="true" length="32"
+            name="bbs_atch_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 게시판 코멘트 정보 테이블"
+        name="cc_tc_bbs_cmnt_s" namespace="account" scope="employee" service="servicecc_tc_bbs_cmnt_s">
+        <field desc="게시판 코멘트 아이디" keyfield="true" length="11"
+            name="bbs_cmnt_no" type="int"/>
+        <field desc="게시판 아이디" keyfield="true" length="50" name="bbs_mid" type="varchar"/>
+        <field desc="게시글 번호" keyfield="true" length="11" name="bbs_no" type="int"/>
+        <field desc="게시판 코멘트 내용" keyfield="false" length="200"
+            name="bbs_cmnt_cntn" type="varchar"/>
+        <field desc="등록자ID" keyfield="false" length="15"
+            name="reg_user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="변경자ID" keyfield="false" length="15"
+            name="modi_user_id" type="varchar"/>
+        <field desc="변경일" keyfield="false" length="22" name="modi_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 게시판 카테고리 정보 테이블"
+        name="cc_tc_bbs_ctgr_s" namespace="account" scope="employee" service="servicecc_tc_bbs_ctgr_s">
+        <field desc="게시판 아이디" keyfield="true" length="50" name="bbs_mid" type="varchar"/>
+        <field desc="게시판 카테고리코드" keyfield="true" length="20"
+            name="bbs_ctgr_cd" type="varchar"/>
+        <field desc="게시판 카테고리명" keyfield="false" length="100"
+            name="bbs_ctgr_nm" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 게시판 관리 테이블" name="cc_tc_bbs_m"
+        namespace="account" scope="employee" service="servicecc_tc_bbs_m">
+        <field desc="게시판 아이디" keyfield="true" length="50" name="bbs_mid" type="varchar"/>
+        <field desc="게시판명" keyfield="false" length="100" name="bbs_name" type="varchar"/>
+        <field desc="게시판 종류" keyfield="false" length="20"
+            name="bbs_type" type="varchar"/>
+        <field desc="관리자 ID" keyfield="false" length="15"
+            name="mgmt_user_id" type="varchar"/>
+        <field desc="첨부기능 사용 여부" keyfield="false" length="1"
+            name="atch_use_yn" type="varchar"/>
+        <field desc="게시글 상단 노출기능 여부" keyfield="false" length="1"
+            name="post_top_use_yn" type="varchar"/>
+        <field desc="댓글기능 사용 여부" keyfield="false" length="1"
+            name="cmnt_use_yn" type="varchar"/>
+        <field desc="ACL기능 사용 여부" keyfield="false" length="1"
+            name="acl_use_yn" type="varchar"/>
+        <field desc="카테고리기능 사용 여부" keyfield="false" length="1"
+            name="ctgr_use_yn" type="varchar"/>
+        <field desc="알림기능 사용 여부" keyfield="false" length="1"
+            name="ntfc_use_yn" type="varchar"/>
+        <field desc="목록 개수" keyfield="false" length="11" name="list_cnt" type="int"/>
+        <field desc="페이지 개수" keyfield="false" length="11"
+            name="page_cnt" type="int"/>
+        <field desc="사용여부" keyfield="false" length="0" name="use_yn" type="char"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 게시글 정보 테이블" name="cc_tc_bbs_s"
+        namespace="account" scope="employee" service="servicecc_tc_bbs_s">
+        <field desc="게시글 번호" keyfield="true" length="11" name="bbs_no" type="int"/>
+        <field desc="게시판 아이디" keyfield="true" length="50" name="bbs_mid" type="varchar"/>
+        <field desc="게시판 카테고리코드" keyfield="true" length="20"
+            name="bbs_ctgr_cd" type="varchar"/>
+        <field desc="게시글 제목" keyfield="false" length="100"
+            name="bbs_title" type="varchar"/>
+        <field desc="게시글 내용" keyfield="false" length="0" name="bbs_cntn" type="text"/>
+        <field desc="게시글 상단 노출기능 여부" keyfield="false" length="1"
+            name="top_show_yn" type="varchar"/>
+        <field desc="조회수" keyfield="false" length="11" name="read_cnt" type="int"/>
+        <field desc="첨부수" keyfield="false" length="11" name="atch_cnt" type="int"/>
+        <field desc="댓글수" keyfield="false" length="11" name="cmnt_cnt" type="int"/>
+        <field desc="등록자ID" keyfield="false" length="15"
+            name="reg_user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="변경자ID" keyfield="false" length="15"
+            name="modi_user_id" type="varchar"/>
+        <field desc="변경일" keyfield="false" length="22" name="modi_dt" type="datetime"/>
+        <field desc="노출여부" keyfield="false" length="0" name="show_yn" type="char"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 북마크 관리 테이블" name="cc_tc_bkmr_m"
+        namespace="account" scope="employee" service="servicecc_tc_bkmr_m">
+        <field desc="북마크아이디" keyfield="true" length="32" name="bkmr_mid" type="varchar"/>
+        <field desc="북마크 아이콘 아이디" keyfield="false" length="32"
+            name="bkmr_icon_id" type="varchar"/>
+        <field desc="북마크 사이트명" keyfield="false" length="20"
+            name="bkmr_site_nm" type="varchar"/>
+        <field desc="북마크 사이트URI" keyfield="false" length="20"
+            name="bkmr_site_uri" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 캘린더 기본정보 테이블" name="cc_tc_clnd_m"
+        namespace="account" scope="employee" service="servicecc_tc_clnd_m">
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="캘린더명" keyfield="false" length="100" name="clnd_nm" type="varchar"/>
+        <field desc="캘린더설명" keyfield="false" length="1000"
+            name="clnd_desc" type="varchar"/>
+        <field desc="캘린더유형" keyfield="false" length="20"
+            name="clnd_type" type="varchar"/>
+        <field desc="캘린더시간대" keyfield="false" length="20"
+            name="clnd_tm_zn" type="varchar"/>
+        <field desc="캘린더소유자ID" keyfield="false" length="15"
+            name="clnd_ownr_id" type="varchar"/>
+        <field desc="캘린더조직ID" keyfield="false" length="32"
+            name="clnd_org_id" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 캘린더 조직별 권한정보 테이블"
+        name="cc_tc_clnd_org_acl_s" namespace="account" scope="employee" service="servicecc_tc_clnd_org_acl_s">
+        <field desc="캘린더조직ID" keyfield="true" length="32"
+            name="clnd_org_id" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="50" name="clnd_mid" type="varchar"/>
+        <field desc="캘린더권한코드" keyfield="false" length="20"
+            name="clnd_auth_cd" type="varchar"/>
+        <field desc="프로젝트 구분코드" keyfield="false" length="20"
+            name="prj_div_cd" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 캘린더 유저별 권한정보 테이블"
+        name="cc_tc_clnd_user_acl_s" namespace="account"
+        scope="employee" service="servicecc_tc_clnd_user_acl_s">
+        <field desc="사용자ID" keyfield="true" length="15"
+            name="clnd_user_id" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="캘린더권한유형" keyfield="true" length="20"
+            name="clnd_auth_type" type="varchar"/>
+        <field desc="캘린더권한코드" keyfield="false" length="20"
+            name="clnd_auth_cd" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 캘린더 유저별 상세정보 테이블"
+        name="cc_tc_clnd_user_s" namespace="account" scope="employee" service="servicecc_tc_clnd_user_s">
+        <field desc="사용자ID" keyfield="true" length="15"
+            name="clnd_user_id" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="캘린더색상" keyfield="false" length="20" name="clnd_clr" type="varchar"/>
+        <field desc="기본 캘린더 여부" keyfield="false" length="1"
+            name="bscs_clnd_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 코드 기본정보(마스터) 테이블" name="cc_tc_code_m"
+        namespace="account" scope="employee" service="servicecc_tc_code_m">
+        <field desc="대분류 코드 아이디" keyfield="true" length="20"
+            name="l_code_id" type="varchar"/>
+        <field desc="대분류 코드 명" keyfield="false" length="50"
+            name="l_code_nm" type="varchar"/>
+        <field desc="대분류 코드 상수" keyfield="false" length="50"
+            name="l_code_cnst" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="대분류 코드 설명" keyfield="false" length="100"
+            name="l_code_desc" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="정렬순서" keyfield="false" length="11" name="sort_seq" type="int"/>
+    </entity>
+    <entity build="yes" desc="WAT 코드 부가정보(슬레이브) 테이블" name="cc_tc_code_s"
+        namespace="account" scope="employee" service="servicecc_tc_code_s">
+        <field desc="대분류 코드 아이디" keyfield="true" length="20"
+            name="l_code_id" type="varchar"/>
+        <field desc="소분류 코드 아이디" keyfield="true" length="20"
+            name="s_code_id" type="varchar"/>
+        <field desc="소분류 코드명" keyfield="false" length="50"
+            name="s_code_nm" type="varchar"/>
+        <field desc="소분류 코드상수" keyfield="false" length="50"
+            name="s_code_cnst" type="varchar"/>
+        <field desc="정렬순서" keyfield="false" length="11" name="sort_seq" type="int"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="설명" keyfield="false" length="100"
+            name="s_code_desc" type="varchar"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="즐겨찾기 관리 테이블" name="cc_tc_fav_m"
+        namespace="account" scope="employee" service="servicecc_tc_fav_m">
+        <field desc="유저 아이디" keyfield="true" length="30" name="user_id" type="varchar"/>
+        <field desc="즐겨찾기 페이지" keyfield="true" length="30"
+            name="fav_page" type="varchar"/>
+        <field desc="즐겨찾기 페이지 등록 시간" keyfield="false" length="22"
+            name="fav_reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 파일 저장정보 테이블" name="cc_tc_file_m"
+        namespace="account" scope="employee" service="servicecc_tc_file_m">
+        <field desc="파일 아이디" keyfield="true" length="32" name="file_id" type="varchar"/>
+        <field desc="파일명" keyfield="false" length="500" name="file_nm" type="varchar"/>
+        <field desc="파일크기" keyfield="false" length="0" name="file_sz" type="double"/>
+        <field desc="파일 확장자" keyfield="false" length="20"
+            name="file_ext" type="varchar"/>
+        <field desc="파일 등록일" keyfield="false" length="22"
+            name="file_reg_dt" type="datetime"/>
+        <field desc="파일 등록자 아이디" keyfield="false" length="15"
+            name="file_reg_user_id" type="varchar"/>
+        <field desc="다운로드수" keyfield="false" length="11"
+            name="file_dwnl_cnt" type="int"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 양식 카테고리 정보 테이블"
+        name="cc_tc_form_ctgr_s" namespace="account" scope="employee" service="servicecc_tc_form_ctgr_s">
+        <field desc="양식 카테고리ID" keyfield="true" length="32"
+            name="form_ctgr_id" type="varchar"/>
+        <field desc="양식 카테고리명" keyfield="false" length="100"
+            name="form_ctgr_nm" type="varchar"/>
+        <field desc="상위 양식 카테고리ID" keyfield="false" length="32"
+            name="up_form_ctgr_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 양식별 전결자 정보 테이블"
+        name="cc_tc_form_dcd_arbt_s" namespace="account"
+        scope="employee" service="servicecc_tc_form_dcd_arbt_s">
+        <field desc="양식아이디" keyfield="true" length="32" name="form_mid" type="varchar"/>
+        <field desc="전결자ID" keyfield="true" length="15"
+            name="dcd_arbt_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 양식 아이템 정보 테이블" name="cc_tc_form_itm_s"
+        namespace="account" scope="employee" service="servicecc_tc_form_itm_s">
+        <field desc="양식아이디" keyfield="true" length="32" name="form_mid" type="varchar"/>
+        <field desc="양식 아이템 아이디" keyfield="true" length="32"
+            name="form_itm_mid" type="varchar"/>
+        <field desc="양식 아이템명" keyfield="false" length="100"
+            name="form_itm_nm" type="varchar"/>
+        <field desc="양식 아이템유형" keyfield="false" length="20"
+            name="form_itm_type" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 양식 기본정보 테이블" name="cc_tc_form_m"
+        namespace="account" scope="employee" service="servicecc_tc_form_m">
+        <field desc="양식아이디" keyfield="true" length="32" name="form_mid" type="varchar"/>
+        <field desc="양식 카테고리ID" keyfield="false" length="32"
+            name="form_ctgr_id" type="varchar"/>
+        <field desc="양식명" keyfield="false" length="100" name="form_nm" type="varchar"/>
+        <field desc="양식설명" keyfield="false" length="1000"
+            name="form_desc" type="varchar"/>
+        <field desc="양식 내용" keyfield="false" length="0" name="form_cntn" type="text"/>
+        <field desc="양식유형" keyfield="false" length="20" name="form_type" type="varchar"/>
+        <field desc="양식 첨부파일 아이디" keyfield="false" length="32"
+            name="form_atch_id" type="varchar"/>
+        <field desc="공용여부" keyfield="false" length="1"
+            name="form_pblc_yn" type="varchar"/>
+        <field desc="등록자ID" keyfield="false" length="15"
+            name="reg_user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="변경자ID" keyfield="false" length="15"
+            name="modi_user_id" type="varchar"/>
+        <field desc="변경일" keyfield="false" length="22" name="modi_dt" type="datetime"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 양식 프로세스 매핑정보 테이블"
+        name="cc_tc_form_prcs_s" namespace="account" scope="employee" service="servicecc_tc_form_prcs_s">
+        <field desc="양식아이디" keyfield="true" length="32" name="form_mid" type="varchar"/>
+        <field desc="프로세스MID" keyfield="true" length="32"
+            name="prcs_mid" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_group_info_s"
+        namespace="account" scope="employee" service="servicecc_tc_group_info_s">
+        <field desc="" keyfield="true" length="15" name="group_id" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="info_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="info_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="info_val" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 그룹정보 기본(마스터) 테이블" name="cc_tc_group_m"
+        namespace="account" scope="employee" service="servicecc_tc_group_m">
+        <field desc="그룹아이디" keyfield="true" length="32" name="group_id" type="varchar"/>
+        <field desc="그룹명" keyfield="false" length="50" name="group_nm" type="varchar"/>
+        <field desc="그룹 구분코드" keyfield="false" length="15"
+            name="group_div_cd" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="상위 그룹 아이디" keyfield="false" length="32"
+            name="up_group_id" type="varchar"/>
+        <field desc="그룹 레벨" keyfield="false" length="11" name="group_lv" type="int"/>
+        <field desc="정령순서" keyfield="false" length="11" name="sort_seq" type="int"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 그룹내 맴버 정보 테이블"
+        name="cc_tc_group_memb_p" namespace="account" scope="employee" service="servicecc_tc_group_memb_p">
+        <field desc="그룹아이디" keyfield="true" length="32" name="group_id" type="varchar"/>
+        <field desc="맴버 아이디" keyfield="true" length="32" name="memb_id" type="varchar"/>
+        <field desc="맴버 구분코드" keyfield="true" length="15"
+            name="memb_div_cd" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT에서 사용되는 언어정보 테이블" name="cc_tc_lang_m"
+        namespace="account" scope="employee" service="servicecc_tc_lang_m">
+        <field desc="언어 코드" keyfield="true" length="5" name="lang_cd" type="varchar"/>
+        <field desc="언어 타입" keyfield="true" length="100"
+            name="lang_type" type="varchar"/>
+        <field desc="언어코드" keyfield="true" length="100" name="lang_code" type="varchar"/>
+        <field desc="시스템 사용 언어" keyfield="false" length="200"
+            name="lang_display" type="varchar"/>
+        <field desc="언어 사용여부" keyfield="false" length="1"
+            name="lang_use_yn" type="varchar"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="WAT 멀티라인 입력 공지사항 테이블"
+        name="cc_tc_notice_ex_m" namespace="account" scope="employee" service="servicecc_tc_notice_ex_m">
+        <field desc="공지사항 아이디" keyfield="true" length="32"
+            name="notice_id" type="varchar"/>
+        <field desc="공지사항 제목" keyfield="false" length="50"
+            name="notice_title" type="varchar"/>
+        <field desc="공지사항 내용" keyfield="false" length="255"
+            name="notice_desc" type="varchar"/>
+        <field desc="공개여부" keyfield="false" length="1" name="show_yn" type="varchar"/>
+        <field desc="생성자 아이디" keyfield="false" length="15"
+            name="creater_id" type="varchar"/>
+        <field desc="생성시간" keyfield="false" length="22"
+            name="notice_create_dt" type="datetime"/>
+        <field desc="업데이트 시간" keyfield="false" length="22"
+            name="notice_update_dt" type="datetime"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 한줄입력 공지사항 테이블" name="cc_tc_notice_m"
+        namespace="account" scope="employee" service="servicecc_tc_notice_m">
+        <field desc="공지사항 아이디" keyfield="true" length="32"
+            name="notice_id" type="varchar"/>
+        <field desc="공지사항 등록일" keyfield="false" length="0"
+            name="notice_time" type="timestamp"/>
+        <field desc="공자사항 등록자 아이디" keyfield="false" length="15"
+            name="notice_user_id" type="varchar"/>
+        <field desc="한줄공지 내용" keyfield="false" length="500"
+            name="notice_desc" type="varchar"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_notice_user_recode"
+        namespace="account" scope="employee" service="servicecc_tc_notice_user_recode">
+        <field desc="" keyfield="true" length="32" name="notice_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="notice_title" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="22" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="cc_tc_notice_v1_m"
+        namespace="account" scope="employee" service="servicecc_tc_notice_v1_m">
+        <field desc="" keyfield="true" length="32" name="notice_id" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="notice_title" type="varchar"/>
+        <field desc="" keyfield="false" length="0" name="notice_desc" type="text"/>
+        <field desc="" keyfield="false" length="0" name="show_yn" type="char"/>
+        <field desc="" keyfield="false" length="15" name="cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="22" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 프로세스 액티비티 참여자정보 테이블"
+        name="cc_tc_prcs_actv_prtcp_s" namespace="account"
+        scope="employee" service="servicecc_tc_prcs_actv_prtcp_s">
+        <field desc="프로세스 MID" keyfield="true" length="32"
+            name="prcs_mid" type="varchar"/>
+        <field desc="액티비티 MID" keyfield="true" length="32"
+            name="actv_mid" type="varchar"/>
+        <field desc="액티비티 참여자 유형" keyfield="true" length="20"
+            name="actv_prtcp_type" type="varchar"/>
+        <field desc="액티비티 참여자ID" keyfield="true" length="32"
+            name="actv_prtcp_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 프로세스 액티비티정보 테이블"
+        name="cc_tc_prcs_actv_s" namespace="account" scope="employee" service="servicecc_tc_prcs_actv_s">
+        <field desc="프로세스 MID" keyfield="true" length="32"
+            name="prcs_mid" type="varchar"/>
+        <field desc="액티비티 MID" keyfield="true" length="32"
+            name="actv_mid" type="varchar"/>
+        <field desc="액티비티 SEQ" keyfield="false" length="2"
+            name="actv_seq" type="int"/>
+        <field desc="액티비티 유형" keyfield="false" length="20"
+            name="actv_type" type="varchar"/>
+        <field desc="액티비티 명" keyfield="false" length="100"
+            name="actv_nm" type="varchar"/>
+        <field desc="액티비티 설명" keyfield="false" length="1000"
+            name="actv_desc" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 프로세스 기본정보 테이블" name="cc_tc_prcs_m"
+        namespace="account" scope="employee" service="servicecc_tc_prcs_m">
+        <field desc="프로세스MID" keyfield="true" length="32"
+            name="prcs_mid" type="varchar"/>
+        <field desc="프로세스 카테고리ID" keyfield="false" length="32"
+            name="prcs_ctgr_id" type="varchar"/>
+        <field desc="프로세스 버전" keyfield="false" length="10"
+            name="prcs_ver" type="varchar"/>
+        <field desc="프로세스 명" keyfield="false" length="100"
+            name="prcs_nm" type="varchar"/>
+        <field desc="프로세스 설명" keyfield="false" length="1000"
+            name="prcs_desc" type="varchar"/>
+        <field desc="등록자ID" keyfield="false" length="15"
+            name="reg_user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="변경자ID" keyfield="false" length="15"
+            name="modi_user_id" type="varchar"/>
+        <field desc="변경일" keyfield="false" length="22" name="modi_dt" type="datetime"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 프로세스 수동 템플릿 정보 테이블"
+        name="cc_tc_prcs_mnl_tmpl_s" namespace="account"
+        scope="employee" service="servicecc_tc_prcs_mnl_tmpl_s">
+        <field desc="프로세스MID" keyfield="true" length="32"
+            name="prcs_mid" type="varchar"/>
+        <field desc="프로세스 템플릿 유형" keyfield="true" length="20"
+            name="prcs_tmpl_type" type="varchar"/>
+        <field desc="프로세스 등록자ID" keyfield="true" length="15"
+            name="prcs_reg_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 프로그램 그룹별 접근정보 테이블"
+        name="cc_tc_prgm_acl_s" namespace="account" scope="employee" service="servicecc_tc_prgm_acl_s">
+        <field desc="그룹아이디" keyfield="true" length="32" name="group_id" type="varchar"/>
+        <field desc="프로젝트 구분코드" keyfield="false" length="20"
+            name="prj_div_cd" type="varchar"/>
+        <field desc="프로그램 아이디" keyfield="true" length="32"
+            name="prgm_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT내 프로그램(서비스) 정보 테이블" name="cc_tc_prgm_m"
+        namespace="account" scope="employee" service="servicecc_tc_prgm_m">
+        <field desc="프로젝트 구분코드" keyfield="false" length="20"
+            name="prj_div_cd" type="varchar"/>
+        <field desc="프로그램 아이디" keyfield="true" length="32"
+            name="prgm_id" type="varchar"/>
+        <field desc="상위 프로그램 아이디" keyfield="false" length="30"
+            name="up_prgm_id" type="varchar"/>
+        <field desc="정렬순서" keyfield="false" length="11" name="sort_seq" type="int"/>
+        <field desc="프로그램 명" keyfield="false" length="100"
+            name="prgm_nm" type="varchar"/>
+        <field desc="프로그램 경로" keyfield="false" length="255"
+            name="prgm_url" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="프로그램 레벨" keyfield="false" length="11"
+            name="prgm_lv" type="int"/>
+        <field desc="프로그램 설명" keyfield="false" length="50"
+            name="prgm_desc" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="아이콘 클레스명" keyfield="false" length="50"
+            name="icon_class" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 프로그램 접속 히스토리 테이블" name="cc_tc_proc_h"
+        namespace="account" scope="employee" service="servicecc_tc_proc_h">
+        <field desc="접속시간" keyfield="true" length="0" name="proc_time" type="timestamp"/>
+        <field desc="엑션아이디" keyfield="false" length="20"
+            name="action_id" type="varchar"/>
+        <field desc="접속자 아이디" keyfield="false" length="15"
+            name="proc_user_id" type="varchar"/>
+        <field desc="접속내역 설명" keyfield="false" length="255"
+            name="proc_desc" type="varchar"/>
+        <field desc="접속자 아이피" keyfield="false" length="30"
+            name="remote_addr" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 푸쉬히스토리 테이블" name="cc_tc_push_h"
+        namespace="account" scope="employee" service="servicecc_tc_push_h">
+        <field desc="푸시 아이디" keyfield="true" length="32" name="push_id" type="varchar"/>
+        <field desc="push service provider code" keyfield="false"
+            length="32" name="push_svc_pvd_cd" type="varchar"/>
+        <field desc="디바이스 토큰" keyfield="false" length="255"
+            name="device_token" type="varchar"/>
+        <field desc="보낸사람 아이디" keyfield="false" length="15"
+            name="sender_user_id" type="varchar"/>
+        <field desc="보낸사람 이름" keyfield="false" length="20"
+            name="sender_user_nm" type="varchar"/>
+        <field desc="받는사람 아이디" keyfield="false" length="15"
+            name="rcv_user_id" type="varchar"/>
+        <field desc="받는사람 이름" keyfield="false" length="20"
+            name="rcv_user_nm" type="varchar"/>
+        <field desc="푸시 제목" keyfield="false" length="70"
+            name="push_title" type="varchar"/>
+        <field desc="푸시 메세지" keyfield="false" length="1024"
+            name="push_msg" type="varchar"/>
+        <field desc="수신 시각" keyfield="false" length="22" name="rcv_time" type="datetime"/>
+        <field desc="수신구분" keyfield="false" length="10" name="rcv_cd" type="varchar"/>
+        <field desc="수신설명" keyfield="false" length="255" name="rcv_desc" type="varchar"/>
+        <field desc="성공여부" keyfield="false" length="1" name="sucs_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 일정 첨부파일 테이블" name="cc_tc_schd_atch_s"
+        namespace="account" scope="employee" service="servicecc_tc_schd_atch_s">
+        <field desc="일정MID" keyfield="true" length="32" name="schd_mid" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="일정 첨부파일 아이디" keyfield="true" length="32"
+            name="schd_atch_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 일정 코멘트 정보 테이블"
+        name="cc_tc_schd_cmnt_s" namespace="account" scope="employee" service="servicecc_tc_schd_cmnt_s">
+        <field desc="일정MID" keyfield="true" length="32" name="schd_mid" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="코멘트 아이디" keyfield="true" length="32"
+            name="schd_cmnt_id" type="varchar"/>
+        <field desc="코멘트 내용" keyfield="false" length="200"
+            name="schd_cmnt_cntn" type="varchar"/>
+        <field desc="등록자ID" keyfield="false" length="15"
+            name="reg_user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 일정 기본정보 테이블" name="cc_tc_schd_m"
+        namespace="account" scope="employee" service="servicecc_tc_schd_m">
+        <field desc="일정MID" keyfield="true" length="32" name="schd_mid" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="일정 유형" keyfield="false" length="20"
+            name="schd_type" type="varchar"/>
+        <field desc="일정제목" keyfield="false" length="100"
+            name="schd_title" type="varchar"/>
+        <field desc="일정시작일" keyfield="false" length="8"
+            name="schd_strt_dt" type="varchar"/>
+        <field desc="일정시작시간" keyfield="false" length="4"
+            name="schd_strt_tm" type="varchar"/>
+        <field desc="일정종료일" keyfield="false" length="8"
+            name="schd_end_dt" type="varchar"/>
+        <field desc="일정 종료시간" keyfield="false" length="4"
+            name="schd_end_tm" type="varchar"/>
+        <field desc="일정 종일 여부" keyfield="false" length="1"
+            name="schd_all_day_yn" type="varchar"/>
+        <field desc="일정소유자ID" keyfield="false" length="15"
+            name="schd_ownr_id" type="varchar"/>
+        <field desc="일정설명" keyfield="false" length="1000"
+            name="schd_desc" type="varchar"/>
+        <field desc="일정원본MID" keyfield="false" length="32"
+            name="schd_orgn_mid" type="varchar"/>
+        <field desc="캘린더원본MID" keyfield="false" length="32"
+            name="clnd_orgn_mid" type="varchar"/>
+        <field desc="일정 반복주기 값" keyfield="false" length="8"
+            name="schd_rptt_val" type="varchar"/>
+        <field desc="일정 반복주기 코드" keyfield="false" length="20"
+            name="schd_rptt_cd" type="varchar"/>
+        <field desc="일정 반복부가정보 값" keyfield="false" length="8"
+            name="schd_rptt_adtn_val" type="varchar"/>
+        <field desc="일정 반복종료 코드" keyfield="false" length="20"
+            name="schd_rptt_end_cd" type="varchar"/>
+        <field desc="일정 반복종료 값" keyfield="false" length="8"
+            name="schd_rptt_end_val" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 일정 참석자 정보 테이블"
+        name="cc_tc_schd_prtcp_s" namespace="account" scope="employee" service="servicecc_tc_schd_prtcp_s">
+        <field desc="일정MID" keyfield="true" length="32" name="schd_mid" type="varchar"/>
+        <field desc="캘린더MID" keyfield="true" length="32" name="clnd_mid" type="varchar"/>
+        <field desc="일정 참석자ID" keyfield="true" length="15"
+            name="schd_prtcp_user_id" type="varchar"/>
+        <field desc="일정 참석 응답 코드" keyfield="false" length="20"
+            name="schd_prtcp_rspn_cd" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 사용자 부가정보 테이블" name="cc_tc_user_info_s"
+        namespace="account" scope="employee" service="servicecc_tc_user_info_s">
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="부가정보 코드" keyfield="true" length="15" name="info_cd" type="varchar"/>
+        <field desc="부가정보 이름" keyfield="false" length="255"
+            name="info_nm" type="varchar"/>
+        <field desc="부가정보 값" keyfield="false" length="255"
+            name="info_val" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="0"
+            name="sys_cr_dt" type="date"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="0"
+            name="sys_ud_dt" type="date"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 사용자 정보 테이블" name="cc_tc_user_m"
+        namespace="account" scope="employee" service="servicecc_tc_user_m">
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="사용자 이름" keyfield="false" length="20" name="user_nm" type="varchar"/>
+        <field desc="사용자 비밀번호" keyfield="false" length="50"
+            name="user_pwd" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="프로필 사진 아아이디" keyfield="false" length="32"
+            name="pic_id" type="varchar"/>
+        <field desc="사용자 설명" keyfield="false" length="255"
+            name="user_desc" type="varchar"/>
+        <field desc="인증키" keyfield="false" length="32" name="auth_key" type="varchar"/>
+        <field desc="사용자 이메일" keyfield="false" length="50"
+            name="user_email" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="최종 로그인 시간" keyfield="false" length="0"
+            name="last_login_dt" type="timestamp"/>
+        <field desc="사용자 영문명" keyfield="false" length="20"
+            name="user_en_nm" type="varchar"/>
+        <field desc="비밀번호 초기화 여부" keyfield="false" length="1"
+            name="init_pw_yn" type="varchar"/>
+        <field desc="비밀번호 변경일" keyfield="false" length="22"
+            name="change_pw_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="WAT 워크플로우 액티비티 참여자정보 테이블"
+        name="cc_tc_wrkf_actv_prtcp_s" namespace="account"
+        scope="employee" service="servicecc_tc_wrkf_actv_prtcp_s">
+        <field desc="" keyfield="true" length="32" name="wrkf_mid" type="varchar"/>
+        <field desc="액티비티 MID" keyfield="true" length="32"
+            name="actv_mid" type="varchar"/>
+        <field desc="액티비티 참여자 유형" keyfield="true" length="20"
+            name="actv_prtcp_type" type="varchar"/>
+        <field desc="액티비티 참여자ID" keyfield="true" length="32"
+            name="actv_prtcp_id" type="varchar"/>
+        <field desc="액티비티 참여자명" keyfield="false" length="50"
+            name="actv_prtcp_nm" type="varchar"/>
+        <field desc="액티비티 참여자 직위/직책" keyfield="false" length="50"
+            name="actv_prtcp_pstn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 워크플로우 액티비티정보 테이블"
+        name="cc_tc_wrkf_actv_s" namespace="account" scope="employee" service="servicecc_tc_wrkf_actv_s">
+        <field desc="" keyfield="true" length="32" name="wrkf_mid" type="varchar"/>
+        <field desc="액티비티 MID" keyfield="true" length="32"
+            name="actv_mid" type="varchar"/>
+        <field desc="액티비티 SEQ" keyfield="false" length="2"
+            name="actv_seq" type="int"/>
+        <field desc="액티비티 유형" keyfield="false" length="20"
+            name="actv_type" type="varchar"/>
+        <field desc="액티비티 명" keyfield="false" length="100"
+            name="actv_nm" type="varchar"/>
+        <field desc="액티비티 설명" keyfield="false" length="1000"
+            name="actv_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="actv_strt_dt" type="datetime"/>
+        <field desc="액티비티 종료일시" keyfield="false" length="22"
+            name="actv_end_dt" type="datetime"/>
+        <field desc="액티비티 상태 코드" keyfield="false" length="20"
+            name="actv_stts_cd" type="varchar"/>
+        <field desc="액티비티 완료여부" keyfield="false" length="1"
+            name="actv_cmpl_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 워크플로우 첨부파일정보 테이블"
+        name="cc_tc_wrkf_atch_s" namespace="account" scope="employee" service="servicecc_tc_wrkf_atch_s">
+        <field desc="" keyfield="true" length="32" name="wrkf_mid" type="varchar"/>
+        <field desc="워크플로우 첨부파일 아이디" keyfield="true" length="32"
+            name="wrkf_atch_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="11" name="dwnl_cnt" type="int"/>
+    </entity>
+    <entity build="yes" desc="WAT 워크플로우 코멘트정보 테이블"
+        name="cc_tc_wrkf_cmnt_s" namespace="account" scope="employee" service="servicecc_tc_wrkf_cmnt_s">
+        <field desc="" keyfield="true" length="32" name="wrkf_mid" type="varchar"/>
+        <field desc="워크플로우 코멘트 아이디" keyfield="true" length="32"
+            name="wrkf_cmnt_id" type="varchar"/>
+        <field desc="워크플로우 코멘트 내용" keyfield="false" length="200"
+            name="wrkf_cmnt_cntn" type="varchar"/>
+        <field desc="등록자ID" keyfield="false" length="15"
+            name="reg_user_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 워크플로우 문서정보 테이블"
+        name="cc_tc_wrkf_doc_s" namespace="account" scope="employee" service="servicecc_tc_wrkf_doc_s">
+        <field desc="" keyfield="true" length="32" name="wrkf_mid" type="varchar"/>
+        <field desc="양식MID" keyfield="true" length="32" name="form_mid" type="varchar"/>
+        <field desc="문서MID" keyfield="true" length="32" name="doc_mid" type="varchar"/>
+        <field desc="문서명" keyfield="false" length="100" name="doc_nm" type="varchar"/>
+        <field desc="문서 내용" keyfield="false" length="0" name="doc_cntn" type="text"/>
+        <field desc="문서 첨부파일 아이디" keyfield="false" length="32"
+            name="doc_atch_id" type="varchar"/>
+        <field desc="첨부수" keyfield="false" length="11" name="atch_cnt" type="int"/>
+        <field desc="댓글수" keyfield="false" length="11" name="cmnt_cnt" type="int"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="WAT 워크플로우 기본정보 테이블" name="cc_tc_wrkf_m"
+        namespace="account" scope="employee" service="servicecc_tc_wrkf_m">
+        <field desc="" keyfield="true" length="32" name="wrkf_mid" type="varchar"/>
+        <field desc="프로세스MID" keyfield="true" length="32"
+            name="prcs_mid" type="varchar"/>
+        <field desc="프로세스 카테고리ID" keyfield="false" length="32"
+            name="prcs_ctgr_id" type="varchar"/>
+        <field desc="프로세스 명" keyfield="false" length="100"
+            name="prcs_nm" type="varchar"/>
+        <field desc="프로세스 버전" keyfield="false" length="10"
+            name="prcs_ver" type="varchar"/>
+        <field desc="워크플로우 명" keyfield="false" length="100"
+            name="wrkf_nm" type="varchar"/>
+        <field desc="워크플로우 설명" keyfield="false" length="1000"
+            name="wrkf_desc" type="varchar"/>
+        <field desc="워크플로우 최초 사용자ID" keyfield="false" length="15"
+            name="wrkf_strt_user_id" type="varchar"/>
+        <field desc="워크플로우 종료일시" keyfield="false" length="15"
+            name="wrkf_end_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="22" name="wrkf_strt_dt" type="datetime"/>
+        <field desc="워크플로우 종료일시" keyfield="false" length="22"
+            name="wrkf_end_dt" type="datetime"/>
+        <field desc="워크플로우 상태 코드" keyfield="false" length="20"
+            name="wrkf_stts_cd" type="varchar"/>
+        <field desc="워크플로우 완료여부" keyfield="false" length="1"
+            name="wrkf_cmpl_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="경비 사용자별 내역 테이블" name="cc_tx_expns_user_in"
+        namespace="account" scope="employee" service="servicecc_tx_expns_user_in">
+        <field desc="key" keyfield="true" length="32"
+            name="expns_user_in_id" type="varchar"/>
+        <field desc="경비사용 방법 (법인카드,개인카드,현금,기타)" keyfield="false"
+            length="32" name="expns_how_cd" type="varchar"/>
+        <field desc="경비 지출자 아이디" keyfield="false" length="15"
+            name="expns_user_id" type="varchar"/>
+        <field desc="경비발생일시" keyfield="false" length="22" name="trns_dt" type="datetime"/>
+        <field desc="발생금액(합계)" keyfield="false" length="18"
+            name="trns_amt" type="int"/>
+        <field desc="비고" keyfield="false" length="50" name="memo" type="varchar"/>
+        <field desc="영수증 아이디" keyfield="false" length="32"
+            name="ref_doc_id" type="varchar"/>
+        <field desc="프로젝트 아이디" keyfield="false" length="32"
+            name="ref_prj_id" type="varchar"/>
+        <field desc="처리여부" keyfield="false" length="1" name="proc_yn" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="월별 급여계획 테이블" name="cc_tx_user_pay_s"
+        namespace="account" scope="employee" service="servicecc_tx_user_pay_s">
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="급여 지급년월" keyfield="true" length="6" name="pay_ym" type="varchar"/>
+        <field desc="급여 구분(급여,상여,수당)" keyfield="true" length="20"
+            name="pay_cd" type="varchar"/>
+        <field desc="급여액" keyfield="false" length="18" name="pay_amt" type="int"/>
+        <field desc="비고" keyfield="false" length="50" name="rem" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="VIEW" name="cc_vc_user_info"
+        namespace="account" scope="employee" service="servicecc_vc_user_info">
+        <field desc="" keyfield="false" length="255" name="base_go_time" type="varchar"/>
+        <field desc="" keyfield="false" length="255"
+            name="base_leave_time" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="card_cpny_no" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="contract_div" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="dept_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="emp_no" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="homeaddress" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="phoneno" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="rank" type="varchar"/>
+        <field desc="" keyfield="false" length="255"
+            name="rcv_out_work_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="science_no" type="varchar"/>
+        <field desc="" keyfield="false" length="255"
+            name="slack_member_id" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="start_page" type="varchar"/>
+        <field desc="" keyfield="false" length="255"
+            name="up_user_email" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="up_user_id" type="varchar"/>
+        <field desc="사용자 아이디" keyfield="false" length="15"
+            name="user_id" type="varchar"/>
+        <field desc="사용자 이름" keyfield="false" length="20" name="user_nm" type="varchar"/>
+        <field desc="사용자 영문명" keyfield="false" length="20"
+            name="user_en_nm" type="varchar"/>
+        <field desc="사용자 비밀번호" keyfield="false" length="50"
+            name="user_pwd" type="varchar"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="프로필 사진 아아이디" keyfield="false" length="32"
+            name="pic_id" type="varchar"/>
+        <field desc="사용자 설명" keyfield="false" length="255"
+            name="user_desc" type="varchar"/>
+        <field desc="인증키" keyfield="false" length="32" name="auth_key" type="varchar"/>
+        <field desc="사용자 이메일" keyfield="false" length="50"
+            name="user_email" type="varchar"/>
+        <field desc="최종 로그인 시간" keyfield="false" length="0"
+            name="last_login_dt" type="timestamp"/>
+        <field desc="비밀번호 초기화 여부" keyfield="false" length="1"
+            name="init_pw_yn" type="varchar"/>
+        <field desc="비밀번호 변경일" keyfield="false" length="22"
+            name="change_pw_dt" type="datetime"/>
+    </entity>
+</entities>

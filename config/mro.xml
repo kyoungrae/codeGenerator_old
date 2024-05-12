@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="물품신청 마스터" name="mro_tb_prd_app_m"
+        namespace="wat" scope="mro" service="MROApplicationMaster">
+        <field desc="신청아이디" keyfield="true" length="32" name="buy_id" type="VARCHAR2"/>
+        <field desc="신청자아이디" keyfield="false" length="32"
+            name="app_user_id" type="VARCHAR2"/>
+        <field desc="신청일" keyfield="false" length="7" name="app_dt" type="DATE"/>
+        <field desc="승인일" keyfield="false" length="7" name="appr_dt" type="DATE"/>
+        <field desc="검수일" keyfield="false" length="7" name="cnfm_dt" type="DATE"/>
+        <field desc="구매상태" keyfield="false" length="20"
+            name="buy_status_cd" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="물품 이력" name="mro_tb_prd_h" namespace="wat"
+        scope="mro" service="MROProductHistory">
+        <field desc="물품아이디" keyfield="true" length="32" name="prd_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="true" length="22" name="hist_seq" type="NUMBER"/>
+        <field desc="물품구분" keyfield="false" length="20"
+            name="prd_div_cd" type="VARCHAR2"/>
+        <field desc="품목명" keyfield="false" length="255" name="prd_nm" type="VARCHAR2"/>
+        <field desc="구성품/재질/명칭" keyfield="false" length="50"
+            name="prd_tp_desc" type="VARCHAR2"/>
+        <field desc="규격/치수/중량" keyfield="false" length="50"
+            name="prd_size_desc" type="VARCHAR2"/>
+        <field desc="제조사/기타" keyfield="false" length="50"
+            name="prd_sply_desc" type="VARCHAR2"/>
+        <field desc="사진" keyfield="false" length="32" name="prd_pic_id" type="VARCHAR2"/>
+        <field desc="용도/사용방법" keyfield="false" length="1024"
+            name="prd_use_desc" type="VARCHAR2"/>
+        <field desc="단위" keyfield="false" length="20" name="prd_size_cd" type="VARCHAR2"/>
+        <field desc="가격" keyfield="false" length="22" name="prd_price" type="NUMBER"/>
+        <field desc="비고" keyfield="false" length="1024" name="prd_memo" type="VARCHAR2"/>
+        <field desc="공급사" keyfield="false" length="15"
+            name="sply_cpny_id" type="VARCHAR2"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="물품 마스터" name="mro_tb_prd_m"
+        namespace="wat" scope="mro" service="MROProductMaster">
+        <field desc="물품아이디" keyfield="true" length="32" name="prd_id" type="VARCHAR2"/>
+        <field desc="물품구분" keyfield="false" length="20"
+            name="prd_div_cd" type="VARCHAR2"/>
+        <field desc="품목명" keyfield="false" length="255" name="prd_nm" type="VARCHAR2"/>
+        <field desc="구성품/재질/명칭" keyfield="false" length="255"
+            name="prd_tp_desc" type="VARCHAR2"/>
+        <field desc="규격/치수/중량" keyfield="false" length="255"
+            name="prd_size_desc" type="VARCHAR2"/>
+        <field desc="제조사/기타" keyfield="false" length="255"
+            name="prd_sply_desc" type="VARCHAR2"/>
+        <field desc="사진" keyfield="false" length="32" name="prd_pic_id" type="VARCHAR2"/>
+        <field desc="용도/사용방법" keyfield="false" length="1024"
+            name="prd_use_desc" type="VARCHAR2"/>
+        <field desc="단위" keyfield="false" length="20" name="prd_size_cd" type="VARCHAR2"/>
+        <field desc="가격" keyfield="false" length="22" name="prd_price" type="NUMBER"/>
+        <field desc="비고" keyfield="false" length="1024" name="prd_memo" type="VARCHAR2"/>
+        <field desc="공급사" keyfield="false" length="15"
+            name="sply_cpny_id" type="VARCHAR2"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="VARCHAR2"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+    <entity build="yes" desc="사용자 포인트" name="mro_tb_user_point_m"
+        namespace="wat" scope="mro" service="MROPoint">
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="VARCHAR2"/>
+        <field desc="대상년도" keyfield="true" length="4" name="target_yyyy" type="VARCHAR2"/>
+        <field desc="부여 포인트" keyfield="false" length="22"
+            name="base_point" type="NUMBER"/>
+        <field desc="사용 포인트" keyfield="false" length="22"
+            name="used_point" type="NUMBER"/>
+        <field desc="잔여 포인트" keyfield="false" length="22"
+            name="left_point" type="NUMBER"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="11"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR2"/>
+        <field desc=" " keyfield="false" length="11" name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc=" " keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR2"/>
+    </entity>
+</entities>

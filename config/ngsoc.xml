@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="스노트분류 full view" name="ngsoc_vs_classtype"
+        namespace="fsec" scope="detect" service="SnortType">
+        <field desc="대분류 아이디" keyfield="false" length="32" name="l_id" type="VARCHAR"></field>
+        <field desc="대분류명" keyfield="false" length="128" name="l_name" type="VARCHAR"/>
+        <field desc="대분류 코드" keyfield="false" length="3" name="l_code" type="VARCHAR"/>
+        <field desc="대분류 설명" keyfield="false" length="4000"
+            name="l_desc" type="CLOB"/>
+        <field desc="중분류 아이디" keyfield="false" length="32" name="m_id" type="VARCHAR"/>
+        <field desc=" " keyfield="false" length="128" name="m_name" type="VARCHAR"/>
+        <field desc="중분류명" keyfield="false" length="3" name="m_code" type="VARCHAR"/>
+        <field desc="중분류 코드" keyfield="false" length="4000"
+            name="m_desc" type="CLOB"/>
+        <field desc="스노트분류 아이디" keyfield="false" length="32" name="s_id" type="VARCHAR"/>
+        <field desc="스노트분류명" keyfield="false" length="128" name="s_name" type="VARCHAR"/>
+        <field desc="우선순위" keyfield="false" length="20"
+            name="s_priority" type="VARCHAR"/>
+        <field desc="스노트분류 설명" keyfield="false" length="4000"
+            name="s_desc" type="CLOB"/>
+    </entity>
+</entities>

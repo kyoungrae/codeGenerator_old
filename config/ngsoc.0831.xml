@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="센서 MASTER" name="ngsoc_tb_sensor_m"
+        namespace="fsec" scope="asset" service="Sensor">
+        <field desc="ID" keyfield="true" length="32" name="sensor_id" type="VARCHAR"/>
+        <field desc="참가기관ID" keyfield="false" length="32"
+            name="group_id" type="VARCHAR"/>
+        <field desc="유형" keyfield="false" length="20" name="sensor_type" type="VARCHAR"/>
+        <field desc="호스트명" keyfield="false" length="64" name="hostname" type="VARCHAR"/>
+        <field desc="IP" keyfield="false" length="20" name="sensor_ip" type="VARCHAR"/>
+        <field desc="자산" keyfield="false" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="VM여부" keyfield="false" length="1" name="vm_yn" type="VARCHAR"/>
+        <field desc="가상센서여부" keyfield="false" length="1"
+            name="vmsensor_yn" type="VARCHAR"/>
+        <field desc="네트워크유형" keyfield="false" length="20"
+            name="network_type" type="VARCHAR"/>
+        <field desc="설명" keyfield="false" length="4000"
+            name="sensor_desc" type="CLOB"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+</entities>

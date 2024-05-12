@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>csv</sourcetype>
+		<conjunction> </conjunction>
+		<filename>#ENTITY_NAME#.#Sourcetype#</filename>
+		<ext>csv</ext>
+		<path>./work/cvs/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2019.2.27</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+<![CDATA[ 
+1,1#begin#
+#field_name#,#field_desc##conjunction##end# 
+]]>
+	</source>
+</template>

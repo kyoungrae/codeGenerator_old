@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="entity">
+	<select id="SELECT.ENTITY" parameterClass="java.lang.String"
+		resultClass="java.util.HashMap">
+		select
+		a.table_name TABLE_NAME,
+		a.table_comment TABLE_COMMENTS,
+		b.column_name COLUMN_NAME,
+		b.column_comment COLUMN_COMMENTS,
+		b.data_type COLUMN_TYPE,
+		case
+		WHEN lower(b.DATA_TYPE) = 'varchar' THEN b.character_maximum_length
+		WHEN lower(b.DATA_TYPE) = 'int' THEN
+		substr(b.column_type,5,length(b.column_type)-5)
+		WHEN lower(b.DATA_TYPE) = 'datetime' THEN '22'
+		ELSE '0'
+		END AS COLUMN_LENGTH,
+		case WHEN b.COLUMN_KEY = 'PRI'
+		THEN 'true'
+		ELSE 'false'
+		END AS COLUMN_KEY,
+		b.IS_NULLABLE COLUMN_NULLABLE,
+		b.column_default COLUMN_DEFAULT
+		from
+		information_schema.tables a
+		,information_schema.columns b
+		where
+		a.table_catalog = b.table_catalog
+		and a.table_schema = b.table_schema
+		and a.table_name = b.table_name
+		and a.table_name like '$productcode$_%'		
+	</select>
+</sqlMap>
+
+<!-- 		select -->
+<!-- 		a.table_name TABLE_NAME, -->
+<!-- 		a.table_comment TABLE_COMMENTS, -->
+<!-- 		b.column_name COLUMN_NAME, -->
+<!-- 		b.column_comment COLUMN_COMMENTS, -->
+<!-- 		b.data_type COLUMN_TYPE, -->
+<!-- 		case -->
+<!-- 		WHEN lower(b.DATA_TYPE) = 'varchar' THEN b.character_maximum_length -->
+<!-- 		WHEN lower(b.DATA_TYPE) = 'int' THEN -->
+<!-- 		substr(b.column_type,5,length(b.column_type)-5) -->
+<!-- 		WHEN lower(b.DATA_TYPE) = 'datetime' THEN '22'  -->
+<!-- 		ELSE '0' -->
+<!-- 		END AS COLUMN_LENGTH, -->
+<!-- 		case WHEN b.COLUMN_KEY = 'PRI' -->
+<!-- 		THEN 'true' -->
+<!-- 		ELSE 'false' -->
+<!-- 		END AS COLUMN_KEY -->
+<!-- 		from -->
+<!-- 		information_schema.tables a -->
+<!-- 		,information_schema.columns b -->
+<!-- 		where -->
+<!-- 		a.table_catalog = b.table_catalog -->
+<!-- 		and a.table_schema = b.table_schema -->
+<!-- 		and a.table_name = b.table_name -->
+<!-- 		and a.table_name like '$productcode$_%' -->

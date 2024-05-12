@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="entity">
+	<select id="SELECT.ENTITY" parameterClass="java.lang.String"
+		resultClass="java.util.HashMap">
+		select 
+		TABLE_NAME,
+		TABLE_COMMENTS,
+		COLUMN_NAME,
+		COLUMN_COMMENTS,
+		COLUMN_TYPE,
+		COLUMN_LENGTH,
+		COLUMN_KEY,
+        COLUMN_NULLABLE,
+        COLUMN_DEFAULT
+from (
+select
+		isc.table_name TABLE_NAME,
+		tc.table_comment TABLE_COMMENTS ,
+		isc.column_name COLUMN_NAME,
+		cc.column_comment COLUMN_COMMENTS,
+		ISC.UDT_NAME COLUMN_TYPE,
+		(
+		case
+		ISC.UDT_NAME
+		when 'varchar' then character_maximum_length
+		when 'numeric' then
+		numeric_precision
+		when 'timestamp' then datetime_precision
+		else 0
+		end ) column_length,
+	(case coalesce(ICC.constraint_name, 'false')
+	when 'false' then 'false'
+	else 'true'
+    end ) COLUMN_KEY,
+	(case
+		ISC.is_nullable
+		when 'YES' then 'Y'
+		when 'NO' then 'N'
+		else 'N'
+	end) COLUMN_NULLABLE,
+		ISC.column_default COLUMN_DEFAULT
+from
+		INFORMATION_SCHEMA.COLUMNS ISC
+left join (
+	select
+		PS.RELNAME as TABLE_NAME
+		,
+		PA.ATTNAME as COLUMN_NAME
+		,
+		PD.DESCRIPTION as COLUMN_COMMENT
+	from
+		PG_STAT_USER_TABLES PS
+		,
+		PG_DESCRIPTION PD
+		,
+		PG_ATTRIBUTE PA
+	where
+		PS.RELID = PD.OBJOID
+		and PD.OBJSUBID != 0
+and PD.OBJOID =
+		PA.ATTRELID
+and PD.OBJSUBID = PA.ATTNUM
+order by
+		PS.RELNAME,
+		PD.OBJSUBID) cc
+		on
+		ISC.TABLE_NAME = cc.TABLE_NAME
+	and ISC.column_name = cc.COLUMN_NAME
+right join (
+	select
+		PS.RELNAME as TABLE_NAME
+		,
+		PD.DESCRIPTION as TABLE_COMMENT
+	from
+		PG_STAT_USER_TABLES PS,
+		PG_DESCRIPTION PD
+	where
+		PS.RELID = PD.OBJOID
+		and PD.OBJSUBID = 0) tc
+		on
+		ISC.TABLE_NAME = tc.TABLE_NAME
+left join INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ICC on
+		ICC.table_name = ISC.table_name
+	and ICC.column_name = ISC.column_name
+order by
+		table_name,
+		column_key,
+		column_name
+) tt
+where table_name like #productcode#|| '%'
+	</select>
+</sqlMap>
+
+<!-- select -->
+<!-- cmt.table_name table_name, -->
+<!-- tmt.comments table_comments, -->
+<!-- cmt.column_name column_name, -->
+<!-- cmt.comments column_comments, -->
+<!-- cols.data_type column_type, -->
+<!-- cols.data_length column_length, -->
+<!-- decode(nvl(ind.index_name,'false'),'false','false','true') column_key -->
+<!-- from -->
+<!-- user_col_comments cmt, user_tab_columns cols, user_ind_columns ind, 
+	user_tab_comments -->
+<!-- tmt -->
+<!-- where cmt.table_name like #productcode#||'_'||'%' -->
+<!-- and cmt.table_name = tmt.table_name(+) -->
+<!-- and cmt.table_name = cols.table_name(+) -->
+<!-- and cmt.table_name = ind.table_name(+) -->
+<!-- and cmt.column_name = cols.column_name(+) -->
+<!-- and cmt.column_name = ind.column_name(+) -->
+<!-- order by cmt.table_name,cols.column_id,cmt.column_name -->
+		
+		

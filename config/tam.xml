@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="tam_tb_overtime" namespace="tam"
+        scope="main" service="OverTime">
+        <field desc="" keyfield="true" length="32" name="attend_id" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="overtime_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="regst_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="32" name="from_dt" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="to_dt" type="varchar"/>
+        <field desc="" keyfield="false" length="200" name="overtime_rmk" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="admin_id" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="status" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="tam_tb_vacday_apply"
+        namespace="tam" scope="main" service="Vacation">
+        <field desc="" keyfield="true" length="32" name="vctn_attend_id" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="vctn_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="vctn_regst_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20" name="vctn_cd" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="vctn_from_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="vctn_to_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="200" name="vctn_rmk" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="admin_id" type="varchar"/>
+        <field desc="" keyfield="false" length="1" name="status" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="tam_tb_vacday_std" namespace="tam"
+        scope="main" service="VacationStandard">
+        <field desc="" keyfield="false" length="20" name="yy" type="varchar"/>
+        <field desc="" keyfield="true" length="30" name="user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="year_vctn_days" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="add_days" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="ocrns_day" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="mod_day" type="varchar"/>
+        <field desc="" keyfield="false" length="20" name="used_day" type="varchar"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+    </entity>
+    <entity build="yes" desc="" name="tam_tc_attendance" namespace="tam"
+        scope="" service="servicetam_tc_attendance">
+        <field desc="" keyfield="true" length="32" name="attend_id" type="varchar"/>
+        <field desc="" keyfield="false" length="32" name="user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="work_go_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="32"
+            name="work_go_status" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="work_leave_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="32"
+            name="work_leave_status" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="regst_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="50" name="work_ref0" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref1" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref2" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref3" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref4" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref5" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref6" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref7" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref8" type="varchar"/>
+        <field desc="" keyfield="false" length="50" name="work_ref9" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="" name="tam_tc_loc_m" namespace="tam"
+        scope="" service="servicetam_tc_loc_m">
+        <field desc="" keyfield="true" length="15" name="cpny_id" type="varchar"/>
+        <field desc="" keyfield="true" length="15" name="loc_id" type="varchar"/>
+        <field desc="" keyfield="false" length="0" name="loc_lat" type="double"/>
+        <field desc="" keyfield="false" length="0" name="loc_lng" type="double"/>
+        <field desc="" keyfield="false" length="50" name="loc_addr" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="loc_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="1" name="use_yn" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="VIEW" name="tam_tc_user_info_s"
+        namespace="tam" scope="" service="servicetam_tc_user_info_s">
+        <field desc="사용자 아이디" keyfield="false" length="15"
+            name="user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="0" name="group_id" type="char"/>
+        <field desc="" keyfield="false" length="255" name="base_go_time" type="varchar"/>
+        <field desc="" keyfield="false" length="255"
+            name="base_leave_time" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="0"
+            name="sys_cr_dt" type="date"/>
+        <field desc="" keyfield="false" length="10"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="0"
+            name="sys_ud_dt" type="date"/>
+        <field desc="" keyfield="false" length="10"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

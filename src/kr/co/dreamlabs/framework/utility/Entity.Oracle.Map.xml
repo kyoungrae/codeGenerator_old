@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="entity">
+	<select id="SELECT.ENTITY" parameterClass="java.lang.String"
+		resultClass="java.util.HashMap">
+		select
+		cmt.table_name table_name,
+		tmt.comments table_comments,
+		cmt.column_name column_name,
+		cmt.comments column_comments,
+		cols.data_type column_type,
+		cols.data_length column_length,
+		decode(nvl(ind.index_name,'false'),'false','false','true') column_key,
+        cols.nullable column_nullable,
+        cols.data_default column_default
+		from
+		user_col_comments cmt, user_tab_columns cols, user_ind_columns ind, user_tab_comments
+		tmt
+		where cmt.table_name like #productcode#||'%'
+		and cmt.table_name = tmt.table_name(+)
+		and cmt.table_name = cols.table_name(+)
+		and cmt.table_name = ind.table_name(+)
+		and cmt.column_name = cols.column_name(+)
+		and cmt.column_name = ind.column_name(+)
+		order by cmt.table_name,cols.column_id,cmt.column_name
+	</select>
+</sqlMap>
+
+<!-- 		select -->
+<!-- 		cmt.table_name table_name, -->
+<!-- 		tmt.comments table_comments, -->
+<!-- 		cmt.column_name column_name, -->
+<!-- 		cmt.comments column_comments, -->
+<!-- 		cols.data_type column_type, -->
+<!-- 		cols.data_length column_length, -->
+<!-- 		decode(nvl(ind.index_name,'false'),'false','false','true') column_key -->
+<!-- 		from -->
+<!-- 		user_col_comments cmt, user_tab_columns cols, user_ind_columns ind, user_tab_comments -->
+<!-- 		tmt -->
+<!-- 		where cmt.table_name like #productcode#||'_'||'%' -->
+<!-- 		and cmt.table_name = tmt.table_name(+) -->
+<!-- 		and cmt.table_name = cols.table_name(+) -->
+<!-- 		and cmt.table_name = ind.table_name(+) -->
+<!-- 		and cmt.column_name = cols.column_name(+) -->
+<!-- 		and cmt.column_name = ind.column_name(+) -->
+<!-- 		order by cmt.table_name,cols.column_id,cmt.column_name -->
+		
+		

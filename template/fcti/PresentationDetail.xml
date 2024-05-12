@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>html</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#Detail</filename>
+		<ext>jsp</ext>
+		<path>./work/genSrc/WebContents/www/fcti/#scope#/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (jhw9790@dreamlabs.co.kr)</author>
+		<cdate>2021.07.30</cdate>
+		<pakage>kr.co.dreamlabs.www</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<style type="text/css">
+</style>
+<div class="html#Service#Detail">
+	<!-- main section -->
+	<section class="panel mainPanel dl-col-all-12">
+		<!-- header -->
+		<header class="panel-heading menu-panel-heading">
+			<h2 class="panel-title menu-panel-title">MENUTITLE</h2>
+			<div class="panel-actions"></div>
+		</header>
+		<!-- //header -->
+		<!-- body -->
+		<div class="panel-body">
+		
+			<div class="dl-tb-input-section">			
+				#begin#
+				<div class="dl-col-all-6">	
+					<div class="dl-col-all-3 dl-box-item-col1">
+						<span class="disp-label">#scope#.#service#.#field_name#</span>
+					</div>
+					<div class="dl-col-all-9 dl-box-item-col2">
+						<label class="dl-box-item-label" id="label_#field_name#"></label>
+					</div>
+				</div>#end#	
+			</div>
+		</div> <!-- // panel-body -->
+		
+		<!-- footer -->
+		<footer class="panel-footer text-right dl-bottom-btn-container">			
+			<button class="btn btn-sm btn-success close-Detail_Popup-click"><i class="fa fa-minus"></i><span class="disp-label">BTN_LIST</span></button>
+		</footer>
+		<!-- //footer -->
+		
+	</section>
+	<!-- //main section -->
+	
+</div><!-- // page -->
+
+<script type="text/javascript">
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// variables
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+var PRGMID = "html#Service#Detail";	//page id 
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// init functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+/**
+ * main onload
+ */
+#begin# 
+var param#key_fields#val = null;#end#
+
+WatDocument.onload = function() {
+
+	#begin# 
+	param#key_fields#val = WatTop.getSubMenuParameter("#key_fields#");#end#
+
+/*
+	#begin# 
+	WatJs.Common.setControlValue("#key_fields#", param#key_fields#val); 
+	WatJs.Common.setControlValue("label_#key_fields#", param#key_fields#val);#end#
+*/
+	
+	initEvts();
+	initDefaultValue();
+
+	WatJs.Common.setTimeout(0.5,function(){
+		window.onresize();
+		search#Service#(#begin# 
+		param#key_fields#val#conjunction##end#);
+	});
+	
+};
+
+/**
+ * datepicker&input&select init setting
+ */
+function initDefaultValue(){
+}
+
+/**
+ * init event
+ */
+function initEvts() {
+	
+	// popup close button click event - detail close
+	WatJs.Common.setEvt(PRGMID,"close-Detail_Popup-click","click",function(evt){
+		WatTop.goSubMenu("#service#");
+		//history.go(-1);
+		//WatTop.reload();
+	});
+}
+
+function search#Service#(#begin# 
+	param#key_fields#val#conjunction##end#) {
+
+	try {
+
+		//parameter setting
+		var schParm = {
+			CURPAGE : 1,
+			RCOUNT : 1,#begin# 
+			#key_fields# : param#key_fields#val#conjunction##end#
+		};
+
+
+		// service call
+		var search#Service#Service = new WatJs.Service();
+		search#Service#Service.type = "json";
+		search#Service#Service.method = "GET";
+		search#Service#Service.url = WatJs.System.getContextRoot() + "/#namespace#/#scope#/#service#.dpg?command=search#Service#Page";
+		search#Service#Service.parameters = schParm;
+
+		search#Service#Service.callback = function(data) {
+			if (typeof data == "undefined" || data == null || data == "") data = [];
+			if (data.length < 1) WatJs.Common.showMessage("",WatJs.Message.NoData);
+			var listSize = data.length;
+			if (0 < listSize) {
+				for (var i = 0; i < listSize; i++) {
+					var listData = data[i];
+					#begin#
+					if(!listData["#key_fields#"])continue;#end#
+					#begin# 
+					$("#label_#field_name#").text(listData["#field_name#"]); #end#
+				}
+			}
+			WatTop.ProgressBarDone();				// 종료
+		};
+		search#Service#Service.execute();
+		WatTop.ProgressBarStart();					// 시작
+		WatTop.ProgressBarSet( 30 );				// 진행상태 30% 설정
+	} catch (e) {
+		WatTop.ProgressBarDone();					// 종료
+		WatJs.Script.exception(PRGMID + " search#Service#Service", e);
+	}
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// popup functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// validation functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// request functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// other functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=	
+//search option functions	
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+</script>
+	]]>
+	</source>
+</template>

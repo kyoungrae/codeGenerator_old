@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>ServiceImpl</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/service/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2015.7.28</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#.service</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+/**
+ *  ++ dreamlabs Product ++
+ */
+package #pakage#;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import kr.co.dreamlabs.#namespace#.#scope#.bean.*;
+import kr.co.dreamlabs.#namespace#.#scope#.handler.#Service#Handler;
+import kr.co.dreamlabs.framework.annotation.DlService;
+import kr.co.dreamlabs.framework.common.database.util.DataList;
+import kr.co.dreamlabs.framework.layer.bean.DataBean;
+import kr.co.dreamlabs.framework.layer.service.spring.Service;
+
+
+ /**
+ * <pre>
+ * #Service##sourcetype#
+ * </pre>
+ *
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+@DlService
+public class #Service##Sourcetype# extends Service implements #Service#Service {
+
+	@Resource 
+	#Service#Handler handler;
+	
+	/**
+	 * <pre>
+	 * #Service##Sourcetype# retrieve#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean
+	 * @return List
+	 * @throws #service#ServiceException #Service##Sourcetype#
+	 */
+	public List retrieve#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		List list = null;
+		try{
+			list = handler.select(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return list;
+	}
+	
+	/**
+	 * <pre>
+	 * #Service##Sourcetype# retrieve#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#ParmBean
+	 * @return DataList
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public DataList retrieve#Service#(#Service#ParmBean bean) throws #Service#ServiceException{
+		DataList list = null;
+		try{
+			list = new DataList(handler.select(bean));
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return list;
+	}
+			
+	/**
+	 * <pre>
+	 * #Service##Sourcetype# create#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int create#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		/* -- key guid generator --
+		kr.co.dreamlabs.framework.common.guid.GuidGenerator g = new kr.co.dreamlabs.framework.common.guid.GuidGenerator();
+	    String getId = g.getGUID();
+		#begin#
+			bean.set#Key_fields#(getId);#end#
+		*/
+		
+		
+		if (!super.isExistsKeyValue(bean)) {
+			throw new #Service#ServiceException(#Service#ServiceException.PARAMETER_ERROR0);
+		}
+			
+		int rtn = -1;
+		try{
+			rtn = handler.insert(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+	
+	
+	/**
+	 * <pre>
+	 * #Service##Sourcetype# modify#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int modify#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		if (!super.isExistsKeyValue(bean)) {
+			throw new #Service#ServiceException(#Service#ServiceException.PARAMETER_ERROR0);
+		}	
+
+		int rtn = -1;
+		try{
+			rtn = handler.update(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+	
+	/**
+	 * <pre>
+	 * #Service##Sourcetype# remove#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int remove#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		int rtn = -1;
+		try{
+		 	rtn = handler.delete(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+	
+	/**
+	 * <pre>
+	 * #Service##Sourcetype# drop#Service#
+	 * </pre>
+	 *
+	 * @param beans #Service#ArrayBean
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int drop#Service#(#Service#ArrayBean beans) throws #Service#ServiceException{
+		int rtn = -1;
+
+		try{
+        	DataBean[] bean = beans.getBean();
+        	for(int i=0;i<bean.length;i++){
+        		rtn = remove#Service#(((#Service#Bean)bean[i]));
+        	}		 	
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+}
+	]]>
+	</source>
+</template>
+ 

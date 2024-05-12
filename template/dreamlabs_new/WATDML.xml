@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<gen-unit>entity</gen-unit><!-- <gen-unit>field</gen-unit> -->
+		<sourcetype>DML</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>insert.menu</filename>
+		<ext>sql</ext>
+		<path>./work/genSrc/dml/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2021.4.30</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+		
+	insert into CC_TC_PRGM_M (PRJ_DIV_CD,PRGM_ID ,UP_PRGM_ID,SORT_SEQ ,PRGM_NM ,PRGM_URL ,PRGM_LV ,PRGM_DESC ,ICON_CLASS ,USE_YN ,SYS_CR_DT ,SYS_CR_USER_ID  ,SYS_UD_DT ,SYS_UD_USER_ID)
+	values                   ('standard','#entity_name#','#scope#',0,'#entity_desc#','/www/#scope#/#Service#.jsp',2,'generated #entity_desc#','el el-search','1',now(),'gen-data',now(),'gen-data');	
+	]]>
+	</source>
+</template>

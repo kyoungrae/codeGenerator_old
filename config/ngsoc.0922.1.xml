@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="서비스" name="service" namespace="fsec"
+        scope="asset" service="Serviz">
+        <field desc="ID" keyfield="true" length="32" name="id" type="VARCHAR"/>
+        <field desc="자산" keyfield="false" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="포트" keyfield="false" length="22" name="port" type="NUMBER"/>
+        <field desc="프로토콜" keyfield="false" length="128" name="proto" type="VARCHAR"/>
+        <field desc="배너" keyfield="false" length="512" name="banner" type="VARCHAR"/>
+        <field desc="최초식별된일시" keyfield="false" length="8"
+            name="first_seen_at" type="DATE"/>
+        <field desc="최종식별된일시" keyfield="false" length="8"
+            name="last_seen_at" type="DATE"/>
+        <field desc="헬스체크유형" keyfield="false" length="20"
+            name="healthcheck_ntype" type="VARCHAR"/>
+    </entity>
+</entities>

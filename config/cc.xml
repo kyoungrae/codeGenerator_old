@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="월별 급여계획 테이블" name="cc_tx_user_pay_s"
+        namespace="cc" scope="" service="servicecc_tx_user_pay_s">
+        <field desc="사용자 아이디" keyfield="true" length="15" name="user_id" type="varchar"/>
+        <field desc="급여 지급년월" keyfield="true" length="6" name="pay_ym" type="varchar"/>
+        <field desc="급여 구분(급여,상여,수당)" keyfield="true" length="20"
+            name="pay_cd" type="varchar"/>
+        <field desc="급여액" keyfield="false" length="18" name="pay_amt" type="int"/>
+        <field desc="비고" keyfield="false" length="50" name="rem" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

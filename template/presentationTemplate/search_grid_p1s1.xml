@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>html</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#</filename>
+		<ext>jsp</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/WebContents/www/#scope#/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (dldrjsdn77@dreamlabs.co.kr)</author>
+		<cdate>2021.01.25</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<style type="text/css">
+</style>
+<div class="html#Service#">
+	<!-- main section -->
+	<section class="panel mainPanel dl-col-all-12">
+		<!-- header -->
+		<header class="panel-heading menu-panel-heading">
+			<h2 class="panel-title menu-panel-title">MENUTITLE</h2>
+			<div class="panel-actions"></div>
+		</header>
+		<!-- //header -->
+		<!-- body -->
+		<div class="panel-body">
+			<div class="col-md-12" data-plugin-scrollable >
+				<!-- search area -->
+				<div class="dl-search-section">
+					<div class="search-container dl-col-all-12">
+						<div class="form-horizontal dl-period-container dl-float-left">
+							<div class="search-form-input dl-period-area">
+								<div class="dl-period-input-area input-daterange input-group daterange-border-left dl-float-end" data-plugin-datepicker>
+									<input type="text" class="form-control dl-float-left" id="date_from" name="date_from" placeholder="WatJs.Message.SetStartDate" autocomplete="off"/>
+									<span class="input-group-addon dl-float-left">~</span>
+									<input type="text" class="form-control dl-float-left" id="date_to" name="date_to" placeholder="WatJs.Message.SetEndDate" autocomplete="off"/>
+								</div>
+								<div class="dl-period-search-btn-small">
+									<span title="기간간편설정 열기"><i class="el el-cog"></i></span>
+								</div>
+								<div class="dl-period-search-btn">
+									<div class="dl-period-search-title">
+										<span style="color:#f75656;font-weight:500;">*</span> <span class="disp-label">cc.simple_set</span>
+										<span class="closeBtn" title="기간간편설정 닫기">X</span>
+									</div>
+									<div class="btn-group flex-wrap">
+										<button type="button" class="btn btn-default btn-period" value="today"><span class="disp-label">period.today</span></button>
+										<button type="button" class="btn btn-default btn-period" value="thisweek"><span class="disp-label">period.thisweek</span></button>
+										<button type="button" class="btn btn-default btn-period" value="thismonth"><span class="disp-label">period.thismonth</span></button>
+										<button type="button" class="btn btn-default btn-period" value="thisyear"><span class="disp-label">period.thisyear</span></button>
+									</div>
+									<div class="hr dl-col-all-12" style="margin:0;"></div>
+									<div class="dl-totPeriod-area dl-float-end">
+										<input type="checkbox" id="totPeriod"/>
+										<label for="totPeriod"><span class="disp-label">period.totPeriod</span></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dl-search1-container dl-float-left">
+							<div class="input-group form-horizontal search-form-input dl-search-input-area">
+								<input id="#service#_Desc" type="text" class="form-control" placeholder="WatJs.Message.InputSearchWord" autocomplete="off"/>
+							</div>
+						</div>
+						<div class="dl-btnp1s1-container dl-float-left">
+							<div class="search-btn-area">
+								<button id="resetBtn" class="default-click"><i class="fa fa-repeat"></i></button>
+								<button id="seaBtn" class="btn btn-sm btn-primary search-click"><i class="fa fa-search"></i></button>
+							</div>
+						</div>
+					</div>
+					<div class="hr dl-col-all-12"></div>
+				</div>
+				<!-- grid list count, search button-->
+				<div class="dl-info-area">
+					<div class="dl-showNo dl-float-left">
+						<select id="showNoGrid"></select>
+					</div>
+					<div class="totalLabel dl-float-left">
+						<span class="disp-label">LIST_TOTAL_COUNT_TOT</span>  <b id="#service#_totalCount">0</b><span class="disp-label">LIST_TOTAL_COUNT_CNT</span>
+					</div>
+				</div>
+				<!-- //grid list count, search button-->
+				
+				<!-- grid & paging -->
+				<div class="grid-area">
+					<div class="grid-container mobile-grid-form">
+						<div id="#service#_Grid"></div>
+					</div>
+					<div id="#service#_Paging" class="crud_Paging"></div>
+				</div>
+			</div>
+		</div> <!-- // panel-body -->
+		
+		<!-- footer -->
+		<footer class="panel-footer text-right dl-bottom-btn-container">			
+			<button class="btn btn-sm btn-success popup-View_Popup-click"><i class="el el-view-mode"></i><span class="disp-label">BTN_DETAIL</span></button>
+			<button class="btn btn-sm btn-success popup-Add_Popup-click"><i class="fa fa-plus"></i> <span class="disp-label">BTN_INSERT</span></button>
+			<button class="btn btn-sm btn-success popup-Modify_Popup-click"><i class="el el-edit"></i><span class="disp-label">BTN_MODIFY</span></button>
+			<button class="btn btn-sm btn-success popup-Drop_Popup-click"><i class="fa fa-minus"></i><span class="disp-label">BTN_REMOVE</span></button>
+			<button class="btn btn-sm btn-success excel-click"><i class="fa fa-download"></i><span class="disp-label">BTN_EXCEL</span></button>
+		</footer>
+		<!-- //footer -->
+		
+	</section>
+	<!-- //main section -->
+	
+	
+	<!-- ========================= popup ========================= -->
+	<!-- view popup -->
+	<div id="View_Popup" class="modal-block modal-block-primary mfp-hide">
+		<section class="panel">
+			<header class="panel-heading menu-panel-heading">
+			<h2 class="panel-title menu-panel-title"><i class="fa fa-caret-right"></i><span class="disp-label">DETAIL</span></h2>		
+			</header>
+			
+			<div class="panel-body">
+				<div class="dl-col-all-12 dl-box-container">
+#begin#
+					<div class ="dl-col-all-12">
+						<div class="dl-col-all-3 dl-box-item-col1">
+							<label class="dl-box-item-label"><span class="disp-label">#scope#.#service#.#field_name#</span></label>
+						</div>
+						<div class="dl-col-all-9 dl-box-item-col2">
+							<label class="dl-box-item-label" id="view_#field_name#"></label>
+						</div>
+					</div>#end#
+				</div>
+			</div>
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="dl-col-all-12 text-right">			
+						<button class="btn btn-default modal-dismiss close-popup-click"><i class="fa fa-minus"></i><span class="disp-label">BTN_CLOSE</span></button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<!-- //view popup -->
+	
+	<!-- add popup -->
+	<div id="Add_Popup" class="modal-block modal-block-primary mfp-hide">
+		<section class="panel">
+			<header class="panel-heading menu-panel-heading">
+			<h2 class="panel-title menu-panel-title"><i class="fa fa-caret-right"></i><span class="disp-label">REGISTRATION</span></h2>
+			</header>
+			
+			<div class="panel-body">
+				<form id="Add_PopupForm" class="form-horizontal mb-lg" novalidate="novalidate">
+<!--					필수값 -->
+<!-- 					<div class="form-group mt-lg has-warning"> -->
+<!-- 						<label class="col-sm-3 control-label"> -->
+<!-- 							<span class="disp-label">sample.crud_id</span><span class="required">*</span> -->
+<!-- 						</label> -->
+<!-- 						<div class="col-sm-9"> -->
+<!-- 							<input class="form-control" id="add_crud_id" type="text" name="crud_id" dataField="crud_id" data-plugin-maxlength maxlength="32" placeholder="ex)f2032ed79a33" autocomplete="off" required/> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+
+#begin#				
+					<div class="form-group mt-lg">
+						<label class="col-sm-3 control-label">
+							<span class="disp-label">#scope#.#service#.#field_name#</span>
+						</label>
+						<div class="col-sm-9">
+							<input class="form-control" id="add_#field_name#" type="text" name="#field_name#" dataField="#field_name#" data-plugin-maxlength maxlength="#length#" placeholder="ex)f2032ed79a33" autocomplete="off"/>
+						</div>
+					</div>#end#
+				</form>
+			</div>
+			
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button class="btn btn-primary modal-confirm save-Add_Popup-click"><i class="fa fa-plus"></i><span class="disp-label">BTN_INSERT</span></button>
+						<button class="btn btn-default modal-dismiss close-Add_Popup-click"><i class="fa fa-remove"></i><span class="disp-label">BTN_CANCEL</span></button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<!-- //add popup -->
+	
+	<!-- modify popup -->
+	<div id="Modify_Popup" class="modal-block modal-block-primary mfp-hide">
+		<section class="panel">
+			<header class="panel-heading menu-panel-heading">
+			<h2 class="panel-title menu-panel-title"><i class="fa fa-caret-right"></i><span class="disp-label">MODIFY</span></h2>
+			</header>
+			
+			<div class="panel-body">
+				<form id="Modify_PopupForm" class="form-horizontal mb-lg" novalidate="novalidate">
+<!-- 				필수값 -->
+<!-- 				<div class="form-group mt-lg has-warning"> -->
+<!-- 					<label class="col-sm-3 control-label"> -->
+<!-- 						<span class="disp-label">sample.crud_id</span><span class="required">*</span> -->
+<!-- 					</label> -->
+<!-- 					<div class="col-sm-9"> -->
+<!-- 						<input class="form-control" id="modify_crud_id" type="text" name="crud_id" dataField="crud_id" data-plugin-maxlength maxlength="#length#" placeholder="ex)f2032ed79a33" autocomplete="off" required/> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+#begin#				
+					<div class="form-group mt-lg">
+						<label class="col-sm-3 control-label">
+							<span class="disp-label">#scope#.#service#.#field_name#</span>
+						</label>
+						<div class="col-sm-9">
+							<input class="form-control" id="modify_#field_name#" type="text" name="#field_name#" dataField="#field_name#" data-plugin-maxlength maxlength="#length#" placeholder="ex)f2032ed79a33" autocomplete="off"/>
+						</div>
+					</div>#end#
+				</form>
+			</div>
+			
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button class="btn btn-primary modal-confirm save-Modify_Popup-click"><i class="el el-edit"></i><span class="disp-label">BTN_MODIFY</span></button>
+						<button class="btn btn-default modal-dismiss close-Modify_Popup-click"><i class="fa fa-remove"></i><span class="disp-label">BTN_CANCEL</span></button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<!-- //modify popup -->
+	
+	<!-- drop popup -->
+	<div id="Drop_Popup" class="modal-block modal-block-primary mfp-hide">
+		<section class="panel">
+			<header class="panel-heading menu-panel-heading">
+				<h2 class="panel-title menu-panel-title"><i class="fa fa-caret-right"></i><span class="disp-label">ALERT_DELETE</span></h2>
+			</header>
+			
+			<div class="panel-body">
+				<div class="dl-col-all-12 dl-box-container">
+#begin#
+					<div class ="dl-col-all-12">
+						<div class="dl-col-all-3 dl-box-item-col1">
+							<label class="dl-box-item-label"><span class="disp-label">#scope#.#service#.#field_name#</span></label>
+						</div>
+						<div class="dl-col-all-9 dl-box-item-col2">
+							<label class="dl-box-item-label" id="drop_#field_name#"></label>
+						</div>
+					</div>#end#
+				</div>
+				<form id="Drop_PopupForm" class="form-horizontal" novalidate="novalidate">
+						<div class="form-group mt-lg text-center">
+							<label class="control-label confirm-label disp-label">_MESSAGE_CONFIRM_ALRET</label>
+#begin#
+							<input class="form-control" id="drop_keyword_#key_fields#" type="hidden" name="#key_fields#" dataField="#key_fields#" required/>	#end#
+						</div>
+					</form>
+					
+			</div>
+			
+			<footer class="panel-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button class="btn btn-primary modal-confirm save-Drop_Popup-click"><i class="fa fa-trash"></i><span class="disp-label">BTN_REMOVE</span></button>
+						<button class="btn btn-default modal-dismiss close-Drop_Popup-click"><i class="fa fa-remove"></i><span class="disp-label">BTN_CANCEL</span></button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<!-- //========================= popup ========================= -->
+	
+</div><!-- // page -->
+
+<script type="text/javascript">
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// variables
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+var PRGMID = "html#Service#";	//page id 
+
+//grid variable
+var __ROWCOUNT_PER_PAGE__ = 10;  //grid rowcount
+var #service#_Grid = null; //grid instance
+var #service#_Paging = null; //paging instance
+
+var updateSupportCodeLock = false; //update lock 
+	
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// init functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+/**
+ * main onload
+ */
+WatDocument.onload = function() {
+
+	WatTop.documentDivResize( #service#_resize );
+
+	initEvts();
+	initGrid();
+	initSelect();
+	initDefaultValue();
+	periodBtnSet();
+	refreshCtrlBts();
+
+	WatJs.Common.setTimeout(0.5,function(){
+		window.onresize();
+		search#Service#();
+	});
+	
+};
+	
+/**
+ * 톱니 눌렀을 때 기간 간편설정 창 슬라이드
+ */
+var periodBtn=0;
+$(".dl-period-search-btn").hide();
+$(".dl-period-search-btn-small").click(function(){
+	if(0==periodBtn){
+		$(".dl-period-search-btn-small span i").css({"transform":"rotate(45deg)"});
+		$(".dl-period-search-btn").slideDown(200,"linear");
+		$(".dl-period-search-btn-small span").attr("title","기간간편설정 닫기");
+		periodBtn=1;
+	} else{
+		initDefaultPeriodPop();
+	}
+});
+$(".dl-period-search-btn .closeBtn").click(function(){
+	initDefaultPeriodPop();
+});
+
+/**
+ * 전체 기간 조회 버튼 클릭 이벤트
+ */
+var totPeriodChk=false;
+$("#totPeriod").click(function(){
+	totPeriodChk=$(this).prop("checked");
+	if(totPeriodChk){
+		WatJs.Common.setControlValue("date_from", "");
+		WatJs.Common.setControlValue("date_to", "");
+		$("#date_from, #date_to, .dl-period-search-btn button").css({"pointerEvents":"none"});
+		$("#date_from, #date_to, .dl-period-search-btn button").attr("readonly","");
+	} else{
+		WatJs.Common.setControlValue("date_from", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisMonthFirstday()));
+		WatJs.Common.setControlValue("date_to", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getToday()));
+		$("#date_from, #date_to, .dl-period-search-btn button").css({"pointerEvents":"auto"});
+		$("#date_from, #date_to, .dl-period-search-btn button").removeAttr("readonly");
+	}
+});
+
+/**
+ * periodPop init button setting
+ */
+function periodBtnSet(){
+	$(".btn-period").click(function(){
+		var periodId=$(this).val();
+		//console.log(periodId);
+		if("today"==periodId){
+			WatJs.Common.setControlValue("date_from", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getToday()));
+			WatJs.Common.setControlValue("date_to", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getToday()));
+		} else if("thisweek"==periodId){
+			WatJs.Common.setControlValue("date_from", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisWeekFirstday()));
+			WatJs.Common.setControlValue("date_to", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisWeekLastday()));
+		} else if("thismonth"==periodId){
+			WatJs.Common.setControlValue("date_from", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisMonthFirstday()));
+			WatJs.Common.setControlValue("date_to", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisMonthLastday()));
+		} else if("thisyear"==periodId){
+			WatJs.Common.setControlValue("date_from", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisYearFirstday()));
+			WatJs.Common.setControlValue("date_to", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisYearLastday()));
+		}
+	});
+}
+
+/**
+ * periodPop init setting
+ */
+function initDefaultPeriodPop(){
+	$(".dl-period-search-btn-small span i").css({"transform":"rotate(0)"});
+	$(".dl-period-search-btn").slideUp(200,"linear");
+	$(".dl-period-search-btn-small span").attr("title","기간간편설정 열기");
+	periodBtn=0;
+}
+
+/**
+ * total period init setting
+ */
+function initDefaultTotPeriod(){
+	totPeriodChk=false;
+	$("#totPeriod").prop("checked",false);
+	$("#date_from, #date_to, .dl-period-search-btn button").css({"pointerEvents":"auto"});
+	$("#date_from, #date_to, .dl-period-search-btn button").removeAttr("readonly");
+}
+
+/**
+ * datepicker&input init setting
+ */
+function initDefaultValue(){
+	WatJs.Common.setControlValue("date_from", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getThisMonthFirstday()));
+	WatJs.Common.setControlValue("date_to", WatJs.Util.Date.getFormatDate.yyyy_mm_dd(WatJs.Util.Date.getToday()));
+	WatJs.Common.setControlValue("#service#_Desc","");
+}
+
+/**
+ * row count select init
+ */
+function initSelect(){
+	 //row카운트 추가 부분
+	var rowCountSelect=new WatJs.Custom.CodeSelect("showNoGrid","GRID_ROW_COUNT");
+	rowCountSelect.setEventOnChange(function(val,text){				
+		if(0==val)return;
+		search#Service#();
+	});	
+	rowCountSelect.visibleTitle(true);
+	rowCountSelect.init();
+}
+
+/**
+ * init event
+ */
+function initEvts() {
+	
+	// excel button click event
+	WatJs.Common.setEvt(PRGMID, "excel-click", "click", function(evt) {		
+		#service#_Grid.toExcel();
+	});	
+	
+	// search button click event
+	WatJs.Common.setEvt(PRGMID,"search-click","click",function(evt){
+		initDefaultPeriodPop();
+		search#Service#();
+	});
+
+	// reset button click event
+	WatJs.Common.setEvt(PRGMID, "default-click", "click", function(evt) {
+		initDefaultValue();
+		initDefaultPeriodPop();
+		initDefaultTotPeriod();
+		search#Service#();
+	});
+	
+	// view button click event
+	WatJs.Common.setEvt(PRGMID,"popup-View_Popup-click","click",function(evt){
+		var rowId = #service#_Grid.getSelectedRowId();
+		popupView#Service#(rowId);
+	});
+	
+	// add button click event
+	WatJs.Common.setEvt(PRGMID,"popup-Add_Popup-click","click",function(evt){
+		popupAdd#Service#();
+	});
+	
+	// modify button click event
+	WatJs.Common.setEvt(PRGMID,"popup-Modify_Popup-click","click",function(evt){
+		var rowId = #service#_Grid.getSelectedRowId();
+		popupModify#Service#(rowId);
+	});
+	
+	// drop button click event
+	WatJs.Common.setEvt(PRGMID,"popup-Drop_Popup-click","click",function(evt){
+		var rowId = #service#_Grid.getSelectedRowId();
+		popupDrop#Service#(rowId);
+	});
+
+	// add popup - save button click event
+	WatJs.Common.setEvt(PRGMID,"save-Add_Popup-click","click",function(evt){
+		if (!isValidAdd#Service#())
+			return;
+		
+		updateSupportCodeLock = true;
+		var content = WatJs.Common.getFormValues("Add_PopupForm");
+		updateSupportCodeLock = false;
+		add#Service#(content);
+		
+		WatJs.Common.closePopup();
+	});
+	
+	// modify popup - save button click event
+	WatJs.Common.setEvt(PRGMID,"save-Modify_Popup-click","click",function(evt){
+		if (!isValidModify#Service#())
+			return;
+		
+		updateSupportCodeLock = true;
+		var content = WatJs.Common.getFormValues("Modify_PopupForm");
+		updateSupportCodeLock = false;
+		modify#Service#(content);
+		
+		WatJs.Common.closePopup();
+	});
+	
+	// drop popup - save button click event
+	WatJs.Common.setEvt(PRGMID,"save-Drop_Popup-click","click",function(evt){
+		if (!isValidDrop#Service#())
+			return;
+		
+		updateSupportCodeLock = true;
+		var content = WatJs.Common.getFormValues("Drop_PopupForm");
+		updateSupportCodeLock = false;
+		drop#Service#(content);
+		
+		WatJs.Common.closePopup();
+	});
+	
+	// popup close button click event - view close
+	WatJs.Common.setEvt(PRGMID,"close-popup-click","click",function(evt){
+		WatJs.Common.closePopup();
+	});
+	
+	// popup close button click event - add cancel
+	WatJs.Common.setEvt(PRGMID,"close-Add_Popup-click","click",function(evt){
+		WatJs.Common.closePopup();
+	});
+	
+	// popup close button click event - modify cancel
+	WatJs.Common.setEvt(PRGMID,"close-Modify_Popup-click","click",function(evt){
+		WatJs.Common.closePopup();
+	});
+	
+	// popup close button click event - drop cancel
+	WatJs.Common.setEvt(PRGMID,"close-Drop_Popup-click","click",function(evt){
+		WatJs.Common.closePopup();
+	});
+}
+	
+/**
+ * main resize event handler
+ */
+function #service#_resize(wid,hei) {
+	var serHei = hei;
+	if (#service#_Grid) {
+		$("##service#_Grid").css("height","auto");
+		$("##service#_Grid objbox").css("height","auto");
+	}
+}
+
+/**
+ * grid & paging initialize 
+ *
+ * 항목별 크기
+ * No. -> 50
+ * 날짜 -> 150
+ * 사용자 -> 100
+ */
+function initGrid() {
+	try {
+		
+		//grid 
+		#service#_Grid = new WatJs.Component.Grid("#service#_Grid");
+		#service#_Grid.setHeader([ 
+			//{"KEY":"NO",		"NAME":"No.",										"WIDTH":"50",		"ALIGN" : "center",	"SORT" : "int", "TYPE" : "ro"},#begin#
+			{"KEY" : "#field_name#",	"NAME" : WatJs.Label.Array["#scope#.#service#.#field_name#"],	"WIDTH" : "*",	"ALIGN" : "center",	"SORT" : "str",	"TYPE" : "ro"}#conjunction##end#
+			//{"KEY" : "sys_cr_user_nm",	"NAME" : WatJs.Label.Array["#scope#.#service#.sys_cr_user_nm"],		"WIDTH" : "*",	"ALIGN" : "center",	"SORT" : "str",	"TYPE" : "ro"},
+			//{"KEY" : "sys_ud_user_nm",	"NAME" : WatJs.Label.Array["#scope#.#service#.sys_ud_user_nm"],		"WIDTH" : "*",	"ALIGN" : "center",	"SORT" : "str",	"TYPE" : "ro"}
+			]);
+		#service#_Grid.setEventOnRowSelect(function(rid,idx){
+			refreshCtrlBts();
+		});
+		#service#_Grid.setEventOnRowDoubleClicked(function(id,ind){
+			popupView#Service#(id);
+		});
+		#service#_Grid.enableAutoHeight(true);	
+		#service#_Grid.init({showNoDataRow:true});
+		
+		//paging
+		#service#_Paging = new WatJs.Component.Page("#service#_Paging");
+		#service#_Paging.setRowCount(__ROWCOUNT_PER_PAGE__);
+		#service#_Paging.init();
+		
+	} catch (e) {
+		WatJs.Script.exception(PRGMID + " initGrid", e);
+	}
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// popup functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+/**
+* 상세 팝업 
+*/
+function popupView#Service#(rowId) {
+	// 상세 팝업 실행
+	WatJs.Common.popup("View_Popup");
+	$("#View_Popup").focus();
+	
+#begin#
+	WatJs.Common.setControlValue("view_#field_name#", #service#_Grid.getValueByColId(rowId, "#field_name#"));#end#
+}
+ 
+/**
+* 등록 팝업
+*/
+function popupAdd#Service#() {
+	// 등록 팝업 실행
+	WatJs.Common.popup("Add_Popup");
+	$("#Add_PopupForm").focus();
+	
+	//input data reset
+	$("#Add_PopupForm")[0].reset();
+	WatJs.Common.initRequiredValidation("Add_PopupForm");
+}
+
+/**
+* 수정 팝업
+*/
+function popupModify#Service#(rowId) {
+	// 수정 팝업 실행
+	WatJs.Common.popup("Modify_Popup");
+	$("#Modify_PopupForm").focus();
+	
+	WatJs.Common.initRequiredValidation("Modify_PopupForm");
+	
+#begin#
+	WatJs.Common.setControlValue("modify_#field_name#", #service#_Grid.getValueByColId(rowId, "#field_name#"));#end#
+}
+
+/**
+* 삭제 팝업
+*/
+function popupDrop#Service#(rowId) {
+	// 삭제 팝업 실행
+	WatJs.Common.popup("Drop_Popup");
+	$("#Drop_Popup").focus();
+	
+#begin#
+	WatJs.Common.setControlValue("drop_#field_name#", #service#_Grid.getValueByColId(rowId, "#field_name#"));#end#
+#begin#
+	WatJs.Common.setControlValue("drop_keyword_#key_fields#", #service#_Grid.getValueByColId(rowId, "#key_fields#"));#end#
+}
+	
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// validation functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+/**
+ * popupAdd#Service# validation
+ */
+function isValidAdd#Service#(){
+	// 필수 입력값 체크
+	if (!WatJs.Common.requiredValidation("Add_PopupForm"))
+		return false;
+	return true;
+}
+
+/**
+ * popupModify#Service# validation
+ */
+function isValidModify#Service#(){
+	// 필수 입력값 체크
+	if (!WatJs.Common.requiredValidation("Modify_PopupForm"))
+		return false;
+	return true;
+}
+
+/**
+ * popupDrop#Service# validation
+ */
+function isValidDrop#Service#(){
+	// 필수 입력값 체크
+	if (!WatJs.Common.requiredValidation("Drop_PopupForm"))
+		return false;
+	return true;
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// request functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+/**
+ * 데이터 조회 요청
+ */
+function search#Service#(page) {
+	if(!page)page=1;
+	
+	#service#_Grid.clear();
+	
+	//2020.02.21 - 장형우 : show 갯수를 선택한 갯수만큼만 보여주기 
+	var rowCount=document.getElementById("showNoGrid").value;
+	if(''==rowCount) rowCount=10;
+	__ROWCOUNT_PER_PAGE__=rowCount;
+	
+	//-tese code ------------------------------------
+	#service#_Grid.setJsonData(#service#_Grid.getTestData(page,__ROWCOUNT_PER_PAGE__,100));
+	#service#_Grid.setTotalCount(100);
+	
+	$("##service#_totalCount").text( #service#_Grid.getTotalCount() );
+	
+	#service#_Paging.setCurrentPage(page);
+	#service#_Paging.setRowCount(__ROWCOUNT_PER_PAGE__);
+	#service#_Paging.setTotalCount(#service#_Grid.getTotalCount());
+	#service#_Paging.setEventOnChange(function(newPage) {
+		search#Service#(newPage);
+	});
+	#service#_Paging.refresh();	
+	//-tese code ------------------------------------
+	
+	
+	/* ------ real code -----------------------------
+
+	try {
+		
+		//parameter setting
+		var schParm = {
+			CURPAGE : page,
+			RCOUNT : __ROWCOUNT_PER_PAGE__
+		};
+		if(!totPeriodChk){
+			var fromDt = WatJs.Common.getControlValue("date_from").replace(/-/gi,"");
+			var toDt = WatJs.Common.getControlValue("date_to").replace(/-/gi,"");
+			if (fromDt.length > 0){
+				schParm.fromDate = fromDt + "000000";
+			}else{
+				schParm.fromDate = "19000101000000";
+			}
+				
+			if (toDt.length > 0){
+				schParm.toDate = toDt + "235959"; 
+			}else{
+				schParm.toDate = WatJs.Util.Date.getToday()+"235959";
+			}
+		}
+
+		var cont = WatJs.Common.getControlValue("#service#_Desc");
+		if ("undefined" != typeof cont && cont.replace(/ /gi,"").length > 0)
+			schParm.#service#_desc = cont;
+
+		// service call
+		var search#Service#Service = new WatJs.Service();
+		search#Service#Service.type = "json";
+		search#Service#Service.method = "GET";
+		search#Service#Service.url = WatJs.System.getContextRoot() + "/#service#.dpg?command=search#Service#Page";
+		search#Service#Service.parameters = schParm;
+
+		search#Service#Service.callback = function(data) {
+			updateSupportCodeLock = true;
+			#service#_Grid.clear();
+
+			if (typeof data == "undefined" || data == null || data == "") data = [];
+			if (data.length < 1) WatJs.Common.showMessage("",WatJs.Message.NoData);
+
+			#service#_Grid.setJsonData(data);
+			WatTop.documentDivResize();
+
+			$("##service#_totalCount").text( #service#_Grid.getTotalCount() );
+
+			#service#_Paging.setCurrentPage(page);
+			#service#_Paging.setTotalCount(#service#_Grid.getTotalCount());
+			#service#_Paging.setEventOnChange(function(newPage) {
+				search#Service#(newPage);
+			});
+			#service#_Paging.setRowCount(__ROWCOUNT_PER_PAGE__);
+			#service#_Paging.refresh();
+
+			updateSupportCodeLock = false;
+			WatTop.ProgressBarDone();				// 종료
+		};
+		search#Service#Service.execute();
+		WatTop.ProgressBarStart();					// 시작
+		WatTop.ProgressBarSet( 30 );				// 진행상태 30% 설정
+	} catch (e) {
+		WatTop.ProgressBarDone();					// 종료
+		WatJs.Script.exception(PRGMID + " search#Service#Service", e);
+	}
+	*/	
+}
+	
+/**
+ * 저장 요청
+ */
+function add#Service#(cont) {
+	
+	console.log("add#Service# cont : ", cont);
+	
+	/*
+	try {
+		var schParm = {
+		#begin#	
+			#field_name# : cont.#field_name# #conjunction##end#
+		};
+		
+		var add#Service#Service = new WatJs.Service();
+		add#Service#Service.type = "json";
+		add#Service#Service.method = "POST";		
+		add#Service#Service.url = WatJs.System.getContextRoot() + "/#service#.dpg?command=add#Service#";
+		add#Service#Service.parameters = schParm;
+		add#Service#Service.callback = function(data) {
+			WatTop.ProgressBarDone();				// 종료
+			WatJs.Common.showMessage("저장","성공적으로 저장되었습니다..","",{style:"success", type:"success"});
+			search#Service#();
+		};
+		add#Service#Service.execute();
+		WatTop.ProgressBarStart();					// 시작
+		WatTop.ProgressBarSet( 30 );				// 진행상태 30% 설정
+	} catch (e) {
+		WatTop.ProgressBarDone();					// 종료
+		WatJs.Script.exception(PRGMID + " add#Service#Service", e);
+	}
+	*/
+}
+
+/**
+ * 수정 요청
+ */
+function modify#Service#(cont) {
+	
+	console.log("modify#Service# cont : ", cont);
+	
+	/*
+	try {
+		var schParm = {
+		#begin#	
+			#field_name# : cont.#field_name# #conjunction##end#
+		};
+		
+		var modify#Service#Service = new WatJs.Service();
+		modify#Service#Service.type = "json";
+		modify#Service#Service.method = "POST";		
+		modify#Service#Service.url = WatJs.System.getContextRoot() + "/#service#.dpg?command=save#Service#";
+		modify#Service#Service.parameters = schParm;
+		modify#Service#Service.callback = function(data) {
+			WatTop.ProgressBarDone();				// 종료
+			WatJs.Common.showMessage("수정","성공적으로 수정되었습니다..","",{style:"success", type:"success"});
+			search#Service#();
+		};
+		modify#Service#Service.execute();
+		WatTop.ProgressBarStart();					// 시작
+		WatTop.ProgressBarSet( 30 );				// 진행상태 30% 설정
+	} catch (e) {
+		WatTop.ProgressBarDone();					// 종료
+		WatJs.Script.exception(PRGMID + " modify#Service#Service", e);
+	}
+	*/
+}
+ 
+/**
+ * 삭제 요청
+ */
+function drop#Service#(cont) {
+		
+	console.log("drop#Service# cont : ", cont);
+	
+	/*
+	try {
+		var schParm = {
+		#begin#	
+			#key_fields# : cont.#key_fields# #conjunction##end#
+		};
+		
+		var drop#Service#Service = new WatJs.Service();
+		drop#Service#Service.type = "json";
+		drop#Service#Service.method = "POST";		
+		drop#Service#Service.url = WatJs.System.getContextRoot() + "/#service#.dpg?command=drop#Service#";
+		drop#Service#Service.parameters = schParm;
+		drop#Service#Service.callback = function(data) {
+			WatTop.ProgressBarDone();				// 종료
+			WatJs.Common.showMessage("삭제","성공적으로 삭제되었습니다..","",{style:"success", type:"success"});
+			search#Service#();
+		};
+		drop#Service#Service.execute();
+		WatTop.ProgressBarStart();					// 시작
+		WatTop.ProgressBarSet( 30 );				// 진행상태 30% 설정
+	} catch (e) {
+		WatTop.ProgressBarDone();					// 종료
+		WatJs.Script.exception(PRGMID + " drop#Service#Service", e);
+	}
+	*/
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// other functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+/**
+ * 버튼 초기화
+ */
+function refreshCtrlBts(){
+	var ele;
+	var rowIds = #service#_Grid.getSelectedRowId();
+
+	var btns = ["popup-View_Popup-click", "popup-Modify_Popup-click", "popup-Drop_Popup-click"];
+	var disabledFlag = WatJs.Common.NullValueReplace(rowIds).length < 1;
+	for (var i=0; i<btns.length; i++) {
+		ele = $("."+PRGMID+" ."+btns[i]);
+		if (ele.length > 0) {
+			if (disabledFlag) $(ele[0]).addClass("disabled");
+			else $(ele[0]).removeClass("disabled");
+		}
+	}
+}
+
+WatJs.Style.required(WatJs.System.getContextRoot() + "/common/css/"+WatJs.Config.Site+".css");	
+</script>
+	]]>
+	</source>
+</template>

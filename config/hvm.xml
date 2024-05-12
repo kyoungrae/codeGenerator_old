@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="진단마스터" name="hvm_tb_diag_m"
+        namespace="hvm" scope="base" service="Diagnosis">
+        <field desc="진단 아이디" keyfield="true" length="32" name="diag_id" type="varchar"/>
+        <field desc="진단 제목" keyfield="false" length="100" name="diag_nm" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="진단대상 매핑" name="hvm_tb_diag_tgassets_mp"
+        namespace="hvm" scope="base" service="DiagnosisTargetMapping">
+        <field desc="진단 아이디" keyfield="true" length="32" name="diag_id" type="varchar"/>
+        <field desc="진단 제목" keyfield="true" length="32"
+            name="tgassets_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="조치" name="hvm_tb_meas_m" namespace="hvm"
+        scope="base" service="Measure">
+        <field desc="조치 아이디" keyfield="true" length="32" name="meas_id" type="varchar"/>
+        <field desc="이력 아이디" keyfield="false" length="32" name="hist_id" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="일정(계획)" name="hvm_tb_plan_m"
+        namespace="hvm" scope="base" service="Plan">
+        <field desc="일정 아이디" keyfield="true" length="32" name="plan_id" type="varchar"/>
+        <field desc="참조 구분(MEAS조치,DIAG진단)" keyfield="false" length="20"
+            name="plan_ref_div_cd" type="varchar"/>
+        <field desc="참조 아이디" keyfield="false" length="32" name="ref_id" type="varchar"/>
+        <field desc="완료여부" keyfield="false" length="1" name="cmlt_yn" type="varchar"/>
+        <field desc="완료여부" keyfield="false" length="1000"
+            name="cmlt_desc" type="varchar"/>
+        <field desc="시작일" keyfield="false" length="22" name="start_dt" type="datetime"/>
+        <field desc="종료일" keyfield="false" length="22" name="end_dt" type="datetime"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="진단대상자산 이력" name="hvm_tb_tgassets_h"
+        namespace="hvm" scope="base" service="TargetAssetsHistory">
+        <field desc="진단대상 아이디" keyfield="false" length="32"
+            name="hist_seq" type="varchar"/>
+        <field desc="진단대상 아이디" keyfield="true" length="32"
+            name="tgassets_id" type="varchar"/>
+        <field desc="진단대상 구분" keyfield="false" length="20"
+            name="tgassets_div_cd" type="varchar"/>
+        <field desc="기반 구분" keyfield="false" length="20"
+            name="base_div_cd" type="varchar"/>
+        <field desc="시장 구분" keyfield="false" length="20"
+            name="market_div_cd" type="varchar"/>
+        <field desc="업무 구분" keyfield="false" length="20"
+            name="job_div_cd" type="varchar"/>
+        <field desc="장비 구분" keyfield="false" length="20"
+            name="device_div_cd" type="varchar"/>
+        <field desc="담당부서" keyfield="false" length="32"
+            name="mng_dept_id" type="varchar"/>
+        <field desc="서비스 범위" keyfield="false" length="20"
+            name="svc_range_cd" type="varchar"/>
+        <field desc="호스트명" keyfield="false" length="50" name="host_nm" type="varchar"/>
+        <field desc="시스템명" keyfield="false" length="50" name="system_nm" type="varchar"/>
+        <field desc="REAL IP" keyfield="false" length="30"
+            name="real_ip" type="varchar"/>
+        <field desc="자산구분" keyfield="false" length="20" name="assets_cd" type="varchar"/>
+        <field desc="자산위치" keyfield="false" length="50"
+            name="assets_loc" type="varchar"/>
+        <field desc="관리자 아이디" keyfield="false" length="20"
+            name="mng_user_id" type="varchar"/>
+        <field desc="담당자 아이디" keyfield="false" length="20"
+            name="user_id" type="varchar"/>
+        <field desc="상태" keyfield="false" length="32" name="ststus_cd" type="varchar"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="진단대상자산 취약점 이력"
+        name="hvm_tb_tgassets_weak_h" namespace="hvm" scope="base" service="TargetAssetsWeaknessHistory">
+        <field desc="이력 아이디" keyfield="true" length="32" name="hist_id" type="varchar"/>
+        <field desc="진단대상 아이디" keyfield="false" length="32"
+            name="tgassets_id" type="varchar"/>
+        <field desc="취약점 항목 아이디" keyfield="false" length="32"
+            name="weakitem_id" type="varchar"/>
+        <field desc="진단평가 (취약,양호)" keyfield="false" length="20"
+            name="diag_eval_cd" type="varchar"/>
+        <field desc="등록일" keyfield="false" length="22" name="reg_dt" type="datetime"/>
+        <field desc="시스템 생성시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

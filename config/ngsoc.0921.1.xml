@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="침입탐지 분석결과" name="analysis_result"
+        namespace="fsec" scope="event" service="AnalysisResult">
+        <field desc="탐지 ID" keyfield="false" length="32" name="id" type="VARCHAR"/>
+        <field desc="탐지모델" keyfield="false" length="32" name="model_id" type="VARCHAR"/>
+        <field desc="참가기관명" keyfield="false" length="128"
+            name="customer_name" type="VARCHAR"/>
+        <field desc="참가기관" keyfield="false" length="32"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="관제센서명" keyfield="false" length="128"
+            name="sensor_name" type="VARCHAR"/>
+        <field desc="관제센서" keyfield="false" length="32" name="sensor_id" type="VARCHAR"/>
+        <field desc="탐지정책명" keyfield="false" length="128"
+            name="policy_name" type="VARCHAR"/>
+        <field desc="TLP" keyfield="false" length="20" name="tlp" type="VARCHAR"/>
+        <field desc="SID" keyfield="false" length="32" name="sid" type="VARCHAR"/>
+        <field desc="리비전" keyfield="false" length="22" name="rev" type="NUMBER"/>
+        <field desc="탐지정책" keyfield="false" length="32" name="policy_id" type="VARCHAR"/>
+        <field desc="위험도" keyfield="false" length="22" name="risk" type="NUMBER"/>
+        <field desc="출발지IP" keyfield="false" length="22" name="src_ip" type="NUMBER"/>
+        <field desc="출발지포트" keyfield="false" length="22" name="src_port" type="NUMBER"/>
+        <field desc="출발지국가코드" keyfield="false" length="2"
+            name="src_country_code" type="VARCHAR"/>
+        <field desc="출발지자산" keyfield="false" length="32"
+            name="src_asset_id" type="VARCHAR"/>
+        <field desc="방향성" keyfield="false" length="20" name="direction" type="VARCHAR"/>
+        <field desc="목적지IP" keyfield="false" length="22" name="dst_ip" type="NUMBER"/>
+        <field desc="목적지포트" keyfield="false" length="22" name="dst_port" type="NUMBER"/>
+        <field desc="목적지국가코드" keyfield="false" length="2"
+            name="dst_country_code" type="VARCHAR"/>
+        <field desc="목적지자산" keyfield="false" length="32"
+            name="dst_asset_id" type="VARCHAR"/>
+        <field desc="IP프로토콜" keyfield="false" length="32"
+            name="ip_proto" type="VARCHAR"/>
+        <field desc="APP프로토콜" keyfield="false" length="32"
+            name="app_proto" type="VARCHAR"/>
+        <field desc="AI예측" keyfield="false" length="22"
+            name="ai_prediction" type="NUMBER"/>
+        <field desc="우선순위" keyfield="false" length="20" name="priority" type="VARCHAR"/>
+        <field desc="영향" keyfield="false" length="20" name="impact" type="VARCHAR"/>
+        <field desc="NIDSID" keyfield="false" length="32"
+            name="nids_identifier" type="VARCHAR"/>
+        <field desc="노터블식별자" keyfield="false" length="32"
+            name="notable_identifier" type="VARCHAR"/>
+        <field desc="탐지시간" keyfield="false" length="8"
+            name="detected_at" type="DATE"/>
+        <field desc="탐지건수" keyfield="false" length="22"
+            name="detected_count" type="NUMBER"/>
+        <field desc="페이로드" keyfield="false" length="4000" name="payload" type="CLOB"/>
+        <field desc="페이로드패킷" keyfield="false" length="4000"
+            name="payload_packet" type="CLOB"/>
+        <field desc="상태" keyfield="false" length="20" name="status" type="VARCHAR"/>
+        <field desc="탐지유형" keyfield="false" length="32"
+            name="template_id" type="VARCHAR"/>
+        <field desc="판단" keyfield="false" length="20" name="judgement" type="VARCHAR"/>
+        <field desc="노터블생성일시" keyfield="false" length="8"
+            name="notable_created_at" type="DATE"/>
+        <field desc="생성일시" keyfield="false" length="8" name="created_at" type="DATE"/>
+        <field desc="수정일시" keyfield="false" length="8"
+            name="modified_at" type="DATE"/>
+        <field desc="AIR 내 base_event_id" keyfield="false" length="32"
+            name="air_base_event_id" type="VARCHAR"/>
+    </entity>
+</entities>

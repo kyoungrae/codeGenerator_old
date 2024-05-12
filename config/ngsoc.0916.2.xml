@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="네트워크구간" name="network" namespace="fsec"
+        scope="asset" service="Network">
+        <field desc="ID" keyfield="true" length="32" name="id" type="VARCHAR"/>
+        <field desc="참가기관" keyfield="false" length="32"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="이름" keyfield="false" length="128" name="name" type="VARCHAR"/>
+        <field desc="서비스유형" keyfield="false" length="20"
+            name="service_ntype" type="VARCHAR"/>
+        <field desc="전산센터유형" keyfield="false" length="20"
+            name="itcenter_ntype" type="VARCHAR"/>
+        <field desc="설명" keyfield="false" length="4000"
+            name="description" type="CLOB"/>
+        <field desc="VPN센서" keyfield="false" length="32"
+            name="sensor_vpn_id" type="VARCHAR"/>
+        <field desc="NIDS센서" keyfield="false" length="32"
+            name="sensor_nids_id" type="VARCHAR"/>
+        <field desc="TAS센서" keyfield="false" length="32"
+            name="sensor_tas_id" type="VARCHAR"/>
+        <field desc="NETFLOW센서" keyfield="false" length="32"
+            name="sensor_netflow_id" type="VARCHAR"/>
+        <field desc="생성일시" keyfield="false" length="8" name="created_at" type="DATE"/>
+        <field desc="수정일시" keyfield="false" length="8"
+            name="modified_at" type="DATE"/>
+        <field desc="생성자" keyfield="false" length="32" name="creator_id" type="VARCHAR"/>
+        <field desc="수정자" keyfield="false" length="32"
+            name="modifier_id" type="VARCHAR"/>
+    </entity>
+</entities>

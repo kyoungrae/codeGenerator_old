@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="rnbd_tc_rule_m" namespace="rnbd"
+        scope="com" service="RuleManager">
+        <field desc="" keyfield="true" length="32" name="rule_id" type="varchar"/>
+        <field desc="" keyfield="false" length="45" name="rule_nm" type="varchar"/>
+        <field desc="" keyfield="false" length="255" name="rule_desc" type="varchar"/>
+        <field desc="" keyfield="false" length="45" name="regst_user" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="regst_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

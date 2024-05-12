@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>ParmBean</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/bean/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2015.7.28</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#.bean</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+/**
+ *  ++ dreamlabs Product ++
+ */
+package #pakage#;
+
+import kr.co.dreamlabs.framework.layer.bean.PageParameter;
+
+/**
+ * <pre>
+ * 이 클래스는 기능관리에서 페이징 처리를 위해 사용되는 Service Bean 이며,
+ * 인터페이스 PageParameter를 구현 해서 정의 합니다.
+ * RCOUNT 와 CURPAGE 에 대한 getter 와 setter 를 정의합니다.
+ * </pre>
+ *
+ * @title #Service##sourcetype#
+ * @programID #Service##sourcetype#.java
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+public class #Service##sourcetype# extends #Service#Bean implements PageParameter {
+	private String ORDERBY;
+	public String getORDERBY() {
+		return ORDERBY;
+	}
+
+	public void setORDERBY(String oRDERBY) {
+		ORDERBY = oRDERBY;
+	}	
+	/**
+	 * <pre>
+	 * RCOUNT는 한 페이지 당 출력되는 데이터 수를 정의 합니다.
+	 * </pre>
+	 */
+	private int RCOUNT = PageParameter.DEFAUL_RCOUNT;
+
+	/**
+	 * <pre>
+	 * CURPAGE는 현재 출력되는 페이지를 정의 합니다.
+	 * </pre>
+	 */
+	private int CURPAGE = PageParameter.DEFAUL_CURPAGE;
+
+	/*
+	 * (non-Javadoc)
+	 * kr.co.dreamlabs.framework.layer.bean.PageParameter#getRCOUNT()
+	 */
+	public int getRCOUNT() {
+
+		return this.RCOUNT;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * kr.co.dreamlabs.framework.layer.bean.PageParameter#setRCOUNT(int)
+	 */
+	public void setRCOUNT(int rCOUNT) {
+
+		this.RCOUNT = rCOUNT;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * kr.co.dreamlabs.framework.layer.bean.PageParameter#getCURPAGE()
+	 */
+	public int getCURPAGE() {
+
+		return this.CURPAGE;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * kr.co.dreamlabs.framework.layer.bean.PageParameter#setCURPAGE(int)
+	 */
+	public void setCURPAGE(int cURPAGE) {
+
+		this.CURPAGE = cURPAGE;
+	}
+}
+	]]>
+	</source>
+</template>

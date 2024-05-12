@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Mysql</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#Handler.Map.#Sourcetype#</filename>
+		<ext>xml</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/handler/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2019.2.27</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="#ENTITY_NAME#">
+	<resultMap id="ResultMap.#ENTITY_NAME#" class="#pakage#.bean.#Service#Bean">
+	<result property="NO" column="NO"></result>
+#begin#
+	<result property="#field_name#" column="#field_name#"></result>#end#
+	</resultMap>
+
+
+
+
+	<select id="SELECT.#ENTITY_NAME#" parameterClass="kr.co.dreamlabs.#namespace#.common.database.bean.#ENTITY_NAME#Bean" resultMap="ResultMap.#ENTITY_NAME#">
+		SELECT
+			@RNUM := @RNUM + 1 AS NO,
+#begin#
+			A.#field_name##conjunction##end#
+				FROM #ENTITY_NAME# A,(SELECT @RNUM :=0)B
+				WHERE 1=1
+				<dynamic>
+			<!--
+			<isNotNull prepend=" AND " property="fromDate">
+				<isNotNull property="toDate">sys_cr_dt
+					between STR_TO_DATE(#fromDate#,'%Y%m%d%H%i%s') and STR_TO_DATE(#toDate#,'%Y%m%d%H%i%s') 
+				</isNotNull>
+			</isNotNull>	       				
+			-->
+#begin#
+	<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#	 
+#begin#
+	<isNotNull  prepend=" AND "  property="$_#field_name#" >$_#field_name# like concat('%', #$_#field_name##, '%')</isNotNull>#end#	
+				</dynamic>
+	</select>
+	
+	<select id="SELECT.#ENTITY_NAME#_PAGE" resultMap="ResultMap.#ENTITY_NAME#" parameterClass="#pakage#.bean.#Service#ParmBean">
+		SELECT * FROM (
+      		SELECT
+      		@RNUM := @RNUM + 1 AS NO,
+#begin#
+			A.#field_name##conjunction##end#
+		FROM #ENTITY_NAME# A,(SELECT @RNUM :=0)B
+		WHERE 1=1
+	    <dynamic>
+	    	<!--
+			<isNotNull prepend=" AND " property="fromDate">
+				<isNotNull property="toDate">sys_cr_dt
+					between STR_TO_DATE(#fromDate#,'%Y%m%d%H%i%s') and STR_TO_DATE(#toDate#,'%Y%m%d%H%i%s') 
+				</isNotNull>
+			</isNotNull>	         
+			-->
+#begin#
+		<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+#begin#
+		<isNotNull  prepend=" AND "  property="$_#field_name#" >$_#field_name# like concat('%', #$_#field_name##, '%')</isNotNull>#end#
+					
+		</dynamic>
+				<isNotNull 	property="ORDERBY">ORDER BY $ORDERBY$</isNotNull>
+		)LIST   
+			<isNotNull property="CURPAGE">
+         WHERE
+         NO  BETWEEN (((#CURPAGE#-1)*#RCOUNT#)+1) AND (#CURPAGE#*#RCOUNT#)
+			</isNotNull>
+		<isNotNull 	property="ORDERBY">ORDER BY $ORDERBY$</isNotNull>
+	</select>
+	
+	<select id="SELECT.#ENTITY_NAME#_COUNT" resultClass="int" parameterClass="#pakage#.bean.#Service#ParmBean">
+		    SELECT COUNT(*)  
+		FROM #ENTITY_NAME#
+		WHERE 1=1
+	    <dynamic>
+			<!--
+			<isNotNull prepend=" AND " property="fromDate">
+				<isNotNull property="toDate">sys_cr_dt
+					between STR_TO_DATE(#fromDate#,'%Y%m%d%H%i%s') and STR_TO_DATE(#toDate#,'%Y%m%d%H%i%s') 
+				</isNotNull>
+			</isNotNull>	    
+			-->
+#begin#
+			<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+#begin#
+			<isNotNull  prepend=" AND "  property="$_#field_name#" >$_#field_name# like concat('%', #$_#field_name##, '%')</isNotNull>#end#
+							
+		</dynamic>
+	</select>
+	
+	<insert id="INSERT.#ENTITY_NAME#">
+		INSERT INTO #ENTITY_NAME#(
+			<dynamic>#begin#
+				<isNotNull prepend=" #conjunction# " property="#field_name#">#field_name#</isNotNull>#end#
+			</dynamic>
+		)
+		VALUES(
+			<dynamic>#begin#
+				<isNotNull prepend=" #conjunction# " property="#field_name#">##field_name##</isNotNull>#end#
+			</dynamic>
+		)
+	</insert>
+
+	<delete id="DELETE.#ENTITY_NAME#">
+		DELETE FROM #ENTITY_NAME#
+		WHERE  1=1 #begin#
+		AND #key_fields# = ##key_fields##  #end#
+	</delete>
+
+	<update id="UPDATE.#ENTITY_NAME#">
+		UPDATE  #ENTITY_NAME# SET
+			<dynamic>
+#begin#
+				<isNotNull prepend=" #conjunction# " property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+			</dynamic>
+		WHERE  1=1 #begin#
+		AND #key_fields# = ##key_fields##  #end#
+	</update>
+</sqlMap>
+	]]>
+	</source>
+</template>

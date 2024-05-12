@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="t_prd_grp_base_unit_amt"
+        namespace="t" scope="order" service="BaseUnitAmount">
+        <field desc="제품그룹코드" keyfield="true" length="11"
+            name="prd_grp_cd" type="int"/>
+        <field desc="고객등급코드(공통코드 CUST_GRADE)" keyfield="true"
+            length="20" name="cust_grd" type="varchar"/>
+        <field desc="단가" keyfield="false" length="0" name="unit_amt" type="bigint"/>
+        <field desc="등록날짜" keyfield="false" length="0" name="reg_dt" type="date"/>
+        <field desc="등록자" keyfield="false" length="50" name="regr" type="varchar"/>
+        <field desc="수정날짜" keyfield="false" length="0" name="upd_dt" type="date"/>
+        <field desc="수정자" keyfield="false" length="50" name="updr" type="varchar"/>
+    </entity>
+</entities>

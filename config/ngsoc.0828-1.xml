@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="피싱회신정보" name="ngsoc_tb_fishing_re_s"
+        namespace="fsec" scope="fishing" service="FishingReply">
+        <field desc="피싱 아이디" keyfield="true" length="32" name="fish_id" type="VARCHAR"/>
+        <field desc="회신아이디" keyfield="true" length="32" name="re_id" type="VARCHAR"/>
+        <field desc="회신내역" keyfield="false" length="255" name="re_desc" type="VARCHAR"/>
+        <field desc="조치상태" keyfield="false" length="20"
+            name="action_status" type="VARCHAR"/>
+        <field desc="정탐여부" keyfield="false" length="1"
+            name="positive_yn" type="VARCHAR"/>
+        <field desc="사고여부" keyfield="false" length="1"
+            name="accident_yn" type="VARCHAR"/>
+        <field desc="참가기관아이디" keyfield="false" length="15"
+            name="group_id" type="VARCHAR"/>
+        <field desc="작성자아이디" keyfield="false" length="15"
+            name="write_user_id" type="VARCHAR"/>
+        <field desc="생성일" keyfield="false" length="8" name="cr_dt" type="DATE"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+</entities>

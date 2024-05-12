@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="" name="tam_tc_attendance" namespace="tam"
+        scope="" service="servicetam_tc_attendance">
+        <field desc="" keyfield="true" length="32" name="attend_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="work_go_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="work_leave_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="7" name="sys_cr_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="" keyfield="false" length="7" name="sys_ud_dt" type="datetime"/>
+        <field desc="" keyfield="false" length="20"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

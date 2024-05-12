@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>html</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#Add</filename>
+		<ext>jsp</ext>
+		<path>./work/genSrc/WebContents/www/fcti/#scope#/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (jhw9790@dreamlabs.co.kr)</author>
+		<cdate>2021.07.30</cdate>
+		<pakage>kr.co.dreamlabs.www</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<style type="text/css">
+</style>
+<div class="html#Service#Add">
+	<!-- main section -->
+	<section class="panel mainPanel dl-col-all-12">
+		<!-- header -->
+		<header class="panel-heading menu-panel-heading">
+			<h2 class="panel-title menu-panel-title">MENUTITLE</h2>
+			<div class="panel-actions"></div>
+		</header>
+		<!-- //header -->
+		<!-- body -->
+		<div class="panel-body">
+			<div class="col-md-12" data-plugin-scrollable >
+				<form id="Add_PopupForm" class="form-horizontal mb-lg" novalidate="novalidate">
+<!--					필수값 -->
+<!-- 					<div class="form-group mt-lg has-warning"> -->
+<!-- 						<label class="col-sm-3 control-label"> -->
+<!-- 							<span class="disp-label">sample.crud_id</span><span class="required">*</span> -->
+<!-- 						</label> -->
+<!-- 						<div class="col-sm-9"> -->
+<!-- 							<input class="form-control" id="add_crud_id" type="text" name="crud_id" dataField="crud_id" data-plugin-maxlength maxlength="32" placeholder="ex)f2032ed79a33" autocomplete="off" required/> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+
+<!--  					라벨 회색배경 입힐 경우 아래 코드 이용	-->
+<!--  					form-group mt-lg부분 수정	-->
+<!-- 					<div class="dl-col-all-12"> -->
+<!-- 						<div class="dl-col-all-3 dl-box-item-col1"> -->
+<!-- 							<label class="dl-box-item-label"><span class="disp-label">#scope#.#service#.#field_name#</span></label> -->
+<!-- 						</div> -->
+<!-- 						<div class="dl-col-all-9 dl-box-item-col2"> -->
+<!-- 							<input class="form-control" id="add_#field_name#" type="text" name="#field_name#" dataField="#field_name#" data-plugin-maxlength maxlength="#length#" placeholder="ex)f2032ed79a33" autocomplete="off"/> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+
+					<!-- 상단 입력 영역 -->∂					
+					<div class="dl-tb-input-section">					
+#begin#				
+
+						<div class="dl-col-all-12">
+							<div class="dl-col-all-2 dl-box-item-col1">
+								<span class="disp-label">#scope#.#service#.#field_name#</span><!--<span class="required">*</span>-->
+							</div>
+							<div class="dl-col-all-10 dl-box-item-col2">
+								<input class="form-control" id="add_#field_name#" type="text" name="#field_name#" dataField="#field_name#" data-plugin-maxlength maxlength="50" placeholder="ex)#field_desc#" autocomplete="off" />
+							</div>
+						</div>#end#
+					</div>
+				</form>
+			</div>
+		</div> <!-- // panel-body -->
+		
+		<!-- footer -->
+		<footer class="panel-footer text-right dl-bottom-btn-container">			
+			<button class="btn btn-sm btn-success save-Add_Popup-click"><i class="fa fa-plus"></i> <span class="disp-label">BTN_INSERT</span></button>
+			<button class="btn btn-sm btn-success close-Add_Popup-click"><i class="fa fa-remove"></i><span class="disp-label">BTN_CANCEL</span></button>
+		</footer>
+		<!-- //footer -->
+		
+	</section>
+	<!-- //main section -->
+	
+</div><!-- // page -->
+
+<script type="text/javascript">
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// variables
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+var PRGMID = "html#Service#Add";	//page id 
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// init functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+/**
+ * main onload
+ */
+WatDocument.onload = function() {
+
+	initEvts();
+	initDefaultValue();
+
+	WatJs.Common.setTimeout(0.5,function(){
+		window.onresize();
+	});
+	
+};
+
+/**
+ * datepicker&input&select init setting
+ */
+function initDefaultValue(){
+	//input data reset
+	$("#Add_PopupForm")[0].reset();
+	WatJs.Common.initRequiredValidation("Add_PopupForm");
+}
+
+/**
+ * init event
+ */
+function initEvts() {
+	
+	// add button click event
+	WatJs.Common.setEvt(PRGMID,"save-Add_Popup-click","click",function(evt){
+		if (!isValidAdd#Service#())
+			return;
+		
+		updateSupportCodeLock = true;
+		var content = WatJs.Common.getFormValues("Add_PopupForm");
+		updateSupportCodeLock = false;
+		add#Service#(content);
+	});
+	
+	// popup close button click event - add cancel
+	WatJs.Common.setEvt(PRGMID,"close-Add_Popup-click","click",function(evt){
+	
+	 	WatTop.goSubMenu("#service#"); 
+		//history.go(-1);
+		//WatTop.reload();
+	});
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// popup functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// validation functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+/**
+ * popupAdd#Service# validation
+ */
+function isValidAdd#Service#(){
+	// 필수 입력값 체크
+	if (!WatJs.Common.requiredValidation("Add_PopupForm"))
+		return false;
+	return true;
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// request functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+	
+/**
+ * 저장 요청
+ */
+function add#Service#(cont) {
+	
+	console.log("add#Service# cont : ", cont);
+	
+	try {
+		var schParm = {
+		#begin#	
+			#field_name# : cont.#field_name# #conjunction##end#
+		};
+		
+		var add#Service#Service = new WatJs.Service();
+		add#Service#Service.type = "json";
+		add#Service#Service.method = "POST";		
+		add#Service#Service.url = WatJs.System.getContextRoot() + "/#namespace#/#scope#/#service#.dpg?command=add#Service#";
+		add#Service#Service.parameters = schParm;
+		add#Service#Service.callback = function(data) {
+			WatTop.ProgressBarDone();				// 종료
+			WatJs.Common.showMessage("저장","성공적으로 저장되었습니다..","",{style:"success", type:"success"});
+			WatTop.goSubMenu("#service#");
+			//history.go(-1);
+			//WatTop.reload();
+		};
+		add#Service#Service.execute();
+		WatTop.ProgressBarStart();					// 시작
+		WatTop.ProgressBarSet( 30 );				// 진행상태 30% 설정
+	} catch (e) {
+		WatTop.ProgressBarDone();					// 종료
+		WatJs.Script.exception(PRGMID + " add#Service#Service", e);
+	}
+}
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// other functions
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=	
+//search option functions	
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+</script>
+	]]>
+	</source>
+</template>

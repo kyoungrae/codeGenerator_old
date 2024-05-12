@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="그룹 마스터 view" name="ngsoc_vc_group_m"
+        namespace="fsec" scope="view" service="VGroupMaster">
+        <field desc="그룹아이디" keyfield="false" length="32" name="group_id" type="VARCHAR"/>
+        <field desc="그룹명" keyfield="false" length="50" name="group_nm" type="VARCHAR"/>
+        <field desc="그룹구분코드" keyfield="false" length="15"
+            name="group_div_cd" type="VARCHAR"/>
+        <field desc="그룹레벨" keyfield="false" length="22" name="group_lv" type="NUMBER"/>
+        <field desc="상위그룹아이디" keyfield="false" length="32"
+            name="up_group_id" type="VARCHAR"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="VARCHAR"/>
+        <field desc="정렬순서" keyfield="false" length="22" name="sort_seq" type="NUMBER"/>
+        <field desc="주소" keyfield="false" length="255" name="addr" type="VARCHAR"/>
+        <field desc="우편번호" keyfield="false" length="255" name="postcode" type="VARCHAR"/>
+        <field desc="설명" keyfield="false" length="255" name="group_desc" type="VARCHAR"/>
+        <field desc="변경사유" keyfield="false" length="255"
+            name="modify_desc" type="VARCHAR"/>
+        <field desc="메일도메인" keyfield="false" length="255" name="domain" type="VARCHAR"/>
+        <field desc="대표 전화번호" keyfield="false" length="255" name="phone" type="VARCHAR"/>
+        <field desc="기관코드" keyfield="false" length="255" name="code" type="VARCHAR"/>
+        <field desc="기관구분" keyfield="false" length="255" name="org_div" type="VARCHAR"/>
+        <field desc=" " keyfield="false" length="255"
+            name="attack_replay_yn" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="사용자 마스터 view" name="ngsoc_vc_user_m"
+        namespace="fsec" scope="view" service="VUserMaster">
+        <field desc="사용자 아이디" keyfield="false" length="15"
+            name="user_id" type="VARCHAR"></field>
+        <field desc="사용자 이름" keyfield="false" length="50" name="user_nm" type="VARCHAR"/>
+        <field desc="사용자 영문명" keyfield="false" length="20"
+            name="user_en_nm" type="VARCHAR"/>
+        <field desc="사용자 비밀번호" keyfield="false" length="128"
+            name="user_pwd" type="VARCHAR"/>
+        <field desc="사용여부" keyfield="false" length="1" name="use_yn" type="VARCHAR"/>
+        <field desc="프로필 사진 아이디" keyfield="false" length="32"
+            name="pic_id" type="VARCHAR"/>
+        <field desc="사용자 설명" keyfield="false" length="255"
+            name="user_desc" type="VARCHAR"/>
+        <field desc="인증키" keyfield="false" length="32" name="auth_key" type="VARCHAR"/>
+        <field desc="사용자 이메일" keyfield="false" length="50"
+            name="user_email" type="VARCHAR"/>
+        <field desc="최종 로그인 시간" keyfield="false" length="12"
+            name="last_login_dt" type="TIMESTAMP(6)"/>
+        <field desc="비밀번호 초기화 여부" keyfield="false" length="1"
+            name="init_pw_yn" type="VARCHAR"/>
+        <field desc="비밀번호 변경일" keyfield="false" length="8"
+            name="change_pw_dt" type="DATE"/>
+        <field desc="참가기관코드" keyfield="false" length="255"
+            name="group_id" type="VARCHAR"/>
+        <field desc="참가기관명" keyfield="false" length="255"
+            name="org_name" type="VARCHAR"/>
+        <field desc="연락처" keyfield="false" length="255" name="phone" type="VARCHAR"/>
+        <field desc="업권" keyfield="false" length="255" name="job_div" type="VARCHAR"/>
+        <field desc="승인구분" keyfield="false" length="255" name="appr_div" type="VARCHAR"/>
+        <field desc="사용자구분" keyfield="false" length="255"
+            name="user_div" type="VARCHAR"/>
+        <field desc="담당직문" keyfield="false" length="255"
+            name="asigned_job" type="VARCHAR"/>
+        <field desc="계정만료일" keyfield="false" length="255"
+            name="expire_acct_dt" type="VARCHAR"/>
+        <field desc="가입신청일" keyfield="false" length="255"
+            name="app_reg_dt" type="VARCHAR"/>
+    </entity>
+</entities>

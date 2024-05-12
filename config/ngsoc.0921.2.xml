@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="관제센서" name="sensor" namespace="fsec"
+        scope="asset" service="Sensor">
+        <field desc="ID" keyfield="true" length="32" name="id" type="VARCHAR"/>
+        <field desc="참가기관" keyfield="false" length="32"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="유형" keyfield="false" length="20" name="ntype" type="VARCHAR"/>
+        <field desc="이름" keyfield="false" length="128" name="name" type="VARCHAR"/>
+        <field desc="IP" keyfield="false" length="16" name="ip" type="VARCHAR"/>
+        <field desc="자산" keyfield="false" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="VM여부" keyfield="false" length="1"
+            name="is_virtual_machine" type="VARCHAR"/>
+        <field desc="네트워크유형" keyfield="false" length="20"
+            name="network_ntype" type="VARCHAR"/>
+        <field desc="설명" keyfield="false" length="4000"
+            name="description" type="CLOB"/>
+        <field desc="생성일시" keyfield="false" length="8" name="created_at" type="DATE"/>
+        <field desc="수정일시" keyfield="false" length="8"
+            name="modified_at" type="DATE"/>
+        <field desc="생성자" keyfield="false" length="32" name="creator_id" type="VARCHAR"/>
+        <field desc="수정자" keyfield="false" length="32"
+            name="modifier_id" type="VARCHAR"/>
+    </entity>
+</entities>

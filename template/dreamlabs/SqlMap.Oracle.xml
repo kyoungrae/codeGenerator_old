@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Oracle</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#Handler.Map.#Sourcetype#</filename>
+		<ext>xml</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/handler/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2020.2.20</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="#ENTITY_NAME#">
+	<resultMap id="ResultMap.#ENTITY_NAME#" class="#pakage#.bean.#Service#Bean">
+#begin#
+	<result property="#field_name#" column="#field_name#"></result>#end#
+	</resultMap>
+
+	<select id="SELECT.#ENTITY_NAME#" parameterClass="kr.co.dreamlabs.#namespace#.common.database.bean.#ENTITY_NAME#Bean" resultMap="ResultMap.#ENTITY_NAME#">
+		SELECT
+		 ROW_NUMBER() OVER(ORDER BY ROWID DESC)
+			RNUM 
+#begin#
+	,#field_name##end#
+				FROM #entity_name#
+				WHERE 1=1
+				<dynamic>
+			<!--
+			<isNotNull prepend=" AND " property="fromDate">
+				<isNotNull property="toDate">sys_cr_dt
+					between TO_DATE(#fromDate#,'YYYYMMDDHH24MISS') and TO_DATE(#toDate#,'YYYYMMDDHH24MISS') 
+				</isNotNull>
+			</isNotNull>	       				
+			-->				
+#begin#
+	<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+#begin#
+	<isNotNull  prepend=" AND "  property="$_#field_name#" >#field_name# like '%'||#$_#field_name##||'%' </isNotNull>#end#		
+				</dynamic>			
+	</select>
+	
+	
+	
+	<select id="SELECT.#ENTITY_NAME#_PAGE" resultMap="ResultMap.#ENTITY_NAME#" parameterClass="#pakage#.bean.#Service#ParmBean">
+
+		SELECT * FROM (
+		SELECT
+		<isNotNull property="ORDERBY"> ROW_NUMBER() OVER(ORDER BY $ORDERBY$)
+			RNUM </isNotNull>
+		<isNull property="ORDERBY"> ROW_NUMBER() OVER(ORDER BY ROWID DESC)
+			RNUM </isNull>
+#begin#
+	,#field_name##end#
+		FROM #entity_name#
+		WHERE 1=1
+	         <dynamic prepend="">
+			<!--
+			<isNotNull prepend=" AND " property="fromDate">
+				<isNotNull property="toDate">sys_cr_dt
+					between TO_DATE(#fromDate#,'YYYYMMDDHH24MISS') and TO_DATE(#toDate#,'YYYYMMDDHH24MISS') 
+				</isNotNull>
+			</isNotNull>	       				
+			-->			
+#begin#
+		<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+#begin#
+	<isNotNull  prepend=" AND "  property="$_#field_name#" >#field_name# like '%'||#$_#field_name##||'%' </isNotNull>#end#		
+			 </dynamic>		
+         ) LIST
+		<isNotNull property="CURPAGE">
+			WHERE RNUM BETWEEN ((#CURPAGE#-1) * #RCOUNT#)+1 AND (#CURPAGE# * #RCOUNT#)
+		</isNotNull>
+         		
+	</select>
+
+	<select id="SELECT.#ENTITY_NAME#_COUNT" resultClass="int" parameterClass="#pakage#.bean.#Service#ParmBean">
+		    SELECT COUNT(*)  
+		FROM #entity_name#
+		WHERE 1=1
+	    <dynamic prepend="">
+			<!--
+			<isNotNull prepend=" AND " property="fromDate">
+				<isNotNull property="toDate">sys_cr_dt
+					between TO_DATE(#fromDate#,'YYYYMMDDHHMISS') and TO_DATE(#toDate#,'YYYYMMDDHHMISS') 
+				</isNotNull>
+			</isNotNull>	       				
+			-->		    
+#begin#
+			<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+#begin#
+	<isNotNull  prepend=" AND "  property="$_#field_name#" >#field_name# like '%'||#$_#field_name##||'%' </isNotNull>#end#			
+		</dynamic>
+	</select>
+	
+	<insert id="INSERT.#ENTITY_NAME#">
+		INSERT INTO #ENTITY_NAME#(
+			<dynamic>#begin#
+				<isNotNull prepend=" #conjunction# " property="#field_name#">#field_name#</isNotNull>#end#
+			</dynamic>
+
+		)
+		VALUES(
+			<dynamic>#begin#
+				<isNotNull prepend=" #conjunction# " property="#field_name#">##field_name##</isNotNull>#end#
+			</dynamic>
+		)
+	</insert>
+
+	<delete id="DELETE.#ENTITY_NAME#">
+		DELETE FROM #ENTITY_NAME#
+		WHERE  1=1 #begin#
+		AND #key_fields# = ##key_fields##  #end#
+	</delete>
+
+	<update id="UPDATE.#ENTITY_NAME#">
+		UPDATE  #ENTITY_NAME# SET
+			<dynamic>
+#begin#
+				<isNotNull prepend=" #conjunction# " property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+			</dynamic>
+		WHERE  1=1 #begin#
+		AND #key_fields# = ##key_fields##  #end#
+	</update>
+</sqlMap>
+	]]>
+	</source>
+</template>

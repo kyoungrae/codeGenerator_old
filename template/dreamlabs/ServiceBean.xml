@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Bean</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/bean/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2015.7.28</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#.bean</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+/**
+ *  ++ dreamlabs Product ++
+ */
+package #pakage#;
+
+import kr.co.dreamlabs.framework.layer.bean.DataBean;
+import kr.co.dreamlabs.#namespace#.common.database.bean.#ENTITY_NAME#Bean;
+/**
+ * <pre>
+ *  #Service##sourcetype#
+ * </pre>
+ *
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+public class #Service##sourcetype# extends #ENTITY_NAME#Bean {
+	private String NO;	
+	private String fromDate;
+	private String toDate;
+		
+	public void setNO(String v){
+		NO = v;
+	}
+	
+	public String getNO(){
+		return NO;
+	}
+	
+	public String getFromDate() {
+		return fromDate;
+	}
+
+	public void setFromDate(String fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public String getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(String toDate) {
+		this.toDate = toDate;
+	}
+		
+	public DataBean newInstance() {
+		return new #Service#Bean();
+	}
+
+		
+#begin#
+   /**
+   *<pre>
+   #field_name#
+   #field_desc#
+   </pre>
+   */
+	private String $_#field_name#=null;
+#end#
+#begin#
+	public String get$_#field_name#() {
+	    return this.$_#field_name#;
+	}
+	public void set$_#field_name#(String v) {
+	    this.$_#field_name# = v;
+	}
+#end#
+	
+}
+	]]>
+	</source>
+</template>

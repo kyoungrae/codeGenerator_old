@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="요주의아이피 MASTER" name="ngsoc_tb_atttnip_m"
+        namespace="fsec" scope="atttnmip" service="AttentionIP">
+        <field desc="아이디" keyfield="true" length="32" name="ip_id" type="VARCHAR"/>
+        <field desc="아이피" keyfield="false" length="20" name="ip_val" type="VARCHAR"/>
+        <field desc="TLP" keyfield="false" length="20" name="ip_tlb" type="VARCHAR"/>
+        <field desc="소유자" keyfield="false" length="255" name="ip_owner" type="VARCHAR"/>
+        <field desc="ASN" keyfield="false" length="10" name="ip_asn" type="VARCHAR"/>
+        <field desc="국가" keyfield="false" length="20" name="ip_country" type="VARCHAR"/>
+        <field desc="Latitude" keyfield="false" length="22"
+            name="ip_lat" type="NUMBER"/>
+        <field desc="Longitude" keyfield="false" length="22"
+            name="ip_lng" type="NUMBER"/>
+        <field desc="등록사유" keyfield="false" length="225"
+            name="ip_reg_desc" type="VARCHAR"/>
+        <field desc="등록일" keyfield="false" length="8" name="ip_reg_dt" type="DATE"/>
+        <field desc="해제일" keyfield="false" length="8"
+            name="ip_release_dt" type="DATE"/>
+        <field desc="whois정보" keyfield="false" length="4000"
+            name="ip_whois_contents" type="CLOB"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="요주의아이피 TAG" name="ngsoc_tb_atttnip_tag_s"
+        namespace="fsec" scope="atttnmip" service="AttentionIPTag">
+        <field desc="아이디" keyfield="true" length="32" name="ip_id" type="VARCHAR"/>
+        <field desc="TAG" keyfield="true" length="255" name="ip_tag" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>    
+</entities>

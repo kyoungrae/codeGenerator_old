@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="탐지정책" name="policy" namespace="fsec"
+        scope="detect" service="DetectPolicy">
+        <field desc="ID" keyfield="true" length="32" name="id" type="VARCHAR"></field>
+        <field desc="이름" keyfield="false" length="128" name="name" type="VARCHAR"/>
+        <field desc="이전이름" keyfield="false" length="128" name="old_name" type="VARCHAR"/>
+        <field desc="설명" keyfield="false" length="4000"
+            name="description" type="CLOB"/>
+        <field desc="위험도" keyfield="false" length="20" name="risk" type="VARCHAR"/>
+        <field desc="TLP" keyfield="false" length="20" name="tlp" type="VARCHAR"/>
+        <field desc="SID" keyfield="false" length="12" name="sid" type="VARCHAR"/>
+        <field desc="플로우" keyfield="false" length="20" name="flow" type="VARCHAR"></field>
+        <field desc="임계치" keyfield="false" length="22" name="threshold" type="NUMBER"/>
+        <field desc="기준시간" keyfield="false" length="22" name="window" type="NUMBER"/>
+        <field desc="스케쥴" keyfield="false" length="256" name="schedule" type="VARCHAR"/>
+        <field desc="출처" keyfield="false" length="20" name="source" type="VARCHAR"/>
+        <field desc="상태" keyfield="false" length="20" name="status" type="VARCHAR"/>
+        <field desc="유형" keyfield="false" length="20" name="ntype" type="VARCHAR"/>
+        <field desc="탐지모델" keyfield="false" length="20" name="model_id" type="VARCHAR"/>
+        <field desc="대분류" keyfield="false" length="32" name="section_id" type="VARCHAR"/>
+        <field desc="중분류" keyfield="false" length="32"
+            name="division_id" type="VARCHAR"/>
+        <field desc="스노트분류" keyfield="false" length="32"
+            name="classtype_id" type="VARCHAR"/>
+        <field desc="탐지유형" keyfield="false" length="32"
+            name="template_id" type="VARCHAR"/>
+        <field desc="생성일시" keyfield="false" length="8" name="created_at" type="DATE"/>
+        <field desc="수정일시" keyfield="false" length="8"
+            name="modified_at" type="DATE"/>
+        <field desc="확인일시" keyfield="false" length="8" name="checked_at" type="DATE"/>
+    </entity>
+</entities>

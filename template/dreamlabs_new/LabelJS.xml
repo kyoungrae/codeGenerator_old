@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>label</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#sourcetype#_#ENTITY_NAME#</filename>
+		<ext>js</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/WebContents/common/js/label/#namespace#/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2020.1.14</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+	//#ENTITY_NAME#
+#begin#
+   WatJs.Label.Array["#entity_name#.#field_name#"] =  "#field_desc#";#end#
+	]]>
+	</source>
+</template>

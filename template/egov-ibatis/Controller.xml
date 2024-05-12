@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Controller</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/controller/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2015.7.28</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#.controller</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+/**
+ * + dreamlabs Web application Framework
+ */
+package #pakage#;
+
+import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.co.dreamlabs.#namespace#.#scope#.bean.#Service#ArrayBean;
+import kr.co.dreamlabs.#namespace#.#scope#.bean.#Service#Bean;
+import kr.co.dreamlabs.#namespace#.#scope#.bean.#Service#ParmBean;
+import kr.co.dreamlabs.#namespace#.#scope#.service.#Service#Service;
+import kr.co.dreamlabs.framework.annotation.DlController;
+import kr.co.dreamlabs.std.web.ancestor.XmlController;
+import kr.co.dreamlabs.std.web.mvc.SpringModelAndView;
+
+ /**
+ * <pre>
+ * #Service##sourcetype#
+ * </pre>
+ *
+ * @title #Service##Sourcetype#
+ * @programID #Service##Sourcetype#.java
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+@DlController
+@RequestMapping("/#namespace#/#scope#/#service#.dpg")
+public class #Service##Sourcetype# extends XmlController{
+	@Resource
+	#Service#Service service;
+
+	@RequestMapping( params = "command=downloadExcel#Service#")
+	public SpringModelAndView downloadExcel#Service#(#Service#Bean bean) throws Exception{
+		return super.getCommonExcelDownloadModelAndView("#Service#.xls",service.retrieve#Service#(bean));
+	}
+	
+	@RequestMapping( params = "command=search#Service#")
+	public SpringModelAndView search#Service#(#Service#ParmBean bean) throws Exception{
+		return super.getCommonModelAndView(service.retrieve#Service#(bean));
+	}
+
+	@RequestMapping( params = "command=save#Service#")
+    public SpringModelAndView modify#Service#(#Service#Bean bean) throws Exception {
+    	String userid = (String) super.session.getAttribute("UserLogin.user");
+		bean.setSys_ud_user_id(userid);
+        return super.getCommonModelAndView(service.modify#Service#(bean));        
+    }
+
+	@RequestMapping( params = "command=drop#Service#")
+	public SpringModelAndView drop#Service#(#Service#ArrayBean beans) throws Exception {
+		return super.getCommonModelAndView(service.drop#Service#(beans));
+	}
+
+	@RequestMapping( params = "command=add#Service#")
+    public SpringModelAndView add#Service#(#Service#Bean bean) throws Exception {
+    	String userid = (String) super.session.getAttribute("UserLogin.user");
+    	bean.setSys_cr_user_id(userid);
+		bean.setSys_ud_user_id(userid);
+        return super.getCommonModelAndView(service.create#Service#(bean));
+    }
+
+}
+	]]>
+	</source>
+</template>

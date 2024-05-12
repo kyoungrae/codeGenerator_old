@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="탐지유형" name="template" namespace="fsec"
+        scope="detect" service="DetectTemplate">
+        <field desc="ID" keyfield="true" length="32" name="id" type="VARCHAR"/>
+        <field desc="(탐지유형)이름" keyfield="false" length="256" name="name" type="VARCHAR"/>
+        <field desc="스노트분류" keyfield="false" length="32"
+            name="classtype_id" type="VARCHAR"/>
+        <field desc="위험도" keyfield="false" length="20" name="risk" type="VARCHAR"/>
+        <field desc="기준시간" keyfield="false" length="22" name="window" type="NUMBER"/>
+        <field desc="설명" keyfield="false" length="4000"
+            name="description" type="CLOB"/>
+        <field desc="차수" keyfield="false" length="20" name="stage" type="VARCHAR"/>
+        <field desc="FCTI용 설명" keyfield="false" length="4000"
+            name="description_fcti" type="CLOB"/>
+        <field desc="이메일용 설명" keyfield="false" length="4000"
+            name="description_email" type="CLOB"/>
+        <field desc="모바일 설명" keyfield="false" length="4000"
+            name="description_mms" type="CLOB"/>
+        <field desc="캡쳐유형" keyfield="false" length="20"
+            name="capture_ntype" type="VARCHAR"/>
+        <field desc="검증명령" keyfield="false" length="1024"
+            name="validation_command" type="VARCHAR"/>
+        <field desc="검증대상" keyfield="false" length="20"
+            name="validation_target" type="VARCHAR"/>
+        <field desc="스플렁크" keyfield="false" length="4000"
+            name="splunk_query" type="CLOB"/>
+        <field desc="엘라스틱" keyfield="false" length="4000"
+            name="elastic_query" type="CLOB"/>
+        <field desc="생성일시" keyfield="false" length="8" name="created_at" type="DATE"/>
+        <field desc="수정일시" keyfield="false" length="8"
+            name="modified_at" type="DATE"/>
+    </entity>
+</entities>

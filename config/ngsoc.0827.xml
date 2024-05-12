@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="피싱정보 MASTER" name="ngsoc_tb_fishing_m"
+        namespace="fsec" scope="fishing" service="FishingInfo">
+        <field desc="피싱 아이디" keyfield="true" length="32" name="fish_id" type="VARCHAR"/>
+        <field desc="TLP" keyfield="false" length="20" name="fish_tlb" type="VARCHAR"/>
+        <field desc="피싱구분" keyfield="false" length="20" name="fish_div" type="VARCHAR"/>
+        <field desc="IP" keyfield="false" length="20" name="fish_ip" type="VARCHAR"/>
+        <field desc="URL" keyfield="false" length="255" name="fish_url" type="VARCHAR"/>
+        <field desc="국가" keyfield="false" length="20"
+            name="fish_country" type="VARCHAR"/>
+        <field desc="작성기관" keyfield="false" length="32"
+            name="writ_org_id" type="VARCHAR"/>
+        <field desc="사칭회사" keyfield="false" length="100" name="imp_cpny" type="VARCHAR"/>
+        <field desc="탐지일" keyfield="false" length="8"
+            name="detection_dt" type="DATE"/>
+        <field desc="악성앱 파일아이디" keyfield="false" length="32"
+            name="mal_app" type="VARCHAR"/>
+        <field desc="캡쳐 파일아이디" keyfield="false" length="32"
+            name="capture" type="VARCHAR"/>
+        <field desc="중요도" keyfield="false" length="20" name="importance" type="VARCHAR"/>
+        <field desc="공유범위" keyfield="false" length="20"
+            name="share_range" type="VARCHAR"/>
+        <field desc="공유상태" keyfield="false" length="20"
+            name="share_status" type="VARCHAR"/>
+        <field desc="확인상태" keyfield="false" length="20"
+            name="confm_status" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+</entities>

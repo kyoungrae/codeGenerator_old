@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>ServiceImpl</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/service/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2015.7.28</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#.service</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+/**
+ *  ++ dreamlabs Product ++
+ */
+package #pakage#;
+
+import java.util.List;
+
+import kr.co.dreamlabs.framework.common.database.util.DataList;
+import kr.co.dreamlabs.framework.layer.service.Service;
+import kr.co.dreamlabs.#namespace#.#scope#.bean.*;
+import kr.co.dreamlabs.#namespace#.#scope#.handler.#Service#Handler;
+ /**
+ * <pre>
+ * #Service##sourcetype#
+ * </pre>
+ *
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+
+public class #Service##Sourcetype# extends Service implements #Service#Service {
+	
+	/**
+	 * <pre>
+	 * retrieve#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean 
+	 * @return List
+	 * @throws #service#ServiceException #Service##Sourcetype#
+	 */
+	public List retrieve#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		#Service#Handler handler = new #Service#Handler();
+		List list = null;
+		try{
+			list = handler.select(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return list;
+	}
+	/**
+	 * <pre>
+	 * retrieve#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#ParmBean 
+	 * @return DataList
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public DataList retrieve#Service#(#Service#ParmBean bean) throws #Service#ServiceException{
+		#Service#Handler handler = new #Service#Handler();
+		DataList list = null;
+		try{
+			list = new DataList(handler.select(bean));
+			int count = handler.selectCount(bean);
+			
+			list.setTOTCOUNT(count);
+			list.setCURPAGE(bean.getCURPAGE());
+			list.setRCOUNT(bean.getRCOUNT());						
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return list;
+	}
+			
+	/**
+	 * <pre>
+	 * create#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean 
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int create#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		if (!super.isExistsKeyValue(bean)) {
+			throw new #Service#ServiceException(#Service#ServiceException.PARAMETER_ERROR0);
+		}
+			
+		#Service#Handler handler = new #Service#Handler();
+		int rtn = -1;
+		try{
+			rtn = handler.insert(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+	
+	
+	/**
+	 * <pre>
+	 * modify#Service#
+	 * </pre>
+	 *
+	 * @param bean #Service#Bean 
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int modify#Service#(#Service#Bean bean) throws #Service#ServiceException{
+		if (!super.isExistsKeyValue(bean)) {
+			throw new #Service#ServiceException(#Service#ServiceException.PARAMETER_ERROR0);
+		}	
+		#Service#Handler handler = new #Service#Handler();
+		int rtn = -1;
+		try{
+			rtn = handler.update(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+	/**
+	 * <pre>
+	 * remove#Service#
+	 * </pre>#begin#
+	 * @param #key_fields# String #end#
+	 * @return int
+	 * @throws #Service#ServiceException #Service##Sourcetype#
+	 */
+	public int remove#Service#(#begin#String #Key_fields##conjunction##end#) throws #Service#ServiceException{
+
+		#Service#Handler handler = new #Service#Handler();
+		#Service#Bean bean = new #Service#Bean();
+		int rtn = -1;
+		try{
+			#begin#
+			bean.set#Key_fields#(#Key_fields#);#end#
+		 	rtn = handler.delete(bean);
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return rtn;
+	}
+	
+	protected StringBuffer getModifyDesc(#Service#Bean bean) throws #Service#ServiceException{
+		#Service#Handler handler = new #Service#Handler();
+		StringBuffer sb = new StringBuffer();
+		#Service#Bean rbean = new #Service#Bean();
+		#begin#
+		rbean.set#Key_fields#(bean.get#Key_fields#());#end#
+ 
+		try{
+			List list = null;
+			list = handler.select(bean);
+			if(1!=list.size())return sb;
+			#Service#Bean rstbean = (#Service#Bean)list.get(0);
+			#begin#			
+			if(!checkEquals(rstbean.get#Field_name#(),bean.get#Field_name#()))sb.append("\n#field_desc# : ").append(rstbean.get#Field_name#()).append(" > ").append(bean.get#Field_name#()); #end#			 
+		}catch(Exception e){
+			throw new #Service#ServiceException(e);
+		}
+		return sb
+	}	
+
+}
+	]]>
+	</source>
+</template>
+ 

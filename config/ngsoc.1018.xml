@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="침해시도 IP 현황 view" name="ngsoc_vs_atttnip"
+        namespace="fsec" scope="report" service="AttentionIPReport">
+        <field desc="구분" keyfield="false" length="20" name="ip_div" type="VARCHAR"/>
+        <field desc="구분명" keyfield="false" length="128" name="ip_div_nm" type="VARCHAR"/>
+        <field desc="등록" keyfield="false" length="22" name="reg" type="NUMBER"/>
+        <field desc="해지" keyfield="false" length="22" name="release" type="NUMBER"/>
+        <field desc="총 등록수" keyfield="false" length="22" name="tot_reg" type="NUMBER"/>
+        <field desc="탐지건수" keyfield="false" length="22" name="detect" type="NUMBER"/>
+        <field desc="연중 신규 요주의 IP" keyfield="false" length="22"
+            name="newip_year" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="침해시도 IP 현황 view" name="ngsoc_vs_atttnip_einf"
+        namespace="fsec" scope="report" service="TryAttackIPReport">
+        <field desc="구분" keyfield="false" length="20" name="ip_div" type="VARCHAR"/>
+        <field desc="구분명" keyfield="false" length="128" name="ip_div_nm" type="VARCHAR"/>
+        <field desc="D-7" keyfield="false" length="22" name="d7" type="NUMBER"/>
+        <field desc="D-6" keyfield="false" length="22" name="d6" type="NUMBER"/>
+        <field desc="D-5" keyfield="false" length="22" name="d5" type="NUMBER"/>
+        <field desc="D-4" keyfield="false" length="22" name="d4" type="NUMBER"/>
+        <field desc="D-3" keyfield="false" length="22" name="d3" type="NUMBER"/>
+        <field desc="D-2" keyfield="false" length="22" name="d2" type="NUMBER"/>
+        <field desc="D-1" keyfield="false" length="22" name="d1" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="일간정보공유현황 view"
+        name="ngsoc_vs_daily_shareinfo" namespace="fsec" scope="report" service="DailyShareinfoReport">
+        <field desc="공유정보 구분" keyfield="false" length="32"
+            name="share_info_div" type="VARCHAR"></field>
+        <field desc="공유정보 구분명" keyfield="false" length="128"
+            name="share_info_div_nm" type="VARCHAR"/>
+        <field desc="공유정보 ID" keyfield="false" length="32"
+            name="share_info_id" type="VARCHAR"/>
+        <field desc="공유정보 제목" keyfield="false" length="128"
+            name="share_info_title" type="VARCHAR"/>
+        <field desc="건수" keyfield="false" length="22" name="ncount" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="업권별 유형별 일간 침해행위 탐지현황 view"
+        name="ngsoc_vs_daily_tmpl_detect" namespace="fsec"
+        scope="report" service="DailyDetectReport">
+        <field desc="업권구분" keyfield="false" length="32" name="sector_id" type="VARCHAR"/>
+        <field desc="업권명" keyfield="false" length="128" name="sector_nm" type="VARCHAR"/>
+        <field desc="서비스거부" keyfield="false" length="22" name="dos" type="NUMBER"/>
+        <field desc="악성코드" keyfield="false" length="22" name="malware" type="NUMBER"/>
+        <field desc="정보수집" keyfield="false" length="22" name="infoget" type="NUMBER"/>
+        <field desc="침입공격" keyfield="false" length="22" name="intattack" type="NUMBER"/>
+        <field desc="기타" keyfield="false" length="22" name="etc" type="NUMBER"/>
+        <field desc="합계" keyfield="false" length="22" name="nsum" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="피싱사이트 탐지 현황 view" name="ngsoc_vs_fishing"
+        namespace="fsec" scope="report" service="FishingReport">
+        <field desc="구분" keyfield="false" length="20" name="fish_div" type="VARCHAR"/>
+        <field desc="구분명" keyfield="false" length="128"
+            name="fish_div_nm" type="VARCHAR"/>
+        <field desc="일간-참가기관" keyfield="false" length="22"
+            name="d_customer" type="NUMBER"/>
+        <field desc="일간-유관기관" keyfield="false" length="22"
+            name="d_reorg" type="NUMBER"/>
+        <field desc="일간-합계" keyfield="false" length="22" name="d_sum" type="NUMBER"/>
+        <field desc="연간-참가기관" keyfield="false" length="22"
+            name="y_customer" type="NUMBER"/>
+        <field desc="연간-유관기관" keyfield="false" length="22"
+            name="y_reorg" type="NUMBER"/>
+        <field desc="연간-합계" keyfield="false" length="22" name="y_sum" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="일간특이사항 view"
+        name="ngsoc_vs_response_customer" namespace="fsec"
+        scope="report" service="ResponseCustomerReport">
+        <field desc="대응이벤트 ID" keyfield="false" length="32"
+            name="response_event_id" type="VARCHAR"/>
+        <field desc="대응이벤트명" keyfield="false" length="128"
+            name="response_event_nm" type="VARCHAR"/>
+        <field desc="참가기관 ID" keyfield="false" length="32"
+            name="customer_id" type="VARCHAR"/>
+        <field desc="참가기관명" keyfield="false" length="128"
+            name="customer_name" type="VARCHAR"/>
+        <field desc="통지건수" keyfield="false" length="22" name="ncount" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="전자적 침해행위 추이 view"
+        name="ngsoc_vs_trend_einfringement" namespace="fsec"
+        scope="report" service="TrendEinfringementReport">
+        <field desc="구분" keyfield="false" length="32" name="trend_div" type="VARCHAR"/>
+        <field desc="구분명" keyfield="false" length="128"
+            name="trend_div_nm" type="VARCHAR"/>
+        <field desc="D-7" keyfield="false" length="22" name="d7" type="NUMBER"/>
+        <field desc="D-6" keyfield="false" length="22" name="d6" type="NUMBER"/>
+        <field desc="D-5" keyfield="false" length="22" name="d5" type="NUMBER"/>
+        <field desc="D-4" keyfield="false" length="22" name="d4" type="NUMBER"/>
+        <field desc="D-3" keyfield="false" length="22" name="d3" type="NUMBER"/>
+        <field desc="D-2" keyfield="false" length="22" name="d2" type="NUMBER"/>
+        <field desc="D-1" keyfield="false" length="22" name="d1" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="업권별 주간 침해행위 분석 현황 view"
+        name="ngsoc_vs_weekly_analysis" namespace="fsec" scope="report" service="WeeklyAnalysisReport">
+        <field desc="업권구분" keyfield="false" length="32" name="sector_id" type="VARCHAR"/>
+        <field desc="업권명" keyfield="false" length="128" name="sector_nm" type="VARCHAR"/>
+        <field desc="D-7" keyfield="false" length="22" name="d7" type="NUMBER"/>
+        <field desc="D-6" keyfield="false" length="22" name="d6" type="NUMBER"/>
+        <field desc="D-5" keyfield="false" length="22" name="d5" type="NUMBER"/>
+        <field desc="D-4" keyfield="false" length="22" name="d4" type="NUMBER"/>
+        <field desc="D-3" keyfield="false" length="22" name="d3" type="NUMBER"/>
+        <field desc="D-2" keyfield="false" length="22" name="d2" type="NUMBER"/>
+        <field desc="D-1" keyfield="false" length="22" name="d1" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="업권별 주간 침해행위 탐지 현황 view"
+        name="ngsoc_vs_weekly_detect" namespace="fsec" scope="report" service="WeeklyDetectReport">
+        <field desc="업권구분" keyfield="false" length="32" name="sector_id" type="VARCHAR"/>
+        <field desc="업권명" keyfield="false" length="128" name="sector_nm" type="VARCHAR"/>
+        <field desc="D-7" keyfield="false" length="22" name="d7" type="NUMBER"/>
+        <field desc="D-6" keyfield="false" length="22" name="d6" type="NUMBER"/>
+        <field desc="D-5" keyfield="false" length="22" name="d5" type="NUMBER"/>
+        <field desc="D-4" keyfield="false" length="22" name="d4" type="NUMBER"/>
+        <field desc="D-3" keyfield="false" length="22" name="d3" type="NUMBER"/>
+        <field desc="D-2" keyfield="false" length="22" name="d2" type="NUMBER"/>
+        <field desc="D-1" keyfield="false" length="22" name="d1" type="NUMBER"/>
+    </entity>
+    <entity build="yes" desc="업권별 주간 침해행위 대응 현황 view"
+        name="ngsoc_vs_weekly_response" namespace="fsec" scope="report" service="WeeklyResponseReport">
+        <field desc="업권구분" keyfield="false" length="32" name="sector_id" type="VARCHAR"/>
+        <field desc="업권명" keyfield="false" length="128" name="sector_nm" type="VARCHAR"/>
+        <field desc="D-7" keyfield="false" length="22" name="d7" type="NUMBER"/>
+        <field desc="D-6" keyfield="false" length="22" name="d6" type="NUMBER"/>
+        <field desc="D-5" keyfield="false" length="22" name="d5" type="NUMBER"/>
+        <field desc="D-4" keyfield="false" length="22" name="d4" type="NUMBER"/>
+        <field desc="D-3" keyfield="false" length="22" name="d3" type="NUMBER"/>
+        <field desc="D-2" keyfield="false" length="22" name="d2" type="NUMBER"/>
+        <field desc="D-1" keyfield="false" length="22" name="d1" type="NUMBER"/>
+    </entity>
+</entities>

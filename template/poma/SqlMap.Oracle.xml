@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Oracle</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#Handler.Map.#Sourcetype#</filename>
+		<ext>xml</ext>
+		<path>./work/genSrc/com/cpaas/biz/database/oracle/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2019.2.27</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="#ENTITY_NAME#">
+ 
+
+	<select id="SELECT.#ENTITY_NAME#" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+		SELECT
+#begin#
+	#field_name##conjunction##end#
+				FROM #entity_name#
+
+				<dynamic prepend="WHERE">
+#begin#
+	<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+				</dynamic>
+		<isNotNull 	property="ORDERBY">ORDER BY $ORDERBY$</isNotNull>				
+	</select>
+	
+	
+	
+	<select id="SELECT.#ENTITY_NAME#_PAGE" resultClass="java.util.HashMap" parameterClass="java.util.HashMap">
+         SELECT SYSTEM.* FROM
+         ( SELECT @RNUM := @RNUM + 1 AS NO ,
+          TAB.* FROM
+ 
+         ( SELECT
+#begin#
+	#field_name##conjunction##end#
+		FROM #entity_name#
+	         <dynamic prepend=" WHERE ">
+#begin#
+		<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+			 </dynamic>
+				<isNotNull 	property="ORDERBY">ORDER BY $ORDERBY$</isNotNull>
+	         ) TAB,
+         	(SELECT @RNUM :=0)B 
+			<isNotNull 	property="ORDERBY"> order by $ORDERBY$   </isNotNull>   		
+         )SYSTEM
+         WHERE
+         NO  BETWEEN (((#CURPAGE#-1)*#RCOUNT#)+1) AND (#CURPAGE#*#RCOUNT#)
+         		
+	</select>
+
+	<select id="SELECT.#ENTITY_NAME#_COUNT" resultClass="int" parameterClass="java.util.HashMap">
+		    SELECT COUNT(*)  
+		FROM #entity_name#
+	    <dynamic prepend=" WHERE ">
+#begin#
+			<isNotNull  prepend=" AND "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+		</dynamic>
+	</select>
+	
+	
+	<insert id="INSERT.#ENTITY_NAME#">
+		INSERT INTO #ENTITY_NAME#(
+			<dynamic>#begin#
+				<isNotNull prepend=" , " property="#field_name#">#field_name#</isNotNull>#end#
+			</dynamic>
+
+		)
+		VALUES(
+			<dynamic>#begin#
+				<isNotNull prepend=" , " property="#field_name#">##field_name##</isNotNull>#end#
+			</dynamic>
+		)
+	</insert>
+
+	<delete id="DELETE.#ENTITY_NAME#">
+		DELETE FROM #ENTITY_NAME#
+		WHERE  1=1 #begin#
+		AND #key_fields# = ##key_fields##  #end#
+	</delete>
+
+	<update id="UPDATE.#ENTITY_NAME#">
+		UPDATE  #ENTITY_NAME# SET
+			<dynamic prepend=",">
+#begin#
+				<isNotNull  prepend=" , "  property="#field_name#" >#field_name#=##field_name##</isNotNull>#end#
+			</dynamic>
+		WHERE  1=1 #begin#
+		AND #key_fields# = ##key_fields##  #end#
+	</update>
+</sqlMap>
+	]]>
+	</source>
+</template>

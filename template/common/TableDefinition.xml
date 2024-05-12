@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>html</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#TABLE_ID#TableDefinition</filename>
+		<ext>html</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/WebContents/www/#scope#/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (jhw9790@dreamlabs.co.kr)</author>
+		<cdate>2022.11.3</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#table_id#테이블 정의서</title>
+    <style>
+        *{text-align:center;box-sizing: border-box;}
+        .table-def-div{width:1000px;border:2px solid #333;border-bottom:1px solid #333;margin-bottom:10px;float:left;}
+        .table-def-header{width:100%;border-bottom:2px solid #333;margin-bottom:10px;float:left;}
+        .table-def-tb{width:100%;border-top:2px solid #333;border-bottom:2px solid #333;float:left;margin-bottom:10px;}
+        .table-def-column{width:100%;border-top:2px solid #333;float:left;}
+
+        .row-header{background-color:#ccc;font-weight:700;}
+        .border-left{border-left:1px solid #333;}
+        .border-right{border-right:1px solid #333;}
+        .bold-txt{font-weight:700;}
+
+        .table-def-header .first-col{width:20%;border-right:1px solid #333;float: left;}
+        .table-def-header .first-col .title{width:100%;background-color:#ccc;border-bottom:1px solid #333;height:44px;float:left;}
+        .table-def-header h2{margin:0;line-height:44px;font-size:20px;}
+        .table-def-header .first-col p{margin:0;width:30%;float:left;line-height:22px;border-right: 1px solid #333;font-size:14px;}
+        .table-def-header .first-col p.row-value{width:70%;background-color:#fff;border-right:none;}
+        .table-def-header .second-col{width:60%;border-right:1px solid #333;float:left;}
+        .table-def-header .second-col > div {width:100%;float:left;border-bottom:1px solid #333;line-height:22px;height:22px;}
+        .table-def-header .second-col > div:last-child{border-bottom:none;}
+        .table-def-header .second-col .row-header{margin:0;width:15%;font-size:14px;float:left;line-height:21px;border-right: 1px solid #333;}
+        .table-def-header .second-col .row-value{margin:0;width:35%;background-color:#fff;font-size:14px;float:left;line-height:21px;height:21px;}
+        .table-def-header .second-col .row-value.wide-width{width:85%;}
+        .table-def-header .second-col > div:last-child p{line-height:22px;}
+        .table-def-header .third-col{width:20%;float:left;}
+        .table-def-header .third-col > div{width:100%;float:left;border-bottom:1px solid #333;line-height:22px;height:22px;}
+        .table-def-header .third-col > div:last-child{border-bottom:none;}
+        .table-def-header .third-col .row-header{margin:0;width:30%;font-size:14px;line-height:21px;border-right: 1px solid #333;float:left;}
+        .table-def-header .third-col .row-value{margin:0;width:70%;background-color:#fff;line-height:21px;float:left;font-size: 14px;}
+        .table-def-header .third-col > div:last-child p{line-height:22px;}
+
+        .table-def-tb > div{width:100%;float:left;line-height:22px;height:22px;border-bottom:1px solid #333;}
+        .table-def-tb > div:last-child{border-bottom:none;}
+        .table-def-tb p{margin:0;font-size:14px;float:left;line-height:21px;}
+        .table-def-tb > div:last-child p{line-height:22px;}
+        
+        .table-def-column > div{width:100%;float:left;border-bottom:1px solid #333;line-height:22px;height:22px;box-sizing: border-box;}
+        .table-def-column > div.column-header{font-weight:700;}
+        .table-def-column > div.column-header p{background-color:#ccc;}
+        .table-def-column > div p{margin:0;text-align:center;font-size:14px;float:left;height:21px;line-height:21px;border-right: 1px solid #333;overflow: hidden;}
+        .table-def-column > div p:nth-child(1){width:7%;}
+        .table-def-column > div p:nth-child(2){width:13%;}
+        .table-def-column > div p:nth-child(3){width:13%;}
+        .table-def-column > div p:nth-child(4){width:17%;}
+        .table-def-column > div p:nth-child(5){width:9%;}
+        .table-def-column > div p:nth-child(6){width:10%;}
+        .table-def-column > div p:nth-child(7){width:11%;}
+        .table-def-column > div p:nth-child(8){width:20%;border-right:none;}
+    </style>
+</head>
+<body>
+	<div class="table-def-div">
+        <div class="table-def-header">
+            <div class="first-col">
+                <div class="title">
+                    <h2>테이블 정의서</h2>
+                </div>
+                <p class="row-header">작성자</p>
+                <p class="row-value">#creator_name#</p>
+            </div>
+            <div class="second-col">
+                <div>
+                    <p class="row-header">양식코드</p>
+                    <p class="row-value bold-txt">#form_code#</p>
+                    <p class="row-header border-left">프로젝트ID</p>
+                    <p class="row-value bold-txt">#prj_id#</p>
+                </div>
+                <div>
+                    <p class="row-header">프로젝트명</p>
+                    <p class="row-value wide-width">#prj_nm#</p>
+                </div>
+                <div>
+                    <p class="row-header">작성일</p>
+                    <p class="row-value">#create_dt#</p>
+                    <p class="row-header border-left">확인자</p>
+                    <p class="row-value">#check_nm#</p>
+                </div>
+            </div>
+            <div class="third-col">
+                <div>
+                    <p class="row-header">작업명</p>
+                    <p class="row-value">#job_nm#</p>
+                </div>
+                <div>
+                    <p class="row-header">작성부서</p>
+                    <p class="row-value">#create_dept#</p>
+                </div>
+                <div>
+                    <p class="row-header">확인일</p>
+                    <p class="row-value">#check_dt#</p>
+                </div>
+            </div>
+        </div>
+        <div class="table-def-tb">
+            <div>
+                <p class="row-header border-right" style="width:20%;">Table명</p>
+                <p class="bold-txt" style="width:30%;background-color:#fff;">#table_id#</p>
+                <p class="row-header border-right border-left" style="width:9%;">Table 논리명</p>
+                <p style="width:41%;background-color:#fff;">#table_nm#</p>
+            </div>
+            <div>
+                <p class="row-header border-right" style="width:20%;">Table 유형 정의</p>
+                <p class="bold-txt" style="width:80%;background-color:#fff;">#table_nm#</p>
+            </div>
+        </div>
+        <div class="table-def-column">
+            <div class="column-header">
+                <p>No</p>
+                <p>논리명(Attribute)</p>
+                <p>물리명(Field Name)</p>
+                <p>자료형태</p>
+                <p>길이</p>
+                <p>Not Null</p>
+                <p>PK</p>
+                <p>기본값</p>
+            </div>
+#begin#
+            <div>
+                <p>#field_no#</p>
+                <p>#field_desc#</p>
+                <p>#field_name#</p>
+                <p>#field_type#</p>
+                <p>#field_length#</p>
+                <p>#field_notnull#</p>
+                <p>#field_pk#</p>
+                <p>#field_default#</p>
+            </div>
+#end#
+        </div>
+    </div>
+</body>
+</html>
+	]]>
+	</source>
+</template>

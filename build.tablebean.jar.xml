@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="${project.name}">
+
+	<property environment="env" />
+	<property file="build.tablebean.properties"/>
+	<property name="basedir" value="." />
+	<property name="libDir" value="lib" />
+	<property name="dlLib" value="${jar.dir}" />
+	<property name="dlJar" value="${jar.name}" />
+	<property name="src" value="${src.dir}" />
+	<property name="test" value="${test.dir}" />
+	<property name="conf" value="${conf.dir}" />
+	<property name="webxml.file" value="web.xml" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="source" value="1.5" />
+	<property name="target" value="1.5" />
+	<property name="bin" value="bin" />
+	<property name="dist" value="dist" />
+	<property name="report.home" value="." />
+
+	<path id="app.classpath">
+		<fileset dir="${libDir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+
+	<target name="init" depends="cleanall">
+		<mkdir dir="${bin}" />
+		<mkdir dir="${dist}" />
+	</target>
+
+	<target name="clean">
+ 		<delete dir="${bin}" />
+	</target>
+
+	<target name="cleanall" depends="clean" />
+
+	<target name="build" depends="api-generate-jar">
+	</target>
+
+	<target name="java_compile" depends="init">
+		<echo>############################</echo>
+		<echo># ${project.name} Compile   </echo>
+		<echo>############################</echo>
+		<javac encoding="utf-8" srcdir="${src}" destdir="${bin}" source="${source}" target="${target}" classpathref="app.classpath" />
+		<copy todir="${bin}">
+			<fileset dir="${src}">
+				<include name="**/*.xml" />
+				<exclude name="CVS/**/*.*" />
+				<exclude name="**/CVS/*.*" />
+			</fileset>
+		</copy>
+	</target>
+	<!--<target name="api-generate-jar" depends="java_compile,pmd,test,junitreport">-->
+		<target name="api-generate-jar" depends="java_compile">
+		<jar jarfile="${dlLib}/${dlJar}">
+			<fileset dir="${bin}">
+				<exclude name="test/**/*.*" />
+				<exclude name="test/**" />
+				<include name="**/*" />
+			</fileset>
+		</jar>
+	</target>
+</project>
+

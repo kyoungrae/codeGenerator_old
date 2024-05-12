@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="TODO 첨부파일" name="wu_tb_todo_addfile_s"
+        namespace="wu" scope="base" service="servicewu_tb_todo_addfile_s">
+        <field desc="할일 아이디" keyfield="true" length="32" name="todo_id" type="varchar"/>
+        <field desc="할일 구분" keyfield="true" length="32"
+            name="todo_addfile_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="TODO 히스토리" name="wu_tb_todo_h"
+        namespace="wu" scope="base" service="servicewu_tb_todo_h">
+        <field desc="할일 아이디" keyfield="true" length="32" name="todo_id" type="varchar"/>
+        <field desc="할일 히스토리 순번" keyfield="true" length="11"
+            name="todo_h_seq" type="int"/>
+        <field desc="할일 구분" keyfield="false" length="20"
+            name="todo_div_cd" type="varchar"/>
+        <field desc="중요도" keyfield="false" length="20" name="imptc_cd" type="varchar"/>
+        <field desc="내용" keyfield="false" length="0" name="todo_desc" type="text"/>
+        <field desc="요청자 아이디" keyfield="false" length="15"
+            name="req_user_id" type="varchar"/>
+        <field desc="담당자 아이디" keyfield="false" length="15"
+            name="todo_user_id" type="varchar"/>
+        <field desc="시작예정일" keyfield="false" length="22"
+            name="pl_start_dt" type="datetime"/>
+        <field desc="시작일" keyfield="false" length="22" name="start_dt" type="datetime"/>
+        <field desc="기일" keyfield="false" length="22" name="deadline_dt" type="datetime"/>
+        <field desc="완료일" keyfield="false" length="22" name="end_dt" type="datetime"/>
+        <field desc="진행상태" keyfield="false" length="20"
+            name="todo_status_cd" type="varchar"/>
+        <field desc="비고" keyfield="false" length="1024"
+            name="result_desc" type="varchar"/>
+        <field desc="상위 아이디" keyfield="false" length="32"
+            name="up_todo_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="TODO 마스터" name="wu_tb_todo_m"
+        namespace="wu" scope="base" service="servicewu_tb_todo_m">
+        <field desc="할일 아이디" keyfield="true" length="32" name="todo_id" type="varchar"/>
+        <field desc="할일 구분" keyfield="false" length="20"
+            name="todo_div_cd" type="varchar"/>
+        <field desc="중요도" keyfield="false" length="20" name="imptc_cd" type="varchar"/>
+        <field desc="내용" keyfield="false" length="0" name="todo_desc" type="text"/>
+        <field desc="요청자 아이디" keyfield="false" length="15"
+            name="req_user_id" type="varchar"/>
+        <field desc="담당자 아이디" keyfield="false" length="15"
+            name="todo_user_id" type="varchar"/>
+        <field desc="시작예정일" keyfield="false" length="22"
+            name="pl_start_dt" type="datetime"/>
+        <field desc="시작일" keyfield="false" length="22" name="start_dt" type="datetime"/>
+        <field desc="기일" keyfield="false" length="22" name="deadline_dt" type="datetime"/>
+        <field desc="완료일" keyfield="false" length="22" name="end_dt" type="datetime"/>
+        <field desc="진행상태" keyfield="false" length="20"
+            name="todo_status_cd" type="varchar"/>
+        <field desc="비고" keyfield="false" length="1024"
+            name="result_desc" type="varchar"/>
+        <field desc="상위 아이디" keyfield="false" length="32"
+            name="up_todo_id" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="TODO 상세" name="wu_tb_todo_rst_s"
+        namespace="wu" scope="base" service="servicewu_tb_todo_rst_s">
+        <field desc="할일 아이디" keyfield="true" length="32" name="todo_id" type="varchar"/>
+        <field desc="상세 아이디" keyfield="false" length="32"
+            name="todo_dtl_id" type="varchar"/>
+        <field desc="내용" keyfield="false" length="0" name="result_desc" type="text"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+    <entity build="yes" desc="TODO 태그" name="wu_tb_todo_tag_s"
+        namespace="wu" scope="base" service="servicewu_tb_todo_tag_s">
+        <field desc="할일 아이디" keyfield="true" length="32" name="todo_id" type="varchar"/>
+        <field desc="할일 태그" keyfield="true" length="256" name="todo_tag" type="varchar"/>
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

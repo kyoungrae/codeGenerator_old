@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="카드 경비 테이블" name="cc_tx_expns_user_in"
+        namespace="account" scope="expense" service="UserExpense">
+        <field desc="key" keyfield="true" length="32" name="expns_user_in_id" type="varchar"/>
+        <field desc="경비사용 방법" keyfield="false" length="32" name="expns_how_cd" type="varchar"/>
+        <field desc="지출자 아이디" keyfield="false" length="15" name="expns_user_id" type="varchar"/>
+        <field desc="경비발생일시" keyfield="false" length="22" name="trns_dt" type="datetime"/>
+        <field desc="발생금액(합계)" keyfield="false" length="18"
+            name="trns_amt" type="int"/>
+        <field desc="비고" keyfield="false" length="50" name="memo" type="varchar"/>
+        <field desc="영수증 아이디" keyfield="false" length="32"
+            name="ref_doc_id" type="varchar"/> 
+        <field desc="시스템 생성 시간" keyfield="false" length="22"
+            name="sys_cr_dt" type="datetime"/>
+        <field desc="시스템 생성자 아이디" keyfield="false" length="15"
+            name="sys_cr_user_id" type="varchar"/>
+        <field desc="시스템 업데이트 시간" keyfield="false" length="22"
+            name="sys_ud_dt" type="datetime"/>
+        <field desc="시스템 업데이트 아이디" keyfield="false" length="15"
+            name="sys_ud_user_id" type="varchar"/>
+    </entity>
+</entities>

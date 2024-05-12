@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="보안관제자산 MASTER" name="ngsoc_tb_asset_m"
+        namespace="fsec" scope="asset" service="AssetMaster">
+        <field desc="자산ID" keyfield="true" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="자산이름" keyfield="false" length="50" name="asset_nm" type="VARCHAR"/>
+        <field desc="자산설명" keyfield="false" length="255"
+            name="asset_desc" type="VARCHAR"/>
+        <field desc="상위자산ID" keyfield="false" length="32"
+            name="up_asset_id" type="VARCHAR"/>
+        <field desc="참가기관ID" keyfield="false" length="32"
+            name="group_id" type="VARCHAR"/>
+        <field desc="IP" keyfield="false" length="20" name="asset_ip" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="보안관제자산 네트워크" name="ngsoc_tb_asset_net_s"
+        namespace="fsec" scope="asset" service="AssetNetwork">
+        <field desc="자산ID" keyfield="true" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="네트워크ID" keyfield="true" length="32" name="net_id" type="VARCHAR"/>
+        <field desc="네트워크이름" keyfield="false" length="20" name="net_nm" type="VARCHAR"/>
+        <field desc="네트워크대역시작IP" keyfield="false" length="20"
+            name="net_ip_from" type="VARCHAR"/>
+        <field desc="네트워크대역끝IP" keyfield="false" length="20"
+            name="net_ip_to" type="VARCHAR"/>
+        <field desc="참가기관ID" keyfield="false" length="32"
+            name="group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="자산상세정보" name="ngsoc_tb_asset_s"
+        namespace="fsec" scope="asset" service="AssetInfo">
+        <field desc="자산ID" keyfield="true" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="자산구분" keyfield="false" length="20"
+            name="asste_type" type="VARCHAR"/>
+        <field desc="자산속성키" keyfield="false" length="50"
+            name="asset_key" type="VARCHAR"/>
+        <field desc="자산속성값" keyfield="false" length="255"
+            name="asset_val" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="보안관제자산 서비스" name="ngsoc_tb_asset_svc_s"
+        namespace="fsec" scope="asset" service="AssetServicez">
+        <field desc="자산ID" keyfield="true" length="32" name="asset_id" type="VARCHAR"/>
+        <field desc="서비스ID" keyfield="true" length="32" name="svc_id" type="VARCHAR"/>
+        <field desc="서비스이름" keyfield="false" length="50" name="svc_nm" type="VARCHAR"/>
+        <field desc="도메인" keyfield="false" length="100"
+            name="svc_domain" type="VARCHAR"/>
+        <field desc="포트" keyfield="false" length="20" name="svc_port" type="VARCHAR"/>
+        <field desc="프로토콜" keyfield="false" length="20"
+            name="svc_protocol" type="VARCHAR"/>
+        <field desc="서비스정보" keyfield="false" length="100"
+            name="svc_info" type="VARCHAR"/>
+        <field desc="최초식별시간" keyfield="false" length="8"
+            name="svc_init_identi_dt" type="DATE"/>
+        <field desc="최종식별시간" keyfield="false" length="8"
+            name="svc_final_identi_dt" type="DATE"/>
+        <field desc="이상탐지여부" keyfield="false" length="1"
+            name="svc_anomaly_detect_yn" type="VARCHAR"/>
+        <field desc="헬스체크여부" keyfield="false" length="1"
+            name="svc_health_check_yn" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+</entities>

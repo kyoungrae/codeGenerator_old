@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<entities>
+    <entity build="yes" desc="CAPEC MASTER" name="ngsoc_tb_capec_m"
+        namespace="fsec" scope="threat" service="CapecMaster">
+        <field desc="CAPEC ID" keyfield="true" length="20"
+            name="capec_id" type="VARCHAR"/>
+        <field desc="CAPEC 명" keyfield="false" length="100"
+            name="capec_nm" type="VARCHAR"/>
+        <field desc="CAPEC 추출" keyfield="false" length="100"
+            name="capec_abstraction" type="VARCHAR"/>
+        <field desc="CAPEC 상태" keyfield="false" length="100"
+            name="capec_status" type="VARCHAR"></field>
+        <field desc="CAPEC 설명" keyfield="false" length="100"
+            name="capec_desc" type="VARCHAR"/>
+        <field desc="CAPEC 대체 조건" keyfield="false" length="100"
+            name="capec_alternate_terms" type="VARCHAR"/>
+        <field desc="CAPEC 공격 가능성" keyfield="false" length="100"
+            name="capec_likelihood_attack" type="VARCHAR"/>
+        <field desc="CAPEC 심각도" keyfield="false" length="100"
+            name="capec_typical_severity" type="VARCHAR"/>
+        <field desc="CAPEC 관련 공격 패턴" keyfield="false" length="100"
+            name="capec_related_attack_patterns" type="VARCHAR"/>
+        <field desc="CAPEC 실행 흐름" keyfield="false" length="100"
+            name="capec_execution_flow" type="VARCHAR"/>
+        <field desc="CAPEC 전제 조건" keyfield="false" length="100"
+            name="capec_prerequisites" type="VARCHAR"/>
+        <field desc="CAPEC 필요 기술" keyfield="false" length="100"
+            name="capec_skills_required" type="VARCHAR"/>
+        <field desc="CAPEC 필요 자원" keyfield="false" length="100"
+            name="capec_resources_required" type="VARCHAR"/>
+        <field desc="CAPEC 지표" keyfield="false" length="100"
+            name="capec_indicators" type="VARCHAR"/>
+        <field desc="CAPEC 결과" keyfield="false" length="100"
+            name="capec_consequences" type="VARCHAR"/>
+        <field desc="CAPEC 완화" keyfield="false" length="100"
+            name="capec_mitigations" type="VARCHAR"/>
+        <field desc="CAPEC 사례" keyfield="false" length="100"
+            name="capec_example_instances" type="VARCHAR"/>
+        <field desc="CAPEC 관련 약점" keyfield="false" length="100"
+            name="capec_related_weaknesses" type="VARCHAR"/>
+        <field desc="CAPEC 분류 맵핑" keyfield="false" length="100"
+            name="capec_taxonomy_mappings" type="VARCHAR"/>
+        <field desc="CAPEC 메모" keyfield="false" length="100"
+            name="capec_notes" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="Vendor 및 Product 정보"
+        name="ngsoc_tb_cve_cpe_s" namespace="fsec" scope="threat" service="CVECpe">
+        <field desc="취약점 ID" keyfield="true" length="20" name="cve_id" type="VARCHAR"/>
+        <field desc="CEP ID" keyfield="true" length="32"
+            name="cve_cpe_id" type="VARCHAR"/>
+        <field desc="CPE URL" keyfield="false" length="100"
+            name="cve_cpe_url" type="VARCHAR"/>
+        <field desc="오퍼레이터" keyfield="false" length="20"
+            name="cve_cpe_operator" type="VARCHAR"/>
+        <field desc="Vendor 명" keyfield="false" length="100"
+            name="cve_vendor_nm" type="VARCHAR"/>
+        <field desc="Product 명" keyfield="false" length="100"
+            name="cve_product_nm" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="취약점 MASTER" name="ngsoc_tb_cve_m"
+        namespace="fsec" scope="threat" service="CVEMaster">
+        <field desc="취약점 ID" keyfield="true" length="20" name="cve_id" type="VARCHAR"/>
+        <field desc="취약점 데이터 타입" keyfield="false" length="20"
+            name="cve_data_type" type="VARCHAR"/>
+        <field desc="취약점 데이터 포맷" keyfield="false" length="20"
+            name="cve_data_format" type="VARCHAR"/>
+        <field desc="취약점 데이터 버전" keyfield="false" length="20"
+            name="cve_data_version" type="VARCHAR"/>
+        <field desc="취약점 할당자" keyfield="false" length="100"
+            name="cve_assigner" type="VARCHAR"/>
+        <field desc="취약점 언어" keyfield="false" length="20"
+            name="cve_lang" type="VARCHAR"/>
+        <field desc="취약점 개요" keyfield="false" length="4000"
+            name="cve_desc" type="CLOB"/>
+        <field desc="취약점 개요 한글 번역" keyfield="false" length="4000"
+            name="cve_desc_ko" type="CLOB"/>
+        <field desc="취약점 퍼블리시 일자" keyfield="false" length="20"
+            name="cve_published" type="VARCHAR"/>
+        <field desc="취약점 마지막 수정 일자" keyfield="false" length="20"
+            name="cve_last_modified" type="VARCHAR"/>
+        <field desc="취약점 카테고리 ID" keyfield="false" length="20"
+            name="cwe_id" type="VARCHAR"/>
+        <field desc="취약점 카테고리 언어" keyfield="false" length="20"
+            name="cve_cwe_lang" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="취약점 Reference 정보"
+        name="ngsoc_tb_cve_ref_s" namespace="fsec" scope="threat" service="CVEReference">
+        <field desc="취약점 ID" keyfield="true" length="20" name="cve_id" type="VARCHAR"/>
+        <field desc="취약점 참조 URL ID" keyfield="true" length="32"
+            name="cve_ref_id" type="VARCHAR"/>
+        <field desc="취약점 참조 URL" keyfield="false" length="100"
+            name="cve_ref_url" type="VARCHAR"/>
+        <field desc="취약점 참조 URL 명" keyfield="false" length="100"
+            name="cve_ref_nm" type="VARCHAR"/>
+        <field desc="취약점 참조 URL Resource" keyfield="false" length="100"
+            name="cve_ref_resource" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="취약점 Reference 태그 정보"
+        name="ngsoc_tb_cve_ref_s_s" namespace="fsec" scope="threat" service="CVETag">
+        <field desc="취약점 ID" keyfield="true" length="20" name="cve_id" type="VARCHAR"/>
+        <field desc="취약점 참조 URL ID" keyfield="true" length="32"
+            name="cve_ref_id" type="VARCHAR"/>
+        <field desc="태그 ID" keyfield="true" length="32" name="tag_id" type="VARCHAR"/>
+        <field desc="태그 명" keyfield="false" length="100" name="tag_nm" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="취약점 Score 정보" name="ngsoc_tb_cve_score_s"
+        namespace="fsec" scope="threat" service="CVEScore">
+        <field desc="취약점 ID" keyfield="true" length="20" name="cve_id" type="VARCHAR"/>
+        <field desc="SCORE ID" keyfield="true" length="32"
+            name="cve_score_id" type="VARCHAR"/>
+        <field desc="SCORE 유형" keyfield="false" length="20"
+            name="cve_score_type" type="VARCHAR"/>
+        <field desc="SCORE 버전" keyfield="false" length="20"
+            name="cve_score_version" type="VARCHAR"/>
+        <field desc="SCORE VECTOR" keyfield="false" length="20"
+            name="cve_score_vector" type="VARCHAR"/>
+        <field desc="SCORE EXPLOITABILITY" keyfield="false" length="20"
+            name="cve_score_exploitability" type="VARCHAR"/>
+        <field desc="SCORE IMPACT" keyfield="false" length="20"
+            name="cve_score_impact" type="VARCHAR"/>
+        <field desc="SCORE BASE SCORE" keyfield="false" length="20"
+            name="cve_score_base_score" type="VARCHAR"/>
+        <field desc="SCOR SEVERITY" keyfield="false" length="20"
+            name="cve_scor_severity" type="VARCHAR"/>
+        <field desc="SCORE ACINSUFINFO" keyfield="false" length="22"
+            name="cve_score_acinsufinfo" type="NUMBER"/>
+        <field desc="SCORE OBTAIN ALL PRIVILEGE" keyfield="false"
+            length="22" name="cve_score_obtain_all_prvl" type="NUMBER"/>
+        <field desc="SCORE OBTAIN USER_PRIVILEGE" keyfield="false"
+            length="22" name="cve_score_obtain_user_prvl" type="NUMBER"/>
+        <field desc="SCORE OBTAIN OTHER_PRIVILEGE" keyfield="false"
+            length="22" name="cve_score_obtain_other_prvl" type="NUMBER"/>
+        <field desc="SCORE USER INTERACTION REQUIRED" keyfield="false"
+            length="22" name="cve_score_user_intrc_required" type="NUMBER"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="취약점 Score 상세 정보"
+        name="ngsoc_tb_cve_score_s_s" namespace="fsec" scope="threat" service="CVEScoreDetail">
+        <field desc="취약점 ID" keyfield="true" length="32" name="cve_id" type="VARCHAR"/>
+        <field desc="SCORE ID" keyfield="true" length="20"
+            name="cve_score_id" type="VARCHAR"/>
+        <field desc="SCORE 키" keyfield="true" length="20"
+            name="cve_score_key" type="VARCHAR"/>
+        <field desc="SCORE 값" keyfield="false" length="20"
+            name="cve_score_value" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="취약점 카테고리 MASTER" name="ngsoc_tb_cwe_m"
+        namespace="fsec" scope="threat" service="CWEMaster">
+        <field desc="취약점 카테고리 ID" keyfield="true" length="20"
+            name="cwe_id" type="VARCHAR"></field>
+        <field desc="취약점 카테고리 명" keyfield="false" length="100"
+            name="cwe_nm" type="VARCHAR"/>
+        <field desc="취약점 카테고리 약점 추출" keyfield="false" length="100"
+            name="cwe_weakness_abstraction" type="VARCHAR"/>
+        <field desc="취약점 카테고리 상태" keyfield="false" length="100"
+            name="cwe_status" type="VARCHAR"/>
+        <field desc="취약점 카테고리 설명" keyfield="false" length="100"
+            name="cwe_desc" type="VARCHAR"/>
+        <field desc="취약점 카테고리 확장 설명" keyfield="false" length="100"
+            name="cwe_extended_desc" type="VARCHAR"/>
+        <field desc="취약점 카테고리 관계 약점" keyfield="false" length="100"
+            name="cwe_related_weaknesses" type="VARCHAR"/>
+        <field desc="취약점 카테고리 약점 순서" keyfield="false" length="100"
+            name="cwe_weakness_ordinalities" type="VARCHAR"/>
+        <field desc="취약점 카테고리 적용가능 플랫폼" keyfield="false" length="100"
+            name="cwe_applicable_platforms" type="VARCHAR"/>
+        <field desc="취약점 카테고리 백그라운드 상세" keyfield="false" length="100"
+            name="cwe_background_details" type="VARCHAR"/>
+        <field desc="취약점 카테고리 대체 조건" keyfield="false" length="45"
+            name="cwe_alternate_terms" type="VARCHAR"/>
+        <field desc="취약점 카테고리 모드 소개" keyfield="false" length="45"
+            name="cwe_modes_introduction" type="VARCHAR"/>
+        <field desc="취약점 카테고리 EXPLOITATION FACTORS" keyfield="false"
+            length="100" name="cwe_exploitation_factors" type="VARCHAR"/>
+        <field desc="취약점 카테고리 LIKELIHOOD EXPLOIT" keyfield="false"
+            length="100" name="cwe_likelihood_exploit" type="VARCHAR"/>
+        <field desc="취약점 카테고리 공통 결과" keyfield="false" length="100"
+            name="cwe_common_consequences" type="VARCHAR"/>
+        <field desc="취약점 카테고리 탐지 방법" keyfield="false" length="100"
+            name="cwe_detection_methods" type="VARCHAR"/>
+        <field desc="취약점 카테고리 POTENTIAL MITIGATIONS" keyfield="false"
+            length="100" name="cwe_potential_mitigations" type="VARCHAR"/>
+        <field desc="취약점 카테고리 관찰 사례" keyfield="false" length="100"
+            name="cwe_observed_examples" type="VARCHAR"/>
+        <field desc="취약점 카테고리 기능 영역" keyfield="false" length="100"
+            name="cwe_functional_areas" type="VARCHAR"/>
+        <field desc="취약점 카테고리 영향 자원" keyfield="false" length="100"
+            name="cwe_affected_resources" type="VARCHAR"/>
+        <field desc="취약점 카테고리 분류 맵핑" keyfield="false" length="100"
+            name="cwe_taxonomy_mappings" type="VARCHAR"/>
+        <field desc="취약점 카테고리 관련 공격 패턴" keyfield="false" length="100"
+            name="cwe_related_attack_patterns" type="VARCHAR"/>
+        <field desc="취약점 카테고리 메모" keyfield="false" length="45"
+            name="cwe_notes" type="VARCHAR"/>
+        <field desc="취약점 카테고리 MCOL" keyfield="false" length="45"
+            name="cwe_mcol" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="자료실 첨부파일" name="ngsoc_tb_data_atch_s"
+        namespace="fsec" scope="pds" service="PDSAttFile">
+        <field desc="자료실 ID" keyfield="true" length="32" name="data_id" type="VARCHAR"/>
+        <field desc="자료실 첨부파일 ID" keyfield="true" length="32"
+            name="data_atch_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"></field>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="자료실 댓글" name="ngsoc_tb_data_cmnt_s"
+        namespace="fsec" scope="pds" service="PDSComments">
+        <field desc="자료실 ID" keyfield="true" length="32" name="data_id" type="VARCHAR"/>
+        <field desc="자료실 댓글 ID" keyfield="true" length="32"
+            name="data_cmnt_id" type="VARCHAR"/>
+        <field desc="자료실 댓글 내용" keyfield="false" length="400"
+            name="data_cmnt_cmnt" type="VARCHAR"/>
+        <field desc="자료실 댓글 등록일자" keyfield="false" length="8"
+            name="data_cmnt_reg_dt" type="DATE"/>
+        <field desc="자료실 댓글 작성자" keyfield="false" length="15"
+            name="data_cmnt_reg_user_id" type="VARCHAR"/>
+        <field desc="자료실 댓글 작성부서" keyfield="false" length="32"
+            name="data_cmnt_reg_group_id" type="VARCHAR"/>
+        <field desc="자료실 댓글 갱신일자" keyfield="false" length="8"
+            name="data_cmnt_modi_dt" type="DATE"/>
+        <field desc="자료실 댓글 갱신자" keyfield="false" length="15"
+            name="data_cmnt_modi_user_id" type="VARCHAR"/>
+        <field desc="자료실 댓글 갱신 부서" keyfield="false" length="32"
+            name="data_cmnt_modi_group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="자료실 MASTER" name="ngsoc_tb_data_m"
+        namespace="fsec" scope="pds" service="PDSMaster">
+        <field desc="자료실 ID" keyfield="true" length="32" name="data_id" type="VARCHAR"></field>
+        <field desc="자료실 (코드관리)" keyfield="false" length="20"
+            name="data_type" type="VARCHAR"/>
+        <field desc="자료실 제목" keyfield="false" length="100"
+            name="data_title" type="VARCHAR"/>
+        <field desc="자료실 내용" keyfield="false" length="4000"
+            name="data_contents" type="CLOB"/>
+        <field desc="자료실 작성일" keyfield="false" length="8"
+            name="data_reg_dt" type="DATE"/>
+        <field desc="자료실 작성자" keyfield="false" length="15"
+            name="data_reg_user_id" type="VARCHAR"/>
+        <field desc="자료실 작성 부서" keyfield="false" length="32"
+            name="data_reg_group_id" type="VARCHAR"/>
+        <field desc="자료실 갱신일" keyfield="false" length="8"
+            name="data_modi_dt" type="DATE"/>
+        <field desc="자료실 갱신자" keyfield="false" length="15"
+            name="data_modi_user_id" type="VARCHAR"/>
+        <field desc="자료실 갱신 부서" keyfield="false" length="32"
+            name="data_modi_group_id" type="VARCHAR"/>
+        <field desc="자료실 TLP" keyfield="false" length="45"
+            name="data_tlb" type="VARCHAR"/>
+        <field desc="자료실 조회 수" keyfield="false" length="22"
+            name="data_read_cnt" type="NUMBER"/>
+        <field desc="자료실 첨부파일 수" keyfield="false" length="22"
+            name="data_atch_cnt" type="NUMBER"/>
+        <field desc="자료실 댓글 수" keyfield="false" length="22"
+            name="data_cmnt_cnt" type="NUMBER"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="외부보안동향 첨부파일" name="ngsoc_tb_est_atch_s"
+        namespace="fsec" scope="est" service="ESTAttFile">
+        <field desc="외부보안동향 ID" keyfield="true" length="32"
+            name="est_id" type="VARCHAR"/>
+        <field desc="외부보안동향 첨부파일 ID" keyfield="true" length="32"
+            name="est_atch_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="외부보안동향 댓글" name="ngsoc_tb_est_cmnt_s"
+        namespace="fsec" scope="est" service="ESTComments">
+        <field desc="외부보안동향 ID" keyfield="true" length="32"
+            name="est_id" type="VARCHAR"/>
+        <field desc="외부보안동향 댓글 ID" keyfield="true" length="32"
+            name="est_cmnt_id" type="VARCHAR"/>
+        <field desc="외부보안동향 댓글 내용" keyfield="false" length="400"
+            name="est_cmnt_cmnt" type="VARCHAR"/>
+        <field desc="외부보안동향 댓글 등록일자" keyfield="false" length="8"
+            name="est_cmnt_reg_dt" type="DATE"/>
+        <field desc="외부보안동향 댓글 작성자" keyfield="false" length="15"
+            name="est_cmnt_reg_user_id" type="VARCHAR"/>
+        <field desc="외부보안동향 댓글 작성부서" keyfield="false" length="32"
+            name="est_cmnt_reg_group_id" type="VARCHAR"/>
+        <field desc="외부보안동향 댓글 갱신일자" keyfield="false" length="8"
+            name="est_cmnt_modi_dt" type="DATE"/>
+        <field desc="외부보안동향 댓글 갱신자" keyfield="false" length="15"
+            name="est_cmnt_modi_user_id" type="VARCHAR"/>
+        <field desc="외부보안동향 댓글 갱신 부서" keyfield="false" length="32"
+            name="est_cmnt_modi_group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="외부보안동향 ioc" name="ngsoc_tb_est_ioc_s"
+        namespace="fsec" scope="est" service="ESTioc">
+        <field desc="외부보안동향 ID" keyfield="true" length="32"
+            name="est_id" type="VARCHAR"/>
+        <field desc="외부보안동향 IOC ID" keyfield="true" length="32"
+            name="est_ioc_id" type="VARCHAR"/>
+        <field desc="외부보안동향 IOC 유형" keyfield="false" length="20"
+            name="est_ioc_type" type="VARCHAR"/>
+        <field desc="외부보안동향 IOC VALUE" keyfield="false" length="100"
+            name="est_ioc_value" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="외부보안동향 MASTER" name="ngsoc_tb_est_m"
+        namespace="fsec" scope="est" service="ESTMaster">
+        <field desc="외부보안동향 ID" keyfield="true" length="32"
+            name="est_id" type="VARCHAR"/>
+        <field desc="외부보안동향 (코드관리)" keyfield="false" length="20"
+            name="est_type" type="VARCHAR"/>
+        <field desc="외부보안동향 제목" keyfield="false" length="100"
+            name="est_title" type="VARCHAR"/>
+        <field desc="외부보안동향 내용" keyfield="false" length="4000"
+            name="est_contents" type="CLOB"/>
+        <field desc="외부보안동향 작성일" keyfield="false" length="8"
+            name="est_reg_dt" type="DATE"/>
+        <field desc="외부보안동향 작성자" keyfield="false" length="15"
+            name="est_reg_user_id" type="VARCHAR"/>
+        <field desc="외부보안동향 작성 부서" keyfield="false" length="32"
+            name="est_reg_group_id" type="VARCHAR"/>
+        <field desc="외부보안동향 갱신일" keyfield="false" length="8"
+            name="est_modi_dt" type="DATE"/>
+        <field desc="외부보안동향 갱신자" keyfield="false" length="15"
+            name="est_modi_user_id" type="VARCHAR"/>
+        <field desc="외부보안동향 갱신 부서" keyfield="false" length="32"
+            name="est_modi_group_id" type="VARCHAR"/>
+        <field desc="외부보안동향 TLP" keyfield="false" length="20"
+            name="est_tlb" type="VARCHAR"/>
+        <field desc="외부보안동향 조회 수" keyfield="false" length="22"
+            name="est_read_cnt" type="NUMBER"/>
+        <field desc="외부보안동향 첨부파일 수" keyfield="false" length="22"
+            name="est_atch_cnt" type="NUMBER"/>
+        <field desc="외부보안동향 댓글 수" keyfield="false" length="22"
+            name="est_cmnt_cnt" type="NUMBER"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="보안권고문 첨부파일" name="ngsoc_tb_sa_atch_s"
+        namespace="fsec" scope="sa" service="SAAttFile">
+        <field desc="보안권고문 ID" keyfield="true" length="32" name="sa_id" type="VARCHAR"/>
+        <field desc="보안권고문 첨부파일 ID" keyfield="true" length="32"
+            name="sa_atch_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="보안권고문 댓글" name="ngsoc_tb_sa_cmnt_s"
+        namespace="fsec" scope="sa" service="SAComments">
+        <field desc="보안권고문 ID" keyfield="true" length="32" name="sa_id" type="VARCHAR"/>
+        <field desc="보안권고문 댓글 ID" keyfield="true" length="32"
+            name="sa_cmnt_id" type="VARCHAR"/>
+        <field desc="보안권고문 댓글 내용" keyfield="false" length="400"
+            name="sa_cmnt_cmnt" type="VARCHAR"/>
+        <field desc="보안권고문 댓글 등록일자" keyfield="false" length="8"
+            name="sa_cmnt_reg_dt" type="DATE"/>
+        <field desc="보안권고문 댓글 작성자" keyfield="false" length="15"
+            name="sa_cmnt_reg_user_id" type="VARCHAR"/>
+        <field desc="보안권고문 댓글 작성부서" keyfield="false" length="32"
+            name="sa_cmnt_reg_group_id" type="VARCHAR"/>
+        <field desc="보안권고문 댓글 갱신일자" keyfield="false" length="8"
+            name="sa_cmnt_modi_dt" type="DATE"/>
+        <field desc="보안권고문 댓글 갱신자" keyfield="false" length="15"
+            name="sa_cmnt_modi_user_id" type="VARCHAR"/>
+        <field desc="보안권고문 댓글 갱신 부서" keyfield="false" length="32"
+            name="sa_cmnt_modi_group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="보안권고문 ioc" name="ngsoc_tb_sa_ioc_s"
+        namespace="fsec" scope="sa" service="SAioc">
+        <field desc="보안권고문 ID" keyfield="true" length="32" name="sa_id" type="VARCHAR"/>
+        <field desc="보안권고문 IOC ID" keyfield="true" length="32"
+            name="sa_ioc_id" type="VARCHAR"/>
+        <field desc="보안권고문 IOC 유형" keyfield="false" length="20"
+            name="sa_ioc_type" type="VARCHAR"/>
+        <field desc="보안권고문 IOC VALUE" keyfield="false" length="100"
+            name="sa_ioc_value" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="보안권고문 MASTER" name="ngsoc_tb_sa_m"
+        namespace="fsec" scope="sa" service="SAMaster">
+        <field desc="보안권고문 ID" keyfield="true" length="32" name="sa_id" type="VARCHAR"/>
+        <field desc="보안권고문 (코드관리)" keyfield="false" length="20"
+            name="sa_type" type="VARCHAR"/>
+        <field desc="보안권고문 제목" keyfield="false" length="100"
+            name="sa_title" type="VARCHAR"/>
+        <field desc="보안권고문 내용" keyfield="false" length="4000"
+            name="sa_contents" type="CLOB"/>
+        <field desc="보안권고문 작성일" keyfield="false" length="8"
+            name="sa_reg_dt" type="DATE"/>
+        <field desc="보안권고문 작성자" keyfield="false" length="15"
+            name="sa_reg_user_id" type="VARCHAR"/>
+        <field desc="보안권고문 작성 부서" keyfield="false" length="32"
+            name="sa_reg_group_id" type="VARCHAR"/>
+        <field desc="보안권고문 갱신일" keyfield="false" length="8"
+            name="sa_modi_dt" type="DATE"/>
+        <field desc="보안권고문 갱신자" keyfield="false" length="15"
+            name="sa_modi_user_id" type="VARCHAR"/>
+        <field desc="보안권고문 갱신 부서" keyfield="false" length="32"
+            name="sa_modi_group_id" type="VARCHAR"/>
+        <field desc="보안권고문 TLP" keyfield="false" length="20"
+            name="sa_tlb" type="VARCHAR"/>
+        <field desc="보안권고문 조회 수" keyfield="false" length="22"
+            name="sa_read_cnt" type="NUMBER"/>
+        <field desc="보안권고문 첨부파일 수" keyfield="false" length="22"
+            name="sa_atch_cnt" type="NUMBER"/>
+        <field desc="보안권고문 댓글 수" keyfield="false" length="22"
+            name="sa_cmnt_cnt" type="NUMBER"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협정보특이사항 첨부파일" name="ngsoc_tb_tiu_atch_s"
+        namespace="fsec" scope="tiu" service="TIUAttFile">
+        <field desc="위협정보특이사항 ID" keyfield="true" length="32"
+            name="tiu_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 첨부파일 ID" keyfield="true" length="32"
+            name="tiu_atch_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협정보특이사항 댓글" name="ngsoc_tb_tiu_cmnt_s"
+        namespace="fsec" scope="tiu" service="TIUComments">
+        <field desc="위협정보특이사항 ID" keyfield="true" length="32"
+            name="tiu_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 댓글 ID" keyfield="true" length="32"
+            name="tiu_cmnt_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 댓글 내용" keyfield="false" length="400"
+            name="tiu_cmnt_cmnt" type="VARCHAR"/>
+        <field desc="위협정보특이사항 댓글 등록일자" keyfield="false" length="8"
+            name="tiu_cmnt_reg_dt" type="DATE"/>
+        <field desc="위협정보특이사항 댓글 작성자" keyfield="false" length="15"
+            name="tiu_cmnt_reg_user_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 댓글 작성부서" keyfield="false" length="32"
+            name="tiu_cmnt_reg_group_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 댓글 갱신일자" keyfield="false" length="8"
+            name="tiu_cmnt_modi_dt" type="DATE"/>
+        <field desc="위협정보특이사항 댓글 갱신자" keyfield="false" length="15"
+            name="tiu_cmnt_modi_user_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 댓글 갱신 부서" keyfield="false" length="32"
+            name="tiu_cmnt_modi_group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협정보특이사항 ioc" name="ngsoc_tb_tiu_ioc_s"
+        namespace="fsec" scope="tiu" service="TIUioc">
+        <field desc="위협정보특이사항 ID" keyfield="true" length="32"
+            name="tiu_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 IOC ID" keyfield="true" length="32"
+            name="tiu_ioc_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 IOC 유형" keyfield="false" length="20"
+            name="tiu_ioc_type" type="VARCHAR"/>
+        <field desc="위협정보특이사항 IOC VALUE" keyfield="false" length="100"
+            name="tiu_ioc_value" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협정보특이사항 MASTER" name="ngsoc_tb_tiu_m"
+        namespace="fsec" scope="tiu" service="TIUMaster">
+        <field desc="위협정보특이사항 ID" keyfield="true" length="32"
+            name="tiu_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 (코드관리)" keyfield="false" length="20"
+            name="tiu_type" type="VARCHAR"/>
+        <field desc="위협정보특이사항 제목" keyfield="false" length="100"
+            name="tiu_title" type="VARCHAR"/>
+        <field desc="위협정보특이사항 내용" keyfield="false" length="4000"
+            name="tiu_contents" type="CLOB"/>
+        <field desc="위협정보특이사항 작성일" keyfield="false" length="8"
+            name="tiu_reg_dt" type="DATE"/>
+        <field desc="위협정보특이사항 작성자" keyfield="false" length="15"
+            name="tiu_reg_user_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 작성 부서" keyfield="false" length="32"
+            name="tiu_reg_group_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 갱신일" keyfield="false" length="8"
+            name="tiu_modi_dt" type="DATE"/>
+        <field desc="위협정보특이사항 갱신자" keyfield="false" length="45"
+            name="tiu_modi_user_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 갱신 부서" keyfield="false" length="15"
+            name="tiu_modi_group_id" type="VARCHAR"/>
+        <field desc="위협정보특이사항 TLP" keyfield="false" length="32"
+            name="tiu_tlb" type="VARCHAR"/>
+        <field desc="위협정보특이사항 조회 수" keyfield="false" length="22"
+            name="tiu_read_cnt" type="NUMBER"/>
+        <field desc="위협정보특이사항 첨부파일 수" keyfield="false" length="22"
+            name="tiu_atch_cnt" type="NUMBER"/>
+        <field desc="위협정보특이사항 댓글 수" keyfield="false" length="22"
+            name="tiu_cmnt_cnt" type="NUMBER"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협상황정보 첨부파일" name="ngsoc_tb_tsi_atch_s"
+        namespace="fsec" scope="tsi" service="TSIAttFile">
+        <field desc="위협상황정보 ID" keyfield="true" length="32"
+            name="tsi_id" type="VARCHAR"/>
+        <field desc="위협상황정보 첨부파일 ID" keyfield="true" length="32"
+            name="tsi_atch_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협상황정보 댓글" name="ngsoc_tb_tsi_cmnt_s"
+        namespace="fsec" scope="tsi" service="TSIComments">
+        <field desc="위협상황정보 ID" keyfield="true" length="32"
+            name="tsi_id" type="VARCHAR"/>
+        <field desc="위협상황정보 댓글 ID" keyfield="true" length="32"
+            name="tsi_cmnt_id" type="VARCHAR"/>
+        <field desc="위협상황정보 댓글 내용" keyfield="false" length="400"
+            name="tsi_cmnt_cmnt" type="VARCHAR"/>
+        <field desc="위협상황정보 댓글 등록일자" keyfield="false" length="8"
+            name="tsi_cmnt_reg_dt" type="DATE"/>
+        <field desc="위협상황정보 댓글 작성자" keyfield="false" length="15"
+            name="tsi_cmnt_reg_user_id" type="VARCHAR"/>
+        <field desc="위협상황정보 댓글 작성부서" keyfield="false" length="32"
+            name="tsi_cmnt_reg_group_id" type="VARCHAR"/>
+        <field desc="위협상황정보 댓글 갱신일자" keyfield="false" length="8"
+            name="tsi_cmnt_modi_dt" type="DATE"/>
+        <field desc="위협상황정보 댓글 갱신자" keyfield="false" length="15"
+            name="tsi_cmnt_modi_user_id" type="VARCHAR"/>
+        <field desc="위협상황정보 댓글 갱신 부서" keyfield="false" length="32"
+            name="tsi_cmnt_modi_group_id" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협상황정보 ioc" name="ngsoc_tb_tsi_ioc_s"
+        namespace="fsec" scope="tsi" service="TSIioc">
+        <field desc="위협상황정보 ID" keyfield="true" length="32"
+            name="tsi_id" type="VARCHAR"/>
+        <field desc="위협상황정보 IOC ID" keyfield="true" length="32"
+            name="tsi_ioc_id" type="VARCHAR"/>
+        <field desc="위협상황정보 IOC 유형" keyfield="false" length="20"
+            name="tsi_ioc_type" type="VARCHAR"/>
+        <field desc="위협상황정보 IOC VALUE" keyfield="false" length="100"
+            name="tsi_ioc_value" type="VARCHAR"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+    <entity build="yes" desc="위협상황정보 MASTER" name="ngsoc_tb_tsi_m"
+        namespace="fsec" scope="tsi" service="TSIMaster">
+        <field desc="위협상황정보 ID" keyfield="true" length="32"
+            name="tsi_id" type="VARCHAR"/>
+        <field desc="위협상황정보 (코드관리)" keyfield="false" length="20"
+            name="tsi_type" type="VARCHAR"/>
+        <field desc="금융전산위기경보" keyfield="false" length="20"
+            name="tsi_crisis_alert" type="VARCHAR"/>
+        <field desc="위협상황정보 제목" keyfield="false" length="100"
+            name="tsi_title" type="VARCHAR"/>
+        <field desc="위협상황정보 내용" keyfield="false" length="4000"
+            name="tsi_contents" type="CLOB"/>
+        <field desc="위협상황정보 작성일" keyfield="false" length="8"
+            name="tsi_reg_dt" type="DATE"/>
+        <field desc="위협상황정보 작성자" keyfield="false" length="15"
+            name="tsi_reg_user_id" type="VARCHAR"/>
+        <field desc="위협상황정보 작성 부서" keyfield="false" length="32"
+            name="tsi_reg_group_id" type="VARCHAR"/>
+        <field desc="위협상황정보 갱신일" keyfield="false" length="8"
+            name="tsi_modi_dt" type="DATE"/>
+        <field desc="위협상황정보 갱신자" keyfield="false" length="15"
+            name="tsi_modi_user_id" type="VARCHAR"/>
+        <field desc="위협상황정보 갱신 부서" keyfield="false" length="32"
+            name="tsi_modi_group_id" type="VARCHAR"/>
+        <field desc="위협상황정보 TLP" keyfield="false" length="20"
+            name="tsi_tlb" type="VARCHAR"/>
+        <field desc="위협상황정보 조회 수" keyfield="false" length="22"
+            name="tsi_read_cnt" type="NUMBER"/>
+        <field desc="위협상황정보 첨부파일 수" keyfield="false" length="22"
+            name="tsi_atch_cnt" type="NUMBER"/>
+        <field desc="위협상황정보 댓글 수" keyfield="false" length="22"
+            name="tsi_cmnt_cnt" type="NUMBER"/>
+        <field desc="데이터 생성일" keyfield="false" length="12"
+            name="sys_cr_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 생성자" keyfield="false" length="15"
+            name="sys_cr_user_id" type="VARCHAR"/>
+        <field desc="데이터 수정일" keyfield="false" length="12"
+            name="sys_ud_dt" type="TIMESTAMP(6)"/>
+        <field desc="데이터 수정자" keyfield="false" length="15"
+            name="sys_ud_user_id" type="VARCHAR"/>
+    </entity>
+</entities>

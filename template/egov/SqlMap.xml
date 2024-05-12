@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Mysql</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service#Handler.Map.#Sourcetype#</filename>
+		<ext>xml</ext>
+		<path>./work/genSrc/kr/co/dreamlabs/#namespace#/#scope#/handler/</path>
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<author>source generator (ilho.ko@gmail.com)</author>
+		<cdate>2019.2.27</cdate>
+		<pakage>kr.co.dreamlabs.#namespace#.#scope#</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.dreamlabs">
+	<resultMap id="ResultMap_#ENTITY_NAME#" class="#pakage#.bean.#Service#Bean">
+	<result property="NO" column="NO"></result>
+#begin#
+	<result property="#field_name#" column="#field_name#"></result>#end#
+	</resultMap>
+
+	<select id="SELECT_#ENTITY_NAME#" resultMap="ResultMap_#ENTITY_NAME#" parameterType="#pakage#.bean.#Service#ParmBean">
+		SELECT
+			@RNUM := @RNUM + 1 AS NO,
+#begin#
+		,#field_name##end#
+				FROM #entity_name#
+				<where>
+#begin#
+	<if test="#field_name# != null">AND #field_name#=#{#field_name#}</if>#end#
+#begin#
+	<if test="_#field_name# != null">AND #field_name# like '%'||#{_#field_name#}||'%'</if>#end#	
+				</where>		
+	</select>
+	
+	<select id="SELECT_#ENTITY_NAME#_PAGE" resultMap="ResultMap.#ENTITY_NAME#" parameterClass="#pakage#.bean.#Service#ParmBean">
+		SELECT * FROM (
+      		SELECT
+      		@RNUM := @RNUM + 1 AS NO,
+#begin#
+			A.#field_name##conjunction##end#
+		FROM #ENTITY_NAME# A,(SELECT @RNUM :=0)B
+		WHERE 1=1
+#begin#
+			,#field_name##end#
+			FROM #entity_name#
+			WHERE 1=1
+
+#begin#
+		<if test="#field_name# != null">AND #field_name#=#{#field_name#}</if>#end#
+#begin#
+		<if test="_#field_name# != null">AND #field_name# like '%'||#{_#field_name#}||'%'</if>#end#		
+				<isNotNull 	property="ORDERBY">ORDER BY $ORDERBY$</isNotNull>
+		)LIST   
+		<if test="CURPAGE != null">
+         WHERE
+         NO  BETWEEN (((#{CURPAGE}-1)*#{RCOUNT})+1) AND (#{CURPAGE}*#{RCOUNT})
+		</if>
+		<if test="ORDERBY == null">ORDER BY ${ORDERBY}
+		</if>
+	</select>
+	
+	<select id="SELECT_#ENTITY_NAME#_COUNT" resultClass="int" parameterClass="#pakage#.bean.#Service#ParmBean">
+		    SELECT COUNT(*)  
+		FROM #ENTITY_NAME#
+		WHERE 1=1
+#begin#
+		<if test="#field_name# != null">AND #field_name#=#{#field_name#}</if>#end#
+#begin#
+		<if test="_#field_name# != null">AND #field_name# like '%'||#{_#field_name#}||'%'</if>#end#			
+	</select>
+	
+	<insert id="INSERT_#ENTITY_NAME#">
+		INSERT INTO #ENTITY_NAME#(
+			sys_cr_dt
+			, sys_ud_dt #begin#
+			, #key_fields# #end# #begin#
+				<if test="#field_name# != null">, #field_name#</if>#end#
+		)
+		VALUES(
+			systimestamp
+			, systimestamp #begin#
+			, #{#key_fields#}  #end# #begin#			
+				<if test="#field_name# != null">, #{#field_name#}</if>#end#
+		)
+	</insert>
+
+	<delete id="DELETE_#ENTITY_NAME#">
+		DELETE FROM #ENTITY_NAME#
+		WHERE  1=1 #begin#
+		AND #key_fields# = #{#key_fields#}  #end#
+	</delete>
+
+	<update id="UPDATE_#ENTITY_NAME#">
+		UPDATE  #ENTITY_NAME#
+			<set>
+				sys_ud_dt = systimestamp #begin#
+				<if test="#field_name# != null">, #field_name#=#{#field_name#}</if>#end#
+			</set>
+		WHERE  1=1 #begin#
+		AND #key_fields# = #{#key_fields#}  #end#
+	</update>
+</sqlMap>
+	]]>
+	</source>
+</template>

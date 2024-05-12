@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<reserved>
+		<sourcetype>Handler</sourcetype>
+		<conjunction>,</conjunction>
+		<filename>#Service##Sourcetype#</filename>
+		<ext>java</ext>
+		<path>./work/genSrc/com/cpaas/biz/database/</path>	
+	</reserved>
+	<definition>
+		<version>1.0</version>
+		<auther>source generator(ilho.ko@gmail.com)</auther>
+		<cdate>2019.09.18</cdate>
+		<pakage>com.cpaas.biz.database</pakage>
+	</definition>
+	<source>
+	<![CDATA[
+package #pakage#;
+
+
+import java.util.List;
+import java.util.Map;
+
+import com.cpaas.framework.common.database.mapper.SqlMapClientWrapper;
+
+ /**
+ * <pre>
+ * #Service##sourcetype#
+ * </pre>
+ *
+ * @since #cdate#
+ * @version #version#
+ * @author #author#
+ */
+ 
+ public class #Service##Sourcetype# extends ExDatabaseProcessor {
+ 	
+	public #Service##Sourcetype#() {
+ 		super();
+ 	}
+ 	
+	public #Service##Sourcetype#(SqlMapClientWrapper s) {
+		super(s);
+	}
+ 	
+	public #Service##Sourcetype#(String u, String p, SqlMapClientWrapper s) {
+		super(u, p, s);
+	}
+	
+	@Override
+	protected int insert(Map parm) throws Exception {
+		return 0;
+	}
+	 
+	@Override
+	protected int update(Map parm) throws Exception {
+		return 0;
+	}
+	
+	@Override
+	protected int delete(Map parm) throws Exception {
+		return 0;
+	}
+	
+	@Override
+	protected List<Map<String, Object>> select(Map parm) throws Exception {
+		return null;
+	}
+	 
+	public List<Map<String, Object>> select#Service#(Map condition) throws Exception {
+		List<Map<String, Object>> al = super.select("SELECT.#ENTITY_NAME#", condition);
+	 	return al;
+	}
+	
+	public int insert#Service#(Map condition) throws Exception {
+		return super.insert("INSERT.#ENTITY_NAME#", condition);
+	}
+	
+	public int update#Service#(Map condition) throws Exception {
+		return super.update("UPDATE.#ENTITY_NAME#", condition);
+	}
+	
+	public int delete#Service#(Map condition) throws Exception {
+		return super.delete("DELETE.#ENTITY_NAME#", condition);
+	}	 
+ }
+	]]>
+	</source>
+</template>
+
